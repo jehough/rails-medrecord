@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Doctor.create(username: "drwho", password: "tardis", first_name: "No One", last_name: "Knows", admin: false)
 Doctor.create(username: "drsuess", password: "redfish", first_name: "Henry", last_name: "Spencer", admin: true)
+
+Patient.create(email:)

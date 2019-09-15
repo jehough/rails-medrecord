@@ -1,0 +1,97 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+Migrating to CreateDoctors (20190915171736)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "first_name" varchar, "last_name" varchar, "admin" boolean DEFAULT 0, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190915171736_create_doctors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190915171736"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+Migrating to CreatePatient (20190915172358)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "first_name" varchar, "last_name" varchar, "birthday" date, "allergies" text)[0m
+  ↳ db/migrate/20190915172358_create_patient.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190915172358"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+Migrating to CreateAppointments (20190915172943)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_id" integer, "doctor_id" integer, "date" date, "time" time, CONSTRAINT "fk_rails_c63da04ab4"
+FOREIGN KEY ("patient_id")
+  REFERENCES "patients" ("id")
+, CONSTRAINT "fk_rails_8db8e1e8a5"
+FOREIGN KEY ("doctor_id")
+  REFERENCES "doctors" ("id")
+)[0m
+  ↳ db/migrate/20190915172943_create_appointments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_patient_id" ON "appointments" ("patient_id")[0m
+  ↳ db/migrate/20190915172943_create_appointments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_doctor_id" ON "appointments" ("doctor_id")[0m
+  ↳ db/migrate/20190915172943_create_appointments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190915172943"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+Migrating to CreateMedications (20190915173637)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "medications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "treats" text)[0m
+  ↳ db/migrate/20190915173637_create_medications.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190915173637"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+Migrating to CreatePatientMeds (20190915173758)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "patient_meds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_id" integer, "medication_id" integer, CONSTRAINT "fk_rails_ebcd356288"
+FOREIGN KEY ("patient_id")
+  REFERENCES "patients" ("id")
+, CONSTRAINT "fk_rails_5423794364"
+FOREIGN KEY ("medication_id")
+  REFERENCES "medications" ("id")
+)[0m
+  ↳ db/migrate/20190915173758_create_patient_meds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_patient_meds_on_patient_id" ON "patient_meds" ("patient_id")[0m
+  ↳ db/migrate/20190915173758_create_patient_meds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_patient_meds_on_medication_id" ON "patient_meds" ("medication_id")[0m
+  ↳ db/migrate/20190915173758_create_patient_meds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190915173758"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+Migrating to CreateDosage (20190915174016)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "dosages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar, "amount" varchar, "medication_id" integer, CONSTRAINT "fk_rails_a34bc544d1"
+FOREIGN KEY ("medication_id")
+  REFERENCES "medications" ("id")
+)[0m
+  ↳ db/migrate/20190915174016_create_dosage.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_dosages_on_medication_id" ON "dosages" ("medication_id")[0m
+  ↳ db/migrate/20190915174016_create_dosage.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190915174016"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-15 17:46:59.835638"], ["updated_at", "2019-09-15 17:46:59.835638"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
