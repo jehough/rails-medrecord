@@ -1,12 +1,12 @@
 class DoctorsController < ApplicationController
+  before_action :current_patient, only: [:index, :show]
 
   def index
-    current_patient
+
     @doctors = Doctor.all
   end
 
   def show
-    current_patient
     @doctor = Doctor.find(params[:id])
   end
 
