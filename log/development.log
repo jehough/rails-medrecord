@@ -212,3 +212,123 @@ Processing by DoctorsController#index as HTML
 Completed 200 OK in 24ms (Views: 16.9ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/doctor/1" for ::1 at 2019-09-16 20:29:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/doctor/1"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/doctors/1" for ::1 at 2019-09-16 20:29:40 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:8
+  Rendering doctors/show.html.erb within layouts/application
+  Rendered doctors/show.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/home/jim/github/rails-medrecord/app/models/appointment.rb:8: syntax error, unexpected end-of-input, expecting end):
+  
+app/models/appointment.rb:8: syntax error, unexpected end-of-input, expecting end
+app/views/doctors/show.html.erb:5:in `_app_views_doctors_show_html_erb___1706063517948517625_69858685183520'
+Started GET "/doctors/1" for ::1 at 2019-09-16 20:30:09 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:8
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  ↳ app/views/doctors/show.html.erb:5
+  Rendered doctors/show.html.erb within layouts/application (219.9ms)
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `appointment' for #<#<Class:0x00007f127c41aec0>:0x00007f127c4195e8>):
+    3: <h3>Available Appointments</h3>
+    4: <ul>
+    5:   <% @doctor.appointments.each do |appt| %>
+    6:     <li><%= appointment.display_time %></li>
+    7:   <% end %>
+    8: </ul>
+  
+app/views/doctors/show.html.erb:6:in `block in _app_views_doctors_show_html_erb___1706063517948517625_69858685410060'
+app/views/doctors/show.html.erb:5:in `_app_views_doctors_show_html_erb___1706063517948517625_69858685410060'
+Started GET "/doctors/1" for ::1 at 2019-09-16 20:30:26 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:8
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  ↳ app/views/doctors/show.html.erb:5
+  Rendered doctors/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-16 20:31:44 -0400
+Processing by DoctorsController#index as HTML
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/index.html.erb:2
+  Rendered doctors/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors.1" for ::1 at 2019-09-16 20:31:46 -0400
+Processing by DoctorsController#index as 
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/index.html.erb:2
+  Rendered doctors/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 40ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors.1" for ::1 at 2019-09-16 20:31:54 -0400
+Processing by DoctorsController#index as 
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/index.html.erb:2
+  Rendered doctors/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 35ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors/1" for ::1 at 2019-09-16 20:31:55 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:8
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ?[0m  [["doctor_id", 1]]
+  ↳ app/views/doctors/show.html.erb:5
+  Rendered doctors/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 29ms (Views: 23.3ms | ActiveRecord: 0.4ms)
+
+

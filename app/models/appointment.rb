@@ -5,4 +5,5 @@ has_one :macro
 
   def display_time
     "#{self.date.strftime("%b %e, %Y")} #{self.time.strftime("%l:%M %P")}"
+  end
 end

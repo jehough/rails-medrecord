@@ -1,4 +1,4 @@
 <ol>
 <% @doctors.each do |doc| %>
-<li><%= doc.doc_name %></li>
+<li><%= link_to doc.doc_name, doctor_path(doc) %></li>
 <% end %>
