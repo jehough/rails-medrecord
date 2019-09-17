@@ -1,4 +1,18 @@
 <h1> Welcome <%= @doctor.doc_name %> </h1>
 
+<h3> Todays Appointments </h3>
+  <% if @today = @doctor.appointments.today %>
+    <table>
+      <tr>
+        <th>Time</th>
+        <th>Patient</th>
+      </tr>
+    <% @today.each do |appt| %>
+      <tr>
+        <td><%= appt.display_time %></td>
+        <td><%= appt.patient.display_name unless appt.patient.nil? %></td>
+      </tr>
+    <% end %>
+  <% end %>
 
 <%= link_to "Log Out", '/doctor/logout' %>

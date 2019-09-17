@@ -20,7 +20,7 @@ class PatientSessionsController < ApplicationController
   end
 
   def destroy
-    sessions.delete :patient_id
+    session.delete :patient_id
     redirect_to root_path
   end
 end
