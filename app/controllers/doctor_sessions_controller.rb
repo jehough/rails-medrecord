@@ -20,6 +20,7 @@ class DoctorSessionsController < ApplicationController
   end
 
   def destroy
-
+    session.delete :doctor_id
+    redirect_to '/'
   end
 end

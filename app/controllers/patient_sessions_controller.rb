@@ -5,10 +5,10 @@ class PatientSessionsController < ApplicationController
   end
 
   def create
-    if @patient = Patient.find_by(params[:email])
-      if @patient.authenticate(params[:password])
+    if @patient = Patient.find_by(params[:patient][:email])
+      if @patient.authenticate(params[:patient][:password])
         session[:patient_id] = @patient.id
-        redirect_to patient_path(@patient)
+        redirect_to doctors_path
       else
         flash[:alert] = "Incorrect Email/Password Combination"
         redirect_to '/'
@@ -20,6 +20,7 @@ class PatientSessionsController < ApplicationController
   end
 
   def destroy
-
+    sessions.delete :patient_id
+    redirect_to root_path
   end
 end
