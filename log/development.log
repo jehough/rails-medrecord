@@ -1288,3 +1288,35 @@ Processing by PatientSessionsController#new as HTML
 Completed 200 OK in 20ms (Views: 9.4ms | ActiveRecord: 0.6ms)
 
 
+Started POST "/patient/login" for ::1 at 2019-09-16 21:41:22 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wA4Zyw+ZcWFpxpThk5lrVJNwIgWLrvhB04MORSYxqEChY0kJFq03UIss83kv9IR7UEswwFLpO9ltn5ghcY4rww==", "patient"=>{"email"=>"joe@sample.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE (joe@sample.com) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:8
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "@sample": syntax error: SELECT  "patients".* FROM "patients" WHERE (joe@sample.com) LIMIT ?):
+  
+app/controllers/patient_sessions_controller.rb:8:in `create'
+Started POST "/patient/login" for ::1 at 2019-09-16 21:41:43 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wA4Zyw+ZcWFpxpThk5lrVJNwIgWLrvhB04MORSYxqEChY0kJFq03UIss83kv9IR7UEswwFLpO9ltn5ghcY4rww==", "patient"=>{"email"=>"joe@sample.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "joe@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:8
+Redirected to http://localhost:3000/doctors
+Completed 302 Found in 239ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-16 21:41:43 -0400
+Processing by DoctorsController#index as HTML
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/index.html.erb:2
+  Rendered doctors/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 1.4ms)
+
+

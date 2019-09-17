@@ -5,7 +5,7 @@ class PatientSessionsController < ApplicationController
   end
 
   def create
-    if @patient = Patient.find_by(params[:patient][:email])
+    if @patient = Patient.find_by(email: params[:patient][:email])
       if @patient.authenticate(params[:patient][:password])
         session[:patient_id] = @patient.id
         redirect_to doctors_path
