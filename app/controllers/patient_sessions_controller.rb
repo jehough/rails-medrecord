@@ -11,9 +11,6 @@ class PatientSessionsController < ApplicationController
       flash[:alert] = "Incorrect Email/Password Combination"
       redirect_to '/'
     end
-
-
-
   end
 
   def destroy
