@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get '/patient/login' => 'patient_sessions#new'
   post '/patient/login' => 'patient_sessions#create'
   get '/patient/logout' => 'patient_sessions#destroy'
-
+  get '/doctors/:id/home' => 'doctors#home'
 end

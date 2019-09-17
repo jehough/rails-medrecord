@@ -1,6 +1,11 @@
 class DoctorsController < ApplicationController
   before_action :current_patient, only: [:index, :show]
   before_action :is_admin, only: [:new, :create, :destroy]
+  before_action :current_doctor, only: [:home]
+
+  def home
+
+  end
 
   def index
     @doctors = Doctor.all
