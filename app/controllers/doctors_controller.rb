@@ -1,14 +1,17 @@
 class DoctorsController < ApplicationController
 
   def index
+    current_user
     @doctors = Doctor.all
   end
 
   def show
+    current_user
     @doctor = Doctor.find(params[:id])
   end
 
   def new
+
     @doctor = Doctor.new
   end
 
