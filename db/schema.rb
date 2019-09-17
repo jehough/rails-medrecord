@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_15_180144) do
+ActiveRecord::Schema.define(version: 2019_09_17_150625) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "patient_id"
@@ -44,6 +44,32 @@ ActiveRecord::Schema.define(version: 2019_09_15_180144) do
     t.string "amount"
     t.integer "medication_id"
     t.index ["medication_id"], name: "index_dosages_on_medication_id"
+  end
+
+  create_table "macros", force: :cascade do |t|
+    t.integer "appointment_id"
+    t.integer "height"
+    t.integer "weight"
+    t.integer "bmi"
+    t.integer "temp"
+    t.integer "systolic"
+    t.integer "diastolic"
+    t.integer "heart_rate"
+    t.integer "spo2"
+    t.integer "rr"
+    t.text "visit_reason"
+    t.text "history"
+    t.text "neuro"
+    t.text "heent"
+    t.text "cardiac"
+    t.text "respiratory"
+    t.text "skin"
+    t.text "musculoskeletal"
+    t.text "psychosocial"
+    t.text "tests_ordered"
+    t.text "therapies"
+    t.text "follow_up"
+    t.index ["appointment_id"], name: "index_macros_on_appointment_id"
   end
 
   create_table "medications", force: :cascade do |t|
