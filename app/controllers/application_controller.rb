@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     if is_patient?
       @patient = Patient.find(session[:patient_id])
     else
-      redirect_to root
+      redirect_to '/'
     end
   end
 
@@ -24,7 +24,16 @@ class ApplicationController < ActionController::Base
     if is_doctor?
       @doctor = Doctor.find(session[:doctor_id])
     else
-      redirect_to root
+      redirect_to '/'
+    end
+  end
+
+  def is_admin?
+    current_doctor
+    if @doctor.admin
+      @admin = @doctor
+    else
+      redirect_to '/'
     end
   end
 end

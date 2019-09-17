@@ -1,21 +1,22 @@
 class DoctorsController < ApplicationController
 
   def index
-    current_user
+    current_patient
     @doctors = Doctor.all
   end
 
   def show
-    current_user
+    current_patient
     @doctor = Doctor.find(params[:id])
   end
 
   def new
-
+    is_admin?
     @doctor = Doctor.new
   end
 
   def create
+    is_admin?
     @doctor = Doctor.new(doc_params)
     if @doctor.valid?
       @doctor.save
