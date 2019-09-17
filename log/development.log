@@ -1949,3 +1949,38 @@ Processing by PatientSessionsController#new as HTML
 Completed 200 OK in 21ms (Views: 10.6ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/patient/login" for ::1 at 2019-09-17 10:39:02 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PatientSessionsController#new as HTML
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 162ms (Views: 144.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/patient/login" for ::1 at 2019-09-17 10:39:08 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VXmuNBjcVmELW71yFtbctAxCOagP6xThbPN+/gEZEfs0FP72AegQUOmx2uqquzObz3krbdas13nS7+iaVqaSeA==", "patient"=>{"email"=>"joe@sample.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "joe@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:8
+Redirected to http://localhost:3000/patients/1/home
+Completed 302 Found in 230ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/patients/1/home" for ::1 at 2019-09-17 10:39:09 -0400
+  
+ActionController::RoutingError (undefined method `before_do' for PatientsController:Class
+Did you mean?  before_action):
+  
+app/controllers/patients_controller.rb:2:in `<class:PatientsController>'
+app/controllers/patients_controller.rb:1:in `<main>'
+Started GET "/patients/1/home" for ::1 at 2019-09-17 10:39:20 -0400
+Processing by PatientsController#home as HTML
+  Parameters: {"patient_id"=>"1"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering patients/home.html.erb within layouts/application
+  Rendered patients/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 22ms (Views: 11.0ms | ActiveRecord: 0.7ms)
+
+

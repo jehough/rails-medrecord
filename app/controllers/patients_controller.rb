@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_do :current_patient, only: :home
+  before_action :current_patient, only: :home
 
   def home
 
