@@ -1,6 +1,7 @@
 <h1> Welcome <%= @doctor.doc_name %> </h1>
 
 <h3> Todays Appointments </h3>
+<div>
   <% if @today = @doctor.appointments.today %>
     <table>
       <tr>
@@ -14,5 +15,5 @@
       </tr>
     <% end %>
   <% end %>
-
-<%= link_to "Log Out", '/doctor/logout' %>
+</div>
+<div><%= link_to "Log Out", '/doctor/logout' %></div>
