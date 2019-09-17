@@ -1,8 +1,8 @@
 class DoctorsController < ApplicationController
   before_action :current_patient, only: [:index, :show]
+  before_action :is_admin, only: [:new, :create, :destroy]
 
   def index
-
     @doctors = Doctor.all
   end
 
@@ -25,4 +25,5 @@ class DoctorsController < ApplicationController
       redirect_to new_doctor_path
     end
   end
+
 end
