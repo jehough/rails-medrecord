@@ -623,3 +623,61 @@ Processing by DoctorSessionsController#new as HTML
 Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/doctor/login" for ::1 at 2019-09-16 21:16:24 -0400
+Processing by DoctorSessionsController#new as HTML
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Login as Doctor</h1>
+    2: 
+    3: <%= form_for @doctor, url: '/doctor/login' do |f| %>
+    4:   <%= f.text_field :username %>
+    5:   <%= f.password_field %>
+    6:   <%= f.submit 'Sign In' %>
+  
+app/views/doctor_sessions/new.html.erb:3:in `_app_views_doctor_sessions_new_html_erb___3021138353155592713_69871713890400'
+Started GET "/doctor/login" for ::1 at 2019-09-16 21:16:53 -0400
+Processing by DoctorSessionsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `new' for nil:NilClass):
+  
+app/controllers/doctor_sessions_controller.rb:4:in `new'
+Started GET "/doctor/login" for ::1 at 2019-09-16 21:17:19 -0400
+Processing by DoctorSessionsController#new as HTML
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2)):
+    2: 
+    3: <%= form_for @doctor, url: '/doctor/login' do |f| %>
+    4:   <%= f.text_field :username %>
+    5:   <%= f.password_field %>
+    6:   <%= f.submit 'Sign In' %>
+    7: <% end %>
+  
+app/views/doctor_sessions/new.html.erb:5:in `block in _app_views_doctor_sessions_new_html_erb___3021138353155592713_69871677845500'
+app/views/doctor_sessions/new.html.erb:3:in `_app_views_doctor_sessions_new_html_erb___3021138353155592713_69871677845500'
+Started GET "/doctor/login" for ::1 at 2019-09-16 21:17:43 -0400
+Processing by DoctorSessionsController#new as HTML
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctor/login" for ::1 at 2019-09-16 21:18:34 -0400
+Processing by DoctorSessionsController#new as HTML
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+

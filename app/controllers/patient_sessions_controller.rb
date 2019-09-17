@@ -1,6 +1,7 @@
 class PatientSessionsController < ApplicationController
 
   def new
+    @patient = Patient.new
   end
 
   def create
