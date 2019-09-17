@@ -191,3 +191,24 @@ Processing by ApplicationController#home as HTML
 Completed 200 OK in 173ms (Views: 169.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/doctors" for ::1 at 2019-09-16 20:21:42 -0400
+  
+SyntaxError (/home/jim/github/rails-medrecord/app/controllers/doctors_controller.rb:5: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/doctors_controller.rb:5: syntax error, unexpected end-of-input, expecting end
+Started GET "/" for ::1 at 2019-09-16 20:21:57 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-16 20:22:01 -0400
+Processing by DoctorsController#index as HTML
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/index.html.erb:2
+  Rendered doctors/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 24ms (Views: 16.9ms | ActiveRecord: 1.2ms)
+
+
