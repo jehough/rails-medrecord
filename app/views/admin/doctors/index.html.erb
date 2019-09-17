@@ -2,6 +2,6 @@
 
 <ul>
 <% @doctors.each do |doc| %>
-  <li> <%= doc.display_name %> <li>
+  <li> <%= link_to doc.doc_name, edit_admin_doctors_path(doc) %> </li>
 <% end %>
 </ul>

@@ -2042,3 +2042,42 @@ Processing by Admin::PatientsController#index as HTML
 Completed 200 OK in 20ms (Views: 15.4ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/admin/doctors" for ::1 at 2019-09-17 10:51:58 -0400
+Processing by Admin::DoctorsController#index as HTML
+  Rendering admin/doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/admin/doctors/index.html.erb:4
+  Rendered admin/doctors/index.html.erb within layouts/application (28.7ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `display_name' for #<Doctor:0x00007fcafc34dec8>
+Did you mean?  display):
+    2: 
+    3: <ul>
+    4: <% @doctors.each do |doc| %>
+    5:   <li> <%= doc.display_name %> <li>
+    6: <% end %>
+    7: </ul>
+  
+app/views/admin/doctors/index.html.erb:5:in `block in _app_views_admin_doctors_index_html_erb___4527324744302623094_70254895318540'
+app/views/admin/doctors/index.html.erb:4:in `_app_views_admin_doctors_index_html_erb___4527324744302623094_70254895318540'
+Started GET "/admin/doctors" for ::1 at 2019-09-17 10:52:30 -0400
+Processing by Admin::DoctorsController#index as HTML
+  Rendering admin/doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/admin/doctors/index.html.erb:4
+  Rendered admin/doctors/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/doctors" for ::1 at 2019-09-17 10:52:42 -0400
+Processing by Admin::DoctorsController#index as HTML
+  Rendering admin/doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/admin/doctors/index.html.erb:4
+  Rendered admin/doctors/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.1ms)
+
+
