@@ -19,7 +19,7 @@ class AppointmentsController < ApplicationController
   end
 
   def add_patient
-    @appointment = Appointment.params[:id]
+    @appointment = Appointment.find(params[:id])
     @appointment.patient = @patient
     redirect_to patient_home_path(@patient)
   end
