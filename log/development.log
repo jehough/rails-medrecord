@@ -3153,3 +3153,77 @@ Processing by AppointmentsController#edit as HTML
 Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/appointments/1/edit" for ::1 at 2019-09-18 09:28:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:8
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  Rendered appointments/edit.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 203ms (Views: 174.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/appointments/1/edit" for ::1 at 2019-09-18 09:32:11 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:8
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  Rendered appointments/edit.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 43ms (Views: 35.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/appointments/1/edit" for ::1 at 2019-09-18 09:32:49 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:8
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  Rendered appointments/edit.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 55ms (Views: 46.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/appointments/1/edit" for ::1 at 2019-09-18 09:32:51 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:8
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  Rendered appointments/edit.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 34ms (Views: 29.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/appointments/1" for ::1 at 2019-09-18 09:33:03 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:4
+  Rendering appointments/show.html.erb within layouts/application
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:2
+  Rendered appointments/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 34ms (Views: 29.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/appointments/1/edit" for ::1 at 2019-09-18 09:33:05 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:8
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  Rendered appointments/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 0.6ms)
+
+
