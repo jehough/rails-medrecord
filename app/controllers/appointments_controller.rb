@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
 
   def show
-      raise params
+    @appointment = Appointment.find(params[:id])
   end
 end

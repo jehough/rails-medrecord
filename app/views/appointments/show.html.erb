@@ -1,0 +1,15 @@
+<h3>Appointment for: <%= @appointment.patient.display_name unless @appointment.patient.nil?%></h3>
+<h3>With: <%= @appointment.doctor.doc_name %> on <%= @appointment.display_time %></h3>
+
+<table>
+  <tr><th colspan="4">Check-in Data</th><tr>
+  <tr>
+    <td>Height:</td>
+    <td><%= @appointment.height %></td>
+    <td>Weight:</td>
+    <td><%= @appointment.weight %></td>
+  </tr>
+  <tr>
+    <td>BMI: </td>
+    <td><%= @appointment.bmi %></td>
+  <tr>

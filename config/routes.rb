@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get '/home' => 'patients#home'
   end
 
-  resources :appoitnments 
+  resources :appointments 
 
   namespace :admin do
     resources :patients
