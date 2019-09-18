@@ -12,4 +12,17 @@
   <tr>
     <td>BMI: </td>
     <td><%= @appointment.bmi %></td>
+    <td>Temperature:</td>
+    <td><%= @appointment.temp %></td>
+  </tr>
   <tr>
+    <td colspan="2">Blood Pressure:</td>
+    <td colspan="2"><%= @appointment.systolic %> / </td>
+    <td><%= @appointment.diastolic %> </td>
+  </tr>
+  <tr>
+    <td> Heart Rate: </td>
+    <td> <%= @appointment.heart_rate %></td>
+    <td> Resperation Rate: </td>
+    <td> <%= @appointment.rr %></td>
+  </tr>

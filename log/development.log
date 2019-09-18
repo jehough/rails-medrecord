@@ -3028,3 +3028,64 @@ scope :future_and_available -> {future.where"patient_id = n...
   
 app/models/appointment.rb:8: syntax error, unexpected ->, expecting end
 app/controllers/appointments_controller.rb:4:in `show'
+Started GET "/appointments/1" for ::1 at 2019-09-17 21:17:21 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/jim/github/rails-medrecord/app/models/appointment.rb:8: syntax error, unexpected ->, expecting end
+scope :future_and_available -> {future.where("patient_id = ...
+                            ^~):
+  
+app/models/appointment.rb:8: syntax error, unexpected ->, expecting end
+app/controllers/appointments_controller.rb:4:in `show'
+Started GET "/appointments/1" for ::1 at 2019-09-17 21:17:40 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:4
+  Rendering appointments/show.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:2
+  Rendered appointments/show.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 216ms (Views: 192.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/appointments/1" for ::1 at 2019-09-17 21:18:52 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:4
+  Rendering appointments/show.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:2
+  Rendered appointments/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/appointments/1" for ::1 at 2019-09-17 21:21:07 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:4
+  Rendering appointments/show.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:2
+  Rendered appointments/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 25ms (Views: 19.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/appointments/1" for ::1 at 2019-09-17 21:21:52 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:4
+  Rendering appointments/show.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:2
+  Rendered appointments/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 0.7ms)
+
+
