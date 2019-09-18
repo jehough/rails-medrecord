@@ -3,6 +3,6 @@
 <h3>Available Appointments</h3>
 <ul>
   <% @doctor.appointments.each do |appt| %>
-    <li><%= appt.display_time %></li>
+    <li><%= link_to appt.display_time, patient_appointment_path(appt) %></li>
   <% end %>
 </ul>
