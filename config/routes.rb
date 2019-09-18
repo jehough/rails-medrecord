@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     get '/home' => 'patients#home'
   end
 
-  resources :appointments 
+  resources :appointments do
+    get '/add_patient' => 'appointments#add_patient'
+  end
 
   namespace :admin do
     resources :patients
