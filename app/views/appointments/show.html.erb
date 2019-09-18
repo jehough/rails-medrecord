@@ -26,3 +26,60 @@
     <td> Resperation Rate: </td>
     <td> <%= @appointment.rr %></td>
   </tr>
+  <tr>
+    <th colspan="4"> Reason For Visit </th>
+  <tr>
+    <td colspan="4"><%= @appointment.visit_reason %></td>
+  </tr>
+  <tr>
+    <th colspan="4"> Past Medical History </th>
+  </tr>
+  <tr>
+    <td colspan="4"> <%= @appointment.history %> </td>
+  </tr>
+  <tr>
+    <th colspan="4"> Assessment </th>
+  </tr>
+  <tr>
+    <td> Neuro </td>
+    <td colspan="3"><%= @appointment.neuro %></td>
+  </tr>
+  <tr>
+    <td> HEENT </td>
+    <td colspan="3"><%= @appointment.heent %></td>
+  </tr>
+  <tr>
+    <td> Cardiac </td>
+    <td colspan="3"><%= @appointment.cardiac%></td>
+  </tr>
+  <tr>
+    <td>Respiratory</td>
+    <td coolspan="3"><%= @appointment.respiratory%></td>
+  </tr>
+  <tr>
+    <td>Skin</td>
+    <td colspan="3"><%= @appointment.skin%></td>
+  </tr>
+  <tr>
+    <td>Musculoskeletal</td>
+    <td colspan="3"><%= @appointment.musculoskeletal%></td>
+  </tr>
+  <tr>
+    <td>Psychosocial</td>
+    <td colspan="3"><%= @appointment.psychosocial%></td>
+  </tr>
+  <tr>
+    <th colspan="4">Treatment Plan</th>
+  </tr>
+  <tr>
+    <td>Tests Ordered</td>
+    <td colspan="4"><%= @appointment.tests_ordered%></td>
+  </tr>
+  <tr>
+    <td>Therapies</td>
+    <td colspan="3"><%= @appointment.therapies%></td>
+  </tr>
+  <tr>
+    <td>Follow Up Instructions</td>
+    <td colspan="3"><%= @appointment.follow_up%></td>
+  </tr>
