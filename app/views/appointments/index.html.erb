@@ -1,0 +1,14 @@
+<h1> Appointments </h1>
+<table>
+  <tr>
+    <th>Date/Time</th>
+    <th>Doctor</th>
+    <th>Patient</th>
+  <tr>
+<% @appointments.each do |appt| %>
+  <tr>
+    <td><%= appt.display_time %></td>
+    <td><%= appt.doctor.doc_name %></td>
+    <td><%= appt.patient.display_name unless patient.nil? %></td>
+  </tr>
+<% end %>
