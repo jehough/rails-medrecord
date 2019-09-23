@@ -4,4 +4,9 @@ class Admin::PatientsController < ApplicationController
     @patients = Patient.all
   end
 
+  def show
+    @patient = Patient.find(params[:id])
+    @appointments = Appointment.future.available
+
+  end
 end

@@ -4,8 +4,8 @@ belongs_to :doctor
 has_one :macro
 
 scope :today, -> {where("date = ?", Date.today)}
-scope :future, -> {where("date > ?", Date.today)}
-scope :future_and_available, -> {future.where("patient_id = nil")}
+scope :future, -> {where("date >= ?", Date.today)}
+scope :available, -> {where("patient_id IS NULL")}
 
   def display_time
     "#{self.date.strftime("%b %e, %Y")} #{self.time.strftime("%l:%M %P")}"

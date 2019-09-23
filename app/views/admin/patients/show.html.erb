@@ -1,0 +1,18 @@
+<h1><%= @patient.display_name %></h1>
+<table>
+  <tr>
+    <th>Doctor</th>
+    <th>Date/Time</th>
+  </tr>
+<% @appointments.each do |appt| %>
+  <tr>
+    <td><%= appt.doctor.doc_name %></td>
+    <td><%= appt.display_time %></td>
+    <td><%= form for appt do |f|%>
+          <%= f.hidden_field :patient_id, :value => @patient.id %>
+          <%= f.submit "Add Appointment" %>
+        <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
