@@ -1,4 +1,21 @@
 <h1><%= @patient.display_name %></h1>
+
+<table>
+  <tr>
+    <th colspan="2"> Scheduled Appointments </th>
+  </tr>
+  <tr>
+    <th>Date/Time</th>
+    <th>Doctor</th>
+  </tr>
+<% @patient.appointments.future.each do |appt| %>
+  <tr>
+    <td><%= appt.display_time %></td>
+    <td><%= appt.doctor.doc_name %></td>
+  </tr>
+<% end %>
+</table>
+
 <table>
   <tr>
     <th>Doctor</th>
