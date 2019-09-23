@@ -9,10 +9,6 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
 
-  def update
-    @appointment = Appointment.find(params[:id])
-    @appointment.update(appointment_params)
-  end
 
   def index
     @appointments = Appointment.future
@@ -21,7 +17,11 @@ class AppointmentsController < ApplicationController
   def update
     @appointment = Appointment.find(params[:id])
     @appointment.update(appointment_params)
-    redirect_to patient_home_path(params[:appointment][:patient_id])
+    if is_patient?
+      redirect_to patient_home_path(params[:appointment][:patient_id])
+    elsif is_doctor?
+      redirect_to doctor_home_path(current_doctor)
+    end
   end
 
   def add_patient
