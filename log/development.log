@@ -5719,3 +5719,137 @@ Processing by Admin::PatientsController#show as HTML
 Completed 200 OK in 60ms (Views: 57.1ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/appointments" for ::1 at 2019-09-23 09:28:42 -0400
+Processing by AppointmentsController#index as HTML
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (date >= '2019-09-23')[0m
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  Rendered appointments/index.html.erb within layouts/application (205.3ms)
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `patient' for #<#<Class:0x00007ff9d035c768>:0x00007ff9d0366e48>
+Did you mean?  patient_url):
+     9:   <tr>
+    10:     <td><%= appt.display_time %></td>
+    11:     <td><%= appt.doctor.doc_name %></td>
+    12:     <td><%= appt.patient.display_name unless patient.nil? %></td>
+    13:   </tr>
+    14: <% end %>
+  
+app/views/appointments/index.html.erb:12:in `block in _app_views_appointments_index_html_erb___3944514285782426756_70355458385760'
+app/views/appointments/index.html.erb:8:in `_app_views_appointments_index_html_erb___3944514285782426756_70355458385760'
+Started GET "/appointments" for ::1 at 2019-09-23 09:28:57 -0400
+Processing by AppointmentsController#index as HTML
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (1.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (date >= '2019-09-23')[0m
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:12
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:12
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:12
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  Rendered appointments/index.html.erb within layouts/application (69.8ms)
+Completed 200 OK in 86ms (Views: 80.8ms | ActiveRecord: 2.3ms)
+
+

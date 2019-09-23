@@ -9,6 +9,6 @@
   <tr>
     <td><%= appt.display_time %></td>
     <td><%= appt.doctor.doc_name %></td>
-    <td><%= appt.patient.display_name unless patient.nil? %></td>
+    <td><%= appt.patient.display_name unless appt.patient.nil? %></td>
   </tr>
 <% end %>
