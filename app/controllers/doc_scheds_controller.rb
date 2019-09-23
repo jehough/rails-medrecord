@@ -1,0 +1,2 @@
+class DocSchedsController < ApplicationController
+end

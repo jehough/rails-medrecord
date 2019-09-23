@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "application#home"
   resources :doctors do
     get '/home' => 'doctors#home'
+    resources :doc_scheds
   end
 
   resources :patients do
