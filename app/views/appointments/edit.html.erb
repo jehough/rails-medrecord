@@ -1,6 +1,7 @@
 <h3>Appointment for: <%= @appointment.patient.display_name unless @appointment.patient.nil?%></h3>
 <h3>With: <%= @appointment.doctor.doc_name %> on <%= @appointment.display_time %></h3>
 <%= form_for @appointment do |f| %>
+  <%= f.hidden_field :patient_id, value: @appointment.patient.id %>
 <table>
   <tr><th colspan="4">Check-in Data</th><tr>
   <tr>

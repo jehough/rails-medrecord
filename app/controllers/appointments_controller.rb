@@ -21,7 +21,7 @@ class AppointmentsController < ApplicationController
   def update
     @appointment = Appointment.find(params[:id])
     @appointment.update(appointment_params)
-    redirect_to admin_patient_path(params[:appointment][:patient_id])
+    redirect_to patient_home_path(params[:appointment][:patient_id])
   end
 
   def add_patient
