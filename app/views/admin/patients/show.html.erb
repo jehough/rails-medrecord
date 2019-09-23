@@ -8,7 +8,7 @@
   <tr>
     <td><%= appt.doctor.doc_name %></td>
     <td><%= appt.display_time %></td>
-    <td><%= form for appt do |f|%>
+    <td><%= form_for appt do |f|%>
           <%= f.hidden_field :patient_id, :value => @patient.id %>
           <%= f.submit "Add Appointment" %>
         <% end %>

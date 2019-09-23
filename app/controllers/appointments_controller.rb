@@ -18,6 +18,12 @@ class AppointmentsController < ApplicationController
     @appointments = Appointment.future
   end
 
+  def update
+    @appointment = Appointment.find(params[:id])
+    @appointment.update(appointment_params)
+    redirect_to admin_patient_path(params[:appointment][:patient_id])
+  end
+
   def add_patient
     @appointment = Appointment.find(params[:appointment_id])
     @appointment.patient = @patient
