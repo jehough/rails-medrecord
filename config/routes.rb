@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root "application#home"
   resources :doctors do
     get '/home' => 'doctors#home'
-    resources :doc_scheds
   end
 
   resources :patients do
@@ -15,9 +14,12 @@ Rails.application.routes.draw do
     get '/add_patient' => 'appointments#add_patient'
   end
 
+  resources :doc_scheds
+
   namespace :admin do
     resources :patients
     resources :doctors
+
   end
     get '/doctor/login' => 'doctor_sessions#new'
     post '/doctor/login' => 'doctor_sessions#create'

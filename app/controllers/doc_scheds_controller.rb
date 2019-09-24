@@ -2,7 +2,6 @@ class DocSchedsController < ApplicationController
 
   def new
     @sched = DocSched.new
-    @doctor = Doctor.find(params[:doctor_id])
   end
 
   def create

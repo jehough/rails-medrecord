@@ -7580,3 +7580,54 @@ TypeError (exception class/object expected):
   
 app/controllers/doc_scheds_controller.rb:9:in `raise'
 app/controllers/doc_scheds_controller.rb:9:in `create'
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 20:07:34 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/_form.html.erb (2.8ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 24ms (Views: 10.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/doctors/1/doc_scheds" for ::1 at 2019-09-23 20:08:14 -0400
+Processing by DocSchedsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SYGnnO07hiQtbQeXEUTtSL96A6H2U9a7+ydPtdgtT5wo7Pde9A/AFc+HYA+tKQJnfEERZC8UFSNFO9nRj5LMHw==", "doc_sched"=>{"date"=>"2019-09-26", "shift_start"=>"09:00", "shift_end"=>"21:00"}, "commit"=>"Create Schedule", "doctor_id"=>"1"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (exception class/object expected):
+  
+app/controllers/doc_scheds_controller.rb:9:in `raise'
+app/controllers/doc_scheds_controller.rb:9:in `create'
+Started GET "/doc_scheds/new" for ::1 at 2019-09-23 20:16:09 -0400
+Processing by DocSchedsController#new as HTML
+Completed 404 Not Found in 9ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Doctor without an ID):
+  
+app/controllers/doc_scheds_controller.rb:5:in `new'
+Started GET "/doc_scheds/new" for ::1 at 2019-09-23 20:16:23 -0400
+Processing by DocSchedsController#new as HTML
+  Rendering doc_scheds/new.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doc_scheds/_form.html.erb:4
+  Rendered doc_scheds/_form.html.erb (30.8ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 47ms (Views: 40.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/doc_scheds/new" for ::1 at 2019-09-23 20:16:49 -0400
+Processing by DocSchedsController#new as HTML
+  Rendering doc_scheds/new.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doc_scheds/_form.html.erb:4
+  Rendered doc_scheds/_form.html.erb (8.5ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
