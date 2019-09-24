@@ -2,8 +2,7 @@ class MedicationsController < ApplicationController
   before_action :current_doctor
   before_action :is_admin?, only: [:new, :edit, :create, :update, :destroy]
   def index
-    if params[:treats]
-      raise params
+    if params[:search]      
       @medications = Medication.where('treats LIKE ?', "%#{params[:search]}%")
     else
       @medications = Medication.all
