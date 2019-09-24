@@ -8372,3 +8372,424 @@ Processing by DocSchedsController#create as HTML
 Completed 200 OK in 27ms (Views: 11.5ms | ActiveRecord: 1.2ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+Migrating to CreateDoctors (20190915171736)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "first_name" varchar, "last_name" varchar, "admin" boolean DEFAULT 0, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190915171736_create_doctors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190915171736"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+Migrating to CreatePatient (20190915172358)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "first_name" varchar, "last_name" varchar, "birthday" date, "allergies" text)[0m
+  ↳ db/migrate/20190915172358_create_patient.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190915172358"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+Migrating to CreateAppointments (20190915172943)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_id" integer, "doctor_id" integer, "date" date, "time" time, "height" integer, "weight" integer, "bmi" integer, "temp" integer, "systolic" integer, "diastolic" integer, "heart_rate" integer, "spo2" integer, "rr" integer, "visit_reason" text, "history" text, "neuro" text, "heent" text, "cardiac" text, "respiratory" text, "skin" text, "musculoskeletal" text, "psychosocial" text, "tests_ordered" text, "therapies" text, "follow_up" text, CONSTRAINT "fk_rails_c63da04ab4"
+FOREIGN KEY ("patient_id")
+  REFERENCES "patients" ("id")
+, CONSTRAINT "fk_rails_8db8e1e8a5"
+FOREIGN KEY ("doctor_id")
+  REFERENCES "doctors" ("id")
+)[0m
+  ↳ db/migrate/20190915172943_create_appointments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_patient_id" ON "appointments" ("patient_id")[0m
+  ↳ db/migrate/20190915172943_create_appointments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_doctor_id" ON "appointments" ("doctor_id")[0m
+  ↳ db/migrate/20190915172943_create_appointments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190915172943"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+Migrating to CreateMedications (20190915173637)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "medications" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "dosage" varchar, "instructions" text, "treats" text)[0m
+  ↳ db/migrate/20190915173637_create_medications.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190915173637"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+Migrating to CreatePatientMeds (20190915173758)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "patient_meds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_id" integer, "medication_id" integer, CONSTRAINT "fk_rails_ebcd356288"
+FOREIGN KEY ("patient_id")
+  REFERENCES "patients" ("id")
+, CONSTRAINT "fk_rails_5423794364"
+FOREIGN KEY ("medication_id")
+  REFERENCES "medications" ("id")
+)[0m
+  ↳ db/migrate/20190915173758_create_patient_meds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_patient_meds_on_patient_id" ON "patient_meds" ("patient_id")[0m
+  ↳ db/migrate/20190915173758_create_patient_meds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_patient_meds_on_medication_id" ON "patient_meds" ("medication_id")[0m
+  ↳ db/migrate/20190915173758_create_patient_meds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190915173758"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+Migrating to CreateDocScheds (20190915180144)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "doc_scheds" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "shift_start" time, "shift_end" time, "doctor_id" integer, CONSTRAINT "fk_rails_f98bed24e1"
+FOREIGN KEY ("doctor_id")
+  REFERENCES "doctors" ("id")
+)[0m
+  ↳ db/migrate/20190915180144_create_doc_scheds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_doc_scheds_on_doctor_id" ON "doc_scheds" ("doctor_id")[0m
+  ↳ db/migrate/20190915180144_create_doc_scheds.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190915180144"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-24 01:14:59.071816"], ["updated_at", "2019-09-24 01:14:59.071816"]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mDoctor Create (0.2ms)[0m  [1m[32mINSERT INTO "doctors" ("username", "password_digest", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "drwho"], ["password_digest", "$2a$12$Qb/aYurFcfjv7WjUqVxAk.y17/cpZyyOYZNNbKtXsp96AHRTROP1a"], ["first_name", "No One"], ["last_name", "Knows"], ["created_at", "2019-09-24 01:15:10.372668"], ["updated_at", "2019-09-24 01:15:10.372668"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mDoctor Create (0.2ms)[0m  [1m[32mINSERT INTO "doctors" ("username", "password_digest", "first_name", "last_name", "admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["username", "drsuess"], ["password_digest", "$2a$12$WUHfxPnnM4kABykzgjwp6ui/hAMxsWCZDpDSvL3R.hXtaxAlV7ona"], ["first_name", "Henry"], ["last_name", "Spencer"], ["admin", 1], ["created_at", "2019-09-24 01:15:10.594158"], ["updated_at", "2019-09-24 01:15:10.594158"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPatient Create (0.2ms)[0m  [1m[32mINSERT INTO "patients" ("email", "password_digest", "first_name", "last_name", "birthday", "allergies") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "joe@sample.com"], ["password_digest", "$2a$12$Wnw3EA81DrCc.oiqQZGsmOF.Kob4R2UQ.DFHqidQggZXk.byD9DF."], ["first_name", "Joe"], ["last_name", "Smith"], ["birthday", "1999-10-10"], ["allergies", "none"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mDocSched Create (0.2ms)[0m  [1m[32mINSERT INTO "doc_scheds" ("date", "shift_start", "shift_end", "doctor_id") VALUES (?, ?, ?, ?)[0m  [["date", "2019-09-23"], ["shift_start", "2000-01-01 08:00:00"], ["shift_end", "2000-01-01 14:00:00"], ["doctor_id", 1]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mDocSched Create (0.1ms)[0m  [1m[32mINSERT INTO "doc_scheds" ("date", "shift_start", "shift_end", "doctor_id") VALUES (?, ?, ?, ?)[0m  [["date", "2019-09-23"], ["shift_start", "2000-01-01 11:00:00"], ["shift_end", "2000-01-01 17:00:00"], ["doctor_id", 2]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 08:00:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 08:15:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 08:30:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 08:45:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 09:00:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 09:15:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 09:30:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 09:45:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 10:00:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 10:15:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 10:30:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 10:45:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 11:00:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 11:15:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 11:30:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 11:45:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 12:00:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 12:15:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 12:30:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.3ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 12:45:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 13:00:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 13:15:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 13:30:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.3ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 1], ["date", "2019-09-23"], ["time", "2000-01-01 13:45:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 11:00:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 11:15:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 11:30:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 11:45:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 12:00:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 12:15:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 12:30:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 12:45:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 13:00:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 13:15:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.3ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 13:30:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (8.5ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 13:45:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 14:00:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 14:15:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 14:30:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 14:45:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 15:00:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 15:15:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 15:30:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.3ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 15:45:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 16:00:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 16:15:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 16:30:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/doc_sched.rb:10
+  [1m[36mAppointment Create (0.2ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-23"], ["time", "2000-01-01 16:45:00"]]
+  ↳ app/models/doc_sched.rb:10
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/doc_sched.rb:10

@@ -60,15 +60,10 @@ ActiveRecord::Schema.define(version: 2019_09_15_180144) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "dosages", force: :cascade do |t|
-    t.string "type"
-    t.string "amount"
-    t.integer "medication_id"
-    t.index ["medication_id"], name: "index_dosages_on_medication_id"
-  end
-
   create_table "medications", force: :cascade do |t|
     t.string "name"
+    t.string "dosage"
+    t.text "instructions"
     t.text "treats"
   end
 
