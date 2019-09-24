@@ -5,7 +5,6 @@ class Patient < ApplicationRecord
   has_many :patient_meds
   has_many :medications, through: :patient_meds
   validates :email, presence: true
-  accepts_nested_attributes_for :patient_meds
 
 
   def appointments_attributes=(appointment)
