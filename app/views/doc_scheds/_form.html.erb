@@ -1,0 +1,10 @@
+
+  <%= form_for @sched, url: doctor_doc_scheds_path(@doctor.id) do |f| %>
+    <%= f.label :date %>
+    <%= f.date_select :date, default: Date.today %><br>
+    <%= f.label :shift_start %>
+    <%= f.time_select :shift_start %><br>
+    <%= f.label :shift_end %>
+    <%= f.time_select :shift_end %><br>
+    <%= f.submit "Create Schedule" %>
+  <% end %>

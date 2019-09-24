@@ -7172,3 +7172,411 @@ TypeError (exception class/object expected):
   
 app/controllers/doc_scheds_controller.rb:4:in `raise'
 app/controllers/doc_scheds_controller.rb:4:in `new'
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 19:52:25 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 21ms (Views: 7.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 19:52:41 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (':form' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <%= render :form %>
+  
+app/views/doc_scheds/new.html.erb:1:in `_app_views_doc_scheds_new_html_erb__2213236377843594049_70074710442180'
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 19:52:49 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/new.html.erb within layouts/application (204.1ms)
+Completed 500 Internal Server Error in 211ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<#<Class:0x00007f7714589200>:0x00007f7710169ae8>
+Did you mean?  for
+               fork):
+    1: <%= render form %>
+  
+app/views/doc_scheds/new.html.erb:1:in `_app_views_doc_scheds_new_html_erb__2213236377843594049_70074673877420'
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 19:54:46 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/new.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial doc_scheds/__form, application/__form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/jim/github/rails-medrecord/app/views"
+):
+    1: <%= render "_form" %>
+  
+app/views/doc_scheds/new.html.erb:1:in `_app_views_doc_scheds_new_html_erb__2213236377843594049_70074709928940'
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 19:55:18 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/_form.html.erb (108.6ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (110.8ms)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `doc_scheds_path' for #<#<Class:0x00007f7714589200>:0x00007f77147536a8>
+Did you mean?  doctor_doc_sched_path):
+    1: <%= form_for @sched do |f| %>
+    2:   <%= f.label :date %>
+    3:   <%= f.date_select :date, default: Date.today %><br>
+    4:   <%= f.label :shift_start %>
+  
+app/views/doc_scheds/_form.html.erb:1:in `_app_views_doc_scheds__form_html_erb___4321711441816455276_70074710558960'
+app/views/doc_scheds/new.html.erb:1:in `_app_views_doc_scheds_new_html_erb__2213236377843594049_70074710531980'
+Started GET "/doctors/1/doc_sched/new" for ::1 at 2019-09-23 19:55:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/doctors/1/doc_sched/new"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 19:55:52 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/_form.html.erb (105.7ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (106.4ms)
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `doc_scheds_path' for #<#<Class:0x00007f7714589200>:0x00007f771971d9e0>
+Did you mean?  doctor_doc_sched_path):
+    1: <%= form_for @sched do |f| %>
+    2:   <%= f.label :date %>
+    3:   <%= f.date_select :date, default: Date.today %><br>
+    4:   <%= f.label :shift_start %>
+  
+app/views/doc_scheds/_form.html.erb:1:in `_app_views_doc_scheds__form_html_erb___4321711441816455276_70074752445260'
+app/views/doc_scheds/new.html.erb:1:in `_app_views_doc_scheds_new_html_erb__2213236377843594049_70074752353000'
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 19:58:34 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/_form.html.erb (2.9ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"doc_scheds", :doctor_id=>nil}, missing required keys: [:doctor_id]):
+    1: <%= form_for @sched, url: doctor_doc_scheds_path(@sched) do |f| %>
+    2:   <%= f.label :date %>
+    3:   <%= f.date_select :date, default: Date.today %><br>
+    4:   <%= f.label :shift_start %>
+  
+app/views/doc_scheds/_form.html.erb:1:in `_app_views_doc_scheds__form_html_erb___4321711441816455276_70074711565660'
+app/views/doc_scheds/new.html.erb:1:in `_app_views_doc_scheds_new_html_erb__2213236377843594049_70074711562340'
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 19:59:55 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/_form.html.erb (104.4ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (106.7ms)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `doc_scheds_path' for #<#<Class:0x00007f7714589200>:0x00007f771972f8e8>
+Did you mean?  doctor_doc_sched_path):
+    1: <%= form_for @doctor do |f| %>
+    2:   <%= form_for @sched do |f| %>
+    3:     <%= f.label :date %>
+    4:     <%= f.date_select :date, default: Date.today %><br>
+    5:     <%= f.label :shift_start %>
+  
+app/views/doc_scheds/_form.html.erb:2:in `block in _app_views_doc_scheds__form_html_erb___4321711441816455276_70074752511680'
+app/views/doc_scheds/_form.html.erb:1:in `_app_views_doc_scheds__form_html_erb___4321711441816455276_70074752511680'
+app/views/doc_scheds/new.html.erb:1:in `_app_views_doc_scheds_new_html_erb__2213236377843594049_70074752387340'
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 20:00:38 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/_form.html.erb (12.8ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    1: <%= form_for @doctor do |f| %>
+    2:   <%= form_for @sched, doctor_doc_scheds_path(@doctor) do |f| %>
+    3:     <%= f.label :date %>
+    4:     <%= f.date_select :date, default: Date.today %><br>
+    5:     <%= f.label :shift_start %>
+  
+app/views/doc_scheds/_form.html.erb:2:in `block in _app_views_doc_scheds__form_html_erb___4321711441816455276_70074748952180'
+app/views/doc_scheds/_form.html.erb:1:in `_app_views_doc_scheds__form_html_erb___4321711441816455276_70074748952180'
+app/views/doc_scheds/new.html.erb:1:in `_app_views_doc_scheds_new_html_erb__2213236377843594049_70074744013100'
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 20:00:50 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/_form.html.erb (1.9ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    1: <%= form_for @doctor do |f| %>
+    2:   <%= form_for @sched, doctor_doc_scheds_path(@doctor.id) do |f| %>
+    3:     <%= f.label :date %>
+    4:     <%= f.date_select :date, default: Date.today %><br>
+    5:     <%= f.label :shift_start %>
+  
+app/views/doc_scheds/_form.html.erb:2:in `block in _app_views_doc_scheds__form_html_erb___4321711441816455276_70074750125400'
+app/views/doc_scheds/_form.html.erb:1:in `_app_views_doc_scheds__form_html_erb___4321711441816455276_70074750125400'
+app/views/doc_scheds/new.html.erb:1:in `_app_views_doc_scheds_new_html_erb__2213236377843594049_70074750037620'
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 20:01:05 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/_form.html.erb (22.0ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 40ms (Views: 35.9ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/doctors/1" for ::1 at 2019-09-23 20:01:30 -0400
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for DoctorsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 20:01:51 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/_form.html.erb (11.3ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 31ms (Views: 26.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/doctors/1/doc_scheds" for ::1 at 2019-09-23 20:02:07 -0400
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for DocSchedsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/doctors/1/doc_scheds" for ::1 at 2019-09-23 20:03:02 -0400
+Processing by DocSchedsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CXxfVWpoo/2VjfCdOcj5D3xC9ElUosdiVJPEJkh5yEZoEQ+Xc1zlzHdnlwWFpRYgv3nmjI3lBPrqj1JCH8ZLxQ==", "doc_sched"=>{"date(1i)"=>"2019", "date(2i)"=>"9", "date(3i)"=>"25", "shift_start(1i)"=>"2019", "shift_start(2i)"=>"9", "shift_start(3i)"=>"24", "shift_start(4i)"=>"09", "shift_start(5i)"=>"00", "shift_end(1i)"=>"2019", "shift_end(2i)"=>"9", "shift_end(3i)"=>"24", "shift_end(4i)"=>"15", "shift_end(5i)"=>"00"}, "commit"=>"Create Schedule", "doctor_id"=>"1"}
+No template found for DocSchedsController#create, rendering head :no_content
+Completed 204 No Content in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 20:03:10 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/_form.html.erb (4.5ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 40ms (Views: 13.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/doctors/1/doc_scheds" for ::1 at 2019-09-23 20:03:34 -0400
+Processing by DocSchedsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"06eseZ+fbVyumgC8Ik4kE0xQLbsv50PW/xlyb25xnFmyyvy7hqsrbUxwZySeI8s8j2s/fvaggE5BBeQLOc4f2g==", "doc_sched"=>{"date(1i)"=>"2019", "date(2i)"=>"9", "date(3i)"=>"25", "shift_start(1i)"=>"2019", "shift_start(2i)"=>"9", "shift_start(3i)"=>"24", "shift_start(4i)"=>"09", "shift_start(5i)"=>"00", "shift_end(1i)"=>"2019", "shift_end(2i)"=>"9", "shift_end(3i)"=>"24", "shift_end(4i)"=>"15", "shift_end(5i)"=>"00"}, "commit"=>"Create Schedule", "doctor_id"=>"1"}
+No template found for DocSchedsController#create, rendering head :no_content
+Completed 204 No Content in 33ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/doctors/1/doc_scheds" for ::1 at 2019-09-23 20:03:52 -0400
+Processing by DocSchedsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"06eseZ+fbVyumgC8Ik4kE0xQLbsv50PW/xlyb25xnFmyyvy7hqsrbUxwZySeI8s8j2s/fvaggE5BBeQLOc4f2g==", "doc_sched"=>{"date(1i)"=>"2019", "date(2i)"=>"9", "date(3i)"=>"25", "shift_start(1i)"=>"2019", "shift_start(2i)"=>"9", "shift_start(3i)"=>"24", "shift_start(4i)"=>"09", "shift_start(5i)"=>"00", "shift_end(1i)"=>"2019", "shift_end(2i)"=>"9", "shift_end(3i)"=>"24", "shift_end(4i)"=>"15", "shift_end(5i)"=>"00"}, "commit"=>"Create Schedule", "doctor_id"=>"1"}
+No template found for DocSchedsController#create, rendering head :no_content
+Completed 204 No Content in 31ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 20:04:07 -0400
+  
+SyntaxError (/home/jim/github/rails-medrecord/app/controllers/doc_scheds_controller.rb:16: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/doc_scheds_controller.rb:16: syntax error, unexpected end-of-input, expecting end
+Started GET "/doctors/1/doc_scheds/new" for ::1 at 2019-09-23 20:04:32 -0400
+Processing by DocSchedsController#new as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doc_scheds_controller.rb:5
+  Rendering doc_scheds/new.html.erb within layouts/application
+  Rendered doc_scheds/_form.html.erb (3.1ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 27ms (Views: 11.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/doctors/1/doc_scheds" for ::1 at 2019-09-23 20:04:47 -0400
+Processing by DocSchedsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hHptnG90MfqUM1KJY+Qyf8MUR+p2X6XvZbChFUAGQZ7lFz1edkB3y3bZNRHfid1QAC9VL68YZnfbrDdxF7nCHQ==", "doc_sched"=>{"date(1i)"=>"2019", "date(2i)"=>"9", "date(3i)"=>"24", "shift_start(1i)"=>"2019", "shift_start(2i)"=>"9", "shift_start(3i)"=>"24", "shift_start(4i)"=>"05", "shift_start(5i)"=>"00", "shift_end(1i)"=>"2019", "shift_end(2i)"=>"9", "shift_end(3i)"=>"24", "shift_end(4i)"=>"18", "shift_end(5i)"=>"00"}, "commit"=>"Create Schedule", "doctor_id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (exception class/object expected):
+  
+app/controllers/doc_scheds_controller.rb:9:in `raise'
+app/controllers/doc_scheds_controller.rb:9:in `create'
