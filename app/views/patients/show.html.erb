@@ -6,5 +6,5 @@
 <h3>Medications</h3>
   <ul>
   <% @patient.patient_meds.each do |med| %>
-    <li><%= med.name %> <%= link_to "Remove", patient_med_delete_path(med) %>
+    <li><%= med.medication.name %> <%= link_to "Remove", patient_med_delete_path(med) %>
   <% end %>
