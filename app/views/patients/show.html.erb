@@ -1,0 +1,10 @@
+<h1><%= @patient.display_name %></h1>
+
+<h3>Appointments</h3>
+  <%= render "table" %>
+
+<h3>Medications</h3>
+  <ul>
+  <% @patient.patient_meds.each do |med| %>
+    <li><%= med.name %> <%= link_to "Remove", patient_med_delete_path(med) %>
+  <% end %>

@@ -12620,3 +12620,114 @@ ActionView::Template::Error (undefined method `options_from_collection' for #<Ac
 app/views/appointments/edit.html.erb:98:in `block (2 levels) in _app_views_appointments_edit_html_erb___1755480972889583521_70218536351060'
 app/views/appointments/edit.html.erb:95:in `block in _app_views_appointments_edit_html_erb___1755480972889583521_70218536351060'
 app/views/appointments/edit.html.erb:4:in `_app_views_appointments_edit_html_erb___1755480972889583521_70218536351060'
+Started GET "/appointments/50/edit" for ::1 at 2019-09-24 08:34:42 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:9
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:10
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  [1m[36mPatientMed Load (0.2ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/appointments/edit.html.erb:95
+  Rendered appointments/edit.html.erb within layouts/application (297.1ms)
+Completed 500 Internal Server Error in 335ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `options_from_collection_for_select' for #<ActionView::Helpers::FormBuilder:0x00007fba0d6f5238>):
+     95:   <%= pat.fields_for :patient_meds do |med| %>
+     96:     <tr>
+     97:       <td> Medication: </td>
+     98:       <td> <%= med.options_from_collection_for_select :medication_id, Medication.all, :id, :name %></td>
+     99:       <td> Dosage: </td>
+    100:       <td> <%= med.text_field :dosage %>
+    101:     </tr>
+  
+app/views/appointments/edit.html.erb:98:in `block (2 levels) in _app_views_appointments_edit_html_erb___1755480972889583521_70218156668520'
+app/views/appointments/edit.html.erb:95:in `block in _app_views_appointments_edit_html_erb___1755480972889583521_70218156668520'
+app/views/appointments/edit.html.erb:4:in `_app_views_appointments_edit_html_erb___1755480972889583521_70218156668520'
+Started GET "/appointments/50/edit" for ::1 at 2019-09-24 08:36:42 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:9
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:10
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  [1m[36mPatientMed Load (0.2ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/appointments/edit.html.erb:95
+  [1m[36mMedication Load (0.2ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.6ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  Rendered appointments/edit.html.erb within layouts/application (47.9ms)
+Completed 200 OK in 72ms (Views: 58.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/patients/1" for ::1 at 2019-09-24 08:51:06 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering patients/show.html.erb within layouts/application
+  Rendered patients/show.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `display_name' for nil:NilClass):
+    1: <h1><%= @patient.display_name %></h1>
+    2: 
+    3: <h3>Appointments</h3>
+    4:   <%= render "table" %>
+  
+app/views/patients/show.html.erb:1:in `_app_views_patients_show_html_erb__71277604833727942_69942808261260'
