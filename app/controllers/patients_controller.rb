@@ -2,11 +2,20 @@ require 'pry'
 class PatientsController < ApplicationController
   before_action :current_patient, only: :home
   before_action :is_doctor?, only: [:show, :update]
+  before_action :current_doctor, only: [:index]
 
 
 
   def home
 
+  end
+
+  def index
+    if @doctor.admin
+      @patients = Patient.all
+    else
+      @patients = @doctor.patients
+    end
   end
 
   def show
