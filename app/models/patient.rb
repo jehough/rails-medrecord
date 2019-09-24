@@ -13,6 +13,16 @@ class Patient < ApplicationRecord
     @appointment.update(appointment)
   end
 
+  def patient_meds_attributes=(medications)
+
+    medications.each do |k,v|
+      if @patient_med = PatientMed.find_by(id: v[:id])
+        @patient_med.update(v)
+      else
+        @patient_med = PatientMed.create(v)
+      end
+    end
+  end
 
   def display_name
     "#{self.first_name} #{self.last_name}"

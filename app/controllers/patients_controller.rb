@@ -15,7 +15,6 @@ class PatientsController < ApplicationController
 
   def update
     @patient = Patient.find(params[:id])
-    binding.pry
     @patient.update(patient_params)
     redirect_to doctor_home_path(current_doctor)
   end
