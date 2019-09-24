@@ -1,9 +1,13 @@
 <h3>Appointment for: <%= @appointment.patient.display_name unless @appointment.patient.nil?%></h3>
 <h3>With: <%= @appointment.doctor.doc_name %> on <%= @appointment.display_time %></h3>
-<%= form_for @appointment do |f| %>
-  <%= f.hidden_field :patient_id, value: @appointment.patient.id %>
+
+<%= form_for @patient do |pat| %>
+<%= pat.fields_for :appointment do |f| %>
+  <%= f.hidden_field :appointment_id, value: @appointment.id %>
 <table>
-  <tr><th colspan="4">Check-in Data</th><tr>
+  <tr>
+    <th colspan="4">Check-in Data</th>
+  </tr>
   <tr>
     <td>Height:</td>
     <td><%= f.text_field :height %></td>
@@ -84,11 +88,11 @@
     <td>Follow Up Instructions</td>
     <td colspan="3"><%= f.text_area :follow_up%></td>
   </tr>
+    <% end %>
   <tr>
     <th colspan="4">Medications </th>
   </tr>
-  <%= f.fields_for :patient_meds do |med| %>
-    <%= f.hidden_field :patient_id, value: @appointment.patient.id %>
+  <%= pat.fields_for :patient_meds do |med| %>
     <tr>
       <td> Medication: </td>
       <td> <%= med.collection_select :medication_id, Medication.all, :id, :name %></td>
@@ -99,7 +103,8 @@
       <td> Instructions: </td>
       <td colspan = "3"> <%= med.text_area :instructions %></td>
     </tr>
+    <% end %>
   </table>
   <br>
-  <%= f.submit "Submit Changes" %>
+  <%= pat.submit "Submit Changes" %>
 <% end %>

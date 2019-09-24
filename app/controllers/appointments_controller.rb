@@ -7,6 +7,12 @@ class AppointmentsController < ApplicationController
 
   def edit
     @appointment = Appointment.find(params[:id])
+    if @appointment.patient.nil?
+      flash[:alert] = "No Scheduled Patient at that time"
+      redirect_to appointments_path
+    else
+      @patient = @appointment.patient
+    end
   end
 
 
