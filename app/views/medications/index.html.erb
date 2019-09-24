@@ -1,6 +1,6 @@
 <%= form_tag(medications_path method: :get) do %>
-  Treats: <%= text_field_tag :treats %>
-  <%= submit_tag 'Search' %>
+  Treats: <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag 'Search', name: nil %>
 <% end %>
 <table>
   <tr>

@@ -2,7 +2,12 @@ class MedicationsController < ApplicationController
   before_action :current_doctor
   before_action :is_admin?, only: [:new, :edit, :create, :update, :destroy]
   def index
-    @medications = Medication.all
+    if params[:treats]
+      raise params
+      @medications = Medication.where('treats LIKE ?', "%#{params[:search]}%")
+    else
+      @medications = Medication.all
+    end
   end
 
   def new
@@ -31,6 +36,6 @@ class MedicationsController < ApplicationController
 
   private
   def med_params
-    params.require(:medication).permit(:name, :treats)
+    params.require(:medication).permit(:name, :treats, :search)
   end
 end

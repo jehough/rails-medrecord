@@ -9397,3 +9397,238 @@ Processing by MedicationsController#index as HTML
 Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/medications" for ::1 at 2019-09-23 21:42:41 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  Rendering medications/index.html.erb within layouts/application
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/medications/index.html.erb:10
+  Rendered medications/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 24ms (Views: 11.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/medications?method=get" for ::1 at 2019-09-23 21:42:47 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZjplgqQhrYtvK4GV0tAWl3IKrjVUYAPXPzNxWhjQLwIHVzVAvRXruo3B5g1uvfm4sTG88I0nwE+BL+c+T2+sgQ==", "treats"=>"Depression", "commit"=>"Search", "method"=>"get"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mCACHE Doctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+Completed 400 Bad Request in 8ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: medication):
+  
+app/controllers/medications_controller.rb:38:in `med_params'
+app/controllers/medications_controller.rb:18:in `create'
+Started POST "/medications?method=get" for ::1 at 2019-09-23 21:45:02 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZjplgqQhrYtvK4GV0tAWl3IKrjVUYAPXPzNxWhjQLwIHVzVAvRXruo3B5g1uvfm4sTG88I0nwE+BL+c+T2+sgQ==", "treats"=>"Depression", "commit"=>"Search", "method"=>"get"}
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mCACHE Doctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: medication):
+  
+app/controllers/medications_controller.rb:38:in `med_params'
+app/controllers/medications_controller.rb:18:in `create'
+Started POST "/medications?method=get" for ::1 at 2019-09-23 21:46:03 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZjplgqQhrYtvK4GV0tAWl3IKrjVUYAPXPzNxWhjQLwIHVzVAvRXruo3B5g1uvfm4sTG88I0nwE+BL+c+T2+sgQ==", "treats"=>"Depression", "commit"=>"Search", "method"=>"get"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: medication):
+  
+app/controllers/medications_controller.rb:38:in `med_params'
+app/controllers/medications_controller.rb:18:in `create'
+Started GET "/medications" for ::1 at 2019-09-23 21:46:24 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  Rendering medications/index.html.erb within layouts/application
+  Rendered medications/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: <%= form_tag(medications_path method: :get) do %>
+    2:   Treats: <%= text_field_tag :treats, params[:medication][:treats] %>
+    3:   <%= submit_tag 'Search', name: nil %>
+    4: <% end %>
+    5: <table>
+  
+app/views/medications/index.html.erb:2:in `block in _app_views_medications_index_html_erb__2614610106797441278_70358321242440'
+app/views/medications/index.html.erb:1:in `_app_views_medications_index_html_erb__2614610106797441278_70358321242440'
+Started GET "/medications" for ::1 at 2019-09-23 21:47:21 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  Rendering medications/index.html.erb within layouts/application
+  Rendered medications/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: <%= form_tag(medications_path method: :get) do %>
+    2:   Treats: <%= text_field_tag :treats, params[:medication][:treats] %>
+    3:   <%= submit_tag 'Search', name: nil %>
+    4: <% end %>
+    5: <table>
+  
+app/views/medications/index.html.erb:2:in `block in _app_views_medications_index_html_erb__2614610106797441278_70358378967900'
+app/views/medications/index.html.erb:1:in `_app_views_medications_index_html_erb__2614610106797441278_70358378967900'
+Started GET "/medications" for ::1 at 2019-09-23 21:47:37 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  Rendering medications/index.html.erb within layouts/application
+  [1m[36mMedication Load (0.3ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/medications/index.html.erb:10
+  Rendered medications/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 28ms (Views: 23.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/medications?method=get" for ::1 at 2019-09-23 21:47:45 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EiePVa9E2lrzbnFJ9NbAAh183zb6AgonsZSW8LokHhpzSt+XtnCcaxGEFtFIuy8t3kfN8yNFyb8PiACU7ZudmQ==", "treats"=>"Depression", "method"=>"get"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: medication):
+  
+app/controllers/medications_controller.rb:38:in `med_params'
+app/controllers/medications_controller.rb:18:in `create'
+Started GET "/medications" for ::1 at 2019-09-23 21:52:06 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  Rendering medications/index.html.erb within layouts/application
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/medications/index.html.erb:10
+  Rendered medications/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 22ms (Views: 9.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/medications?method=get" for ::1 at 2019-09-23 21:52:11 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YZMT9rJuj8xBCJMIijugt/LkYH3+N/LfKpYzBck/c6kA/kM0q1rJ/aPi9JA2Vk+YMd9yuCdwMUeUiqVhnoDwKg==", "search"=>"Depression", "method"=>"get"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: medication):
+  
+app/controllers/medications_controller.rb:38:in `med_params'
+app/controllers/medications_controller.rb:18:in `create'
+Started GET "/medications" for ::1 at 2019-09-23 21:52:23 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  Rendering medications/index.html.erb within layouts/application
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/medications/index.html.erb:10
+  Rendered medications/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/medications?method=get" for ::1 at 2019-09-23 21:52:43 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v4QaxNk0uofa4ljC+OguJ3U+PxkN5cUZmTLtG/F5Vnne6UoGwAD8tjgIP1pEhcEItgUt3NSiBoEnLnt/psbV+g==", "search"=>"Depression", "method"=>"get"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+Completed 400 Bad Request in 12ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: medication):
+  
+app/controllers/medications_controller.rb:39:in `med_params'
+app/controllers/medications_controller.rb:19:in `create'
+Started GET "/medications" for ::1 at 2019-09-23 21:53:29 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  Rendering medications/index.html.erb within layouts/application
+  Rendered medications/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    1: <%= form_tag(medications_path method: :get) do %>
+    2:   Treats: <%= text_field_tag :medication[:search], params[:search] %>
+    3:   <%= submit_tag 'Search', name: nil %>
+    4: <% end %>
+    5: <table>
+  
+app/views/medications/index.html.erb:2:in `[]'
+app/views/medications/index.html.erb:2:in `block in _app_views_medications_index_html_erb__2614610106797441278_70358379243400'
+app/views/medications/index.html.erb:1:in `_app_views_medications_index_html_erb__2614610106797441278_70358379243400'
+Started POST "/medications" for ::1 at 2019-09-23 21:55:55 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"slomYv5t13mzt6vpiBRkgTaZHcKQCjltZJAbQqOzKYHTN3ag51mRSFFdzHE0eYuu9aIPB0lN+vXajI0m9AyqAg==", "medication"=>{"name"=>"False Ideas", "treats"=>"Depression"}, "commit"=>"Create Medication"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/medications_controller.rb:19
+  [1m[36mMedication Create (0.4ms)[0m  [1m[32mINSERT INTO "medications" ("name", "treats") VALUES (?, ?)[0m  [["name", "False Ideas"], ["treats", "Depression"]]
+  ↳ app/controllers/medications_controller.rb:19
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/medications_controller.rb:19
+Redirected to http://localhost:3000/medications
+Completed 302 Found in 20ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/medications" for ::1 at 2019-09-23 21:55:55 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  Rendering medications/index.html.erb within layouts/application
+  [1m[36mMedication Load (0.2ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/medications/index.html.erb:10
+  Rendered medications/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/medications?method=get" for ::1 at 2019-09-23 21:56:01 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P2o/PfryAFgl1S9H5OUJNmLYtErKE+PPA68rEzfnKzheB2//48ZGacc/SN9YiOYZoeOmjxNUIFe9s713YFiouw==", "search"=>"Depression", "method"=>"get"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mCACHE Doctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: medication):
+  
+app/controllers/medications_controller.rb:39:in `med_params'
+app/controllers/medications_controller.rb:19:in `create'
