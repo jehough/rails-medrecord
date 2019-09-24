@@ -1,8 +1,18 @@
 class AppointmentsController < ApplicationController
   before_action :current_patient, only: [:add_patient]
+  before_action :is_doctor?, only: [:edit, :update]
+  before_action :is_user?, only: [:show]
+  before_action :is_admin?, only: [:index, :destroy, :destroy_past]
+
+  def index
+    @appointments = Appointment.future
+  end
 
   def show
     @appointment = Appointment.find(params[:id])
+    if is_patient?
+      redirect_to patient_home_path unless (current_patient == @appointment.patient)
+    end
   end
 
   def edit
@@ -15,11 +25,6 @@ class AppointmentsController < ApplicationController
       @patient.patient_meds.build
       @patient.patient_meds.build
     end
-  end
-
-
-  def index
-    @appointments = Appointment.future
   end
 
   def update

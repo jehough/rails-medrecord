@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
       redirect_to doctor_home_path(current_doctor)
     end
   end
+
+  def is_user?
+    !!session[:patient_id] || !!session[:doctor_id]
+  end
   
   def is_patient?
     !!session[:patient_id]
