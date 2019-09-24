@@ -10,9 +10,10 @@ class Patient < ApplicationRecord
 
   def appointment_attributes=(appointment)
     self.appointment = Appointment.find(appointment[:id])
+    self.appointment.update(appointment)
   end
 
-  
+
   def display_name
     "#{self.first_name} #{self.last_name}"
   end
