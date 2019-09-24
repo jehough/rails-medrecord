@@ -95,7 +95,7 @@
   <%= pat.fields_for :patient_meds do |med| %>
     <tr>
       <td> Medication: </td>
-      <td> <%= med.collection_select :medication_id, Medication.all, :id, :name %></td>
+      <td> <%= med.options_from_collection :medication_id, Medication.all, :id, :name %></td>
       <td> Dosage: </td>
       <td> <%= med.text_field :dosage %>
     </tr>

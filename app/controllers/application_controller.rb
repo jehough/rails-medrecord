@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
-
+  helper_method :is_patient?
+  helper_method :is_doctor?
+  helper_method :is_admin?
+  
   def home
 
   end
