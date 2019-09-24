@@ -8,4 +8,11 @@
     <td><%= appt.doctor.doc_name %></td>
   </tr>
 <% end %>
+
 </table>
+
+<ul>
+  <% @patient.medications.each do |med| %>
+    <li><%= med.name %> - <%= med.dosage %></li>
+  <% end %>
+</ul>

@@ -9,7 +9,7 @@ class Patient < ApplicationRecord
   accepts_nested_attributes_for :appointments
 
   def appointment_attributes=(appointment)
-    self.appointment = Appointment.find(appointment[:id])
+    self.appointment = Appointment.find(appointment[:appointment_id])
     self.appointment.update(appointment)
   end
 
