@@ -9897,3 +9897,51 @@ Processing by MedicationsController#new as HTML
 Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/medications/1" for ::1 at 2019-09-23 22:21:22 -0400
+Processing by MedicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mMedication Load (0.2ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/medications_controller.rb:23
+  Rendering medications/show.html.erb within layouts/application
+  Rendered medications/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 12.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/medications/1" for ::1 at 2019-09-23 22:21:44 -0400
+Processing by MedicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mMedication Load (0.3ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/medications_controller.rb:23
+  Rendering medications/show.html.erb within layouts/application
+  Rendered medications/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 20ms (Views: 14.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/medications/1" for ::1 at 2019-09-23 22:22:13 -0400
+Processing by MedicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mMedication Load (0.3ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/medications_controller.rb:23
+  Rendering medications/show.html.erb within layouts/application
+  Rendered medications/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 30ms (Views: 23.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/medications/1" for ::1 at 2019-09-23 22:22:19 -0400
+Processing by MedicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mMedication Load (0.3ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/medications_controller.rb:23
+  Rendering medications/show.html.erb within layouts/application
+  Rendered medications/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 24.8ms | ActiveRecord: 0.6ms)
+
+
