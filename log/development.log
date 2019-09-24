@@ -17198,3 +17198,131 @@ Processing by AppointmentsController#index as HTML
 Completed 200 OK in 55ms (Views: 49.0ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/patients" for ::1 at 2019-09-24 16:53:32 -0400
+Processing by PatientsController#index as HTML
+  Parameters: {"authenticity_token"=>"2+y1zkJk4yYpwtQ6cORG3bAGzbhwPcPQpx2Cj4W5rae6geUMW1ClF8sos6LMianycz3ffal6AEgZARTr0gYuJA=="}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/patients/index.html.erb:8
+  Rendered patients/index.html.erb within layouts/application (5.8ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 27ms (Views: 13.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/patients" for ::1 at 2019-09-24 16:53:42 -0400
+Processing by PatientsController#index as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/patients/index.html.erb:8
+  Rendered patients/index.html.erb within layouts/application (4.8ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 52ms (Views: 47.6ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPatient Create (0.2ms)[0m  [1m[32mINSERT INTO "patients" ("email", "password_digest", "first_name", "last_name", "birthday", "allergies") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "jack@sample.com"], ["password_digest", "$2a$12$q4mW2vV2o89ut5/Xll4Mzu02h3YfOUU.r6ittKI09K/MAXLtTNSbm"], ["first_name", "Jack"], ["last_name", "Doe"], ["birthday", "1984-11-11"], ["allergies", "none"]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/patients" for ::1 at 2019-09-24 16:57:38 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PatientsController#index as HTML
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/patients/index.html.erb:8
+  Rendered patients/index.html.erb within layouts/application (6.3ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 183ms (Views: 165.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/medications?utf8=%E2%9C%93&search=Doe" for ::1 at 2019-09-24 16:57:46 -0400
+Processing by MedicationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Doe"}
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering medications/index.html.erb within layouts/application
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE (treats LIKE '%Doe%')[0m
+  ↳ app/views/medications/index.html.erb:10
+  Rendered medications/index.html.erb within layouts/application (1.7ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 64ms (Views: 12.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/medications?utf8=%E2%9C%93&search=Doe" for ::1 at 2019-09-24 16:58:42 -0400
+Processing by MedicationsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Doe"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering medications/index.html.erb within layouts/application
+  [1m[36mMedication Load (0.3ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE (treats LIKE '%Doe%')[0m
+  ↳ app/views/medications/index.html.erb:10
+  Rendered medications/index.html.erb within layouts/application (3.7ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 28ms (Views: 22.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/patients" for ::1 at 2019-09-24 16:58:48 -0400
+Processing by PatientsController#index as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/patients/index.html.erb:8
+  Rendered patients/index.html.erb within layouts/application (4.9ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 32ms (Views: 26.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/patients?utf8=%E2%9C%93&search=Doe" for ::1 at 2019-09-24 16:58:54 -0400
+Processing by PatientsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Doe"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE (last_name LIKE '%Doe%')[0m
+  ↳ app/views/patients/index.html.erb:8
+  Rendered patients/index.html.erb within layouts/application (3.5ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 27ms (Views: 21.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/patients?utf8=%E2%9C%93&search=Smith" for ::1 at 2019-09-24 16:58:59 -0400
+Processing by PatientsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Smith"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE (last_name LIKE '%Smith%')[0m
+  ↳ app/views/patients/index.html.erb:8
+  Rendered patients/index.html.erb within layouts/application (3.7ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 31ms (Views: 24.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/patients?utf8=%E2%9C%93&search=" for ::1 at 2019-09-24 16:59:06 -0400
+Processing by PatientsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE (last_name LIKE '%%')[0m
+  ↳ app/views/patients/index.html.erb:8
+  Rendered patients/index.html.erb within layouts/application (3.3ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 29ms (Views: 20.9ms | ActiveRecord: 0.9ms)
+
+

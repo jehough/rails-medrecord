@@ -1,5 +1,11 @@
 <h1> Patients </h1>
-<%= form_tag(medications_path, :method => :get) do %>
-  Treats: <%= text_field_tag :search, params[:search] %>
+<%= form_tag(patients_path, :method => :get) do %>
+  Last Name: <%= text_field_tag :search, params[:search] %>
   <%= submit_tag 'Search', name: nil %>
 <% end %>
+
+<ul>
+<% @patients.each do |p| %>
+  <li><%= link_to p.display_name, patient_path(p) %></li>
+<% end %>
+</ul>

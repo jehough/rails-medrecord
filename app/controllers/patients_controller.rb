@@ -13,8 +13,14 @@ class PatientsController < ApplicationController
   def index
     if @doctor.admin
       @patients = Patient.all
+      if params[:search]
+        @patients = @patients.where('last_name LIKE ?', "%#{params[:search]}%")
+      end
     else
       @patients = @doctor.patients
+      if params[:search]
+        @patients = @patients.where('last_name LIKE ?', "%#{params[:search]}%")
+      end
     end
   end
 
