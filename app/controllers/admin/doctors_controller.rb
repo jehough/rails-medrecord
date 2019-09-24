@@ -9,6 +9,15 @@ class Admin::DoctorsController < ApplicationController
     @doctor = Doctor.new
   end
 
+  def edit
+    @doctor = Doctor.find(params[:id])
+  end
+
+  def update
+    @doctor = Doctor.find(params[:id])
+    @doctor.update(doc_params)
+  end
+
   def create
     @doctor = Doctor.new(doc_params)
     if @doctor.valid?
@@ -17,5 +26,11 @@ class Admin::DoctorsController < ApplicationController
     else
       redirect_to new_doctor_path
     end
+  end
+
+  private
+
+  def doc_params
+    params.require(:doctor).permit(:username, :password, :first_name, :last_name, :admin)
   end
 end
