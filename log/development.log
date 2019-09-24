@@ -10911,3 +10911,34 @@ Processing by AppointmentsController#edit as HTML
 Completed 200 OK in 51ms (Views: 48.9ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/appointments/50/edit" for ::1 at 2019-09-24 02:16:06 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:9
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:10
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  [1m[36mPatientMed Load (0.1ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/appointments/edit.html.erb:95
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  Rendered appointments/edit.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 63ms (Views: 30.5ms | ActiveRecord: 2.5ms)
+
+
+Started PATCH "/patients/1" for ::1 at 2019-09-24 02:19:54 -0400
+Processing by PatientsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xaDfs/sNBerj2Ea5Spbz+hzgFcSVoAb4uaEoFe8EMyOkzY9x4jlD2wEyISH2+xzV39sHAUznxWAHvb5xuLuwoA==", "patient"=>{"appointment"=>{"appointment_id"=>"50", "height"=>"150", "weight"=>"160", "bmi"=>"9", "temp"=>"97", "systolic"=>"110", "diastolic"=>"98", "heart_rate"=>"68", "rr"=>"15", "visit_reason"=>"looking for drugs", "history"=>"Lots of drugs", "neuro"=>"Needs drugs", "heent"=>"", "cardiac"=>"", "respiratory"=>"", "skin"=>"", "musculoskeletal"=>"", "psychosocial"=>"", "tests_ordered"=>"", "therapies"=>"", "follow_up"=>""}, "patient_meds_attributes"=>{"0"=>{"medication_id"=>"3", "dosage"=>"30 mg tablets", "instructions"=>"take one tablet daily"}, "1"=>{"medication_id"=>"2", "dosage"=>"", "instructions"=>""}}}, "commit"=>"Submit Changes", "id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (exception class/object expected):
+  
+app/controllers/patients_controller.rb:10:in `raise'
+app/controllers/patients_controller.rb:10:in `update'

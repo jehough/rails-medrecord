@@ -12,6 +12,8 @@ class AppointmentsController < ApplicationController
       redirect_to appointments_path
     else
       @patient = @appointment.patient
+      @patient.patient_meds.build
+      @patient.patient_meds.build
     end
   end
 

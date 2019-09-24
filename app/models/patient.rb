@@ -8,6 +8,11 @@ class Patient < ApplicationRecord
   accepts_nested_attributes_for :patient_meds
   accepts_nested_attributes_for :appointments
 
+  def appointment_attributes=(appointment)
+    self.appointment = Appointment.find(appointment[:id])
+  end
+
+  
   def display_name
     "#{self.first_name} #{self.last_name}"
   end
