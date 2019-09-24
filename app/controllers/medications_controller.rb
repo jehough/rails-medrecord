@@ -9,9 +9,13 @@ class MedicationsController < ApplicationController
     @medication = Medication.new
   end
 
+
   def create
     @medication = Medication.new(med_params)
+  end
 
+  def show
+    @medication= Medication.find(params[:id])
   end
 
   def edit
@@ -22,5 +26,10 @@ class MedicationsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def med_params
+    params.require(:medication).permit(:name, :dosage, :instructions, :treats)
   end
 end

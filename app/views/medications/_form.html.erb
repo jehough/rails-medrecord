@@ -1,0 +1,7 @@
+<%= form_for @medication do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :treats %>
+  <%= f.text_area :treats %><br>
+  <%= f.submit "Create Medication" %>
+<% end %>

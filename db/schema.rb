@@ -62,14 +62,14 @@ ActiveRecord::Schema.define(version: 2019_09_15_180144) do
 
   create_table "medications", force: :cascade do |t|
     t.string "name"
-    t.string "dosage"
-    t.text "instructions"
     t.text "treats"
   end
 
   create_table "patient_meds", force: :cascade do |t|
     t.integer "patient_id"
     t.integer "medication_id"
+    t.string "dosage"
+    t.text "instructions"
     t.index ["medication_id"], name: "index_patient_meds_on_medication_id"
     t.index ["patient_id"], name: "index_patient_meds_on_patient_id"
   end
