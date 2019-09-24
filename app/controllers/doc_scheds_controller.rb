@@ -1,5 +1,6 @@
 class DocSchedsController < ApplicationController
   before_action :is_admin?
+
   def new
     @sched = DocSched.new
   end

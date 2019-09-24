@@ -7,7 +7,7 @@
   <tr>
 <% @appointments.each do |appt| %>
   <tr>
-    <td><%= appt.display_time %></td>
+    <td><%= link_to appt.display_time, edit_appointment_path(appt) %></td>
     <td><%= appt.doctor.doc_name %></td>
     <td><%= appt.patient.display_name unless appt.patient.nil? %></td>
   </tr>
