@@ -31,6 +31,16 @@ class AppointmentsController < ApplicationController
     redirect_to patient_home_path(@patient)
   end
 
+  def destroy
+    @appointment = Appointment.find(params[:appointment_id])
+    @appointment.destroy
+  end
+
+  def destroy_past
+    @appts = Appointments.all.past.available
+    @appts.destroy_all
+  end
+
   private
   def appointment_params
     params.require(:appointment).permit(:patient_id, :height, :weight, :bmi, :temp, :systolic, :diastolic, :heart_rate, :spo2, :rr, :visit_reason, :history, :neuro, :heent, :cardiac, :respiratory, :skin, :musculoskeletal, :psychosocial, :therapies, :tests_ordered, :follow_up)

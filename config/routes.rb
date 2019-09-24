@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get '/add_patient' => 'appointments#add_patient'
   end
 
-  resources :doc_scheds
+  resources :doc_scheds, only: [:new, :create]
 
   namespace :admin do
     resources :patients
