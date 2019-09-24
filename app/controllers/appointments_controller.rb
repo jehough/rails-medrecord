@@ -1,8 +1,8 @@
 class AppointmentsController < ApplicationController
   before_action :current_patient, only: [:add_patient]
   before_action :is_doctor?, only: [:edit, :update]
-  before_action :is_user?, only: [:show]
-  before_action :is_admin?, only: [:index, :destroy, :destroy_past]
+  before_action :is_user?, only: [:index, :show]
+  before_action :is_admin?, only: [:destroy, :destroy_past]
 
   def index
     @appointments = Appointment.future

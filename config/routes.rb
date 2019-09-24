@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :patients
     resources :doctors
-
   end
     get '/doctor/login' => 'doctor_sessions#new'
     post '/doctor/login' => 'doctor_sessions#create'
