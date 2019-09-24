@@ -15838,3 +15838,554 @@ Processing by AppointmentsController#show as HTML
 Completed 200 OK in 29ms (Views: 20.2ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/patient/logout" for ::1 at 2019-09-24 11:28:05 -0400
+Processing by PatientSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qMN7t7la9/AII035M9bv4SCnNOUvEC97NI9Pn3Vem8PJrit1oG6xwerJKmGPuwDO45wmIPZX7OOKk9n7IuEYQA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-24 11:28:05 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctor/login" for ::1 at 2019-09-24 11:28:06 -0400
+Processing by DoctorSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"RHSSqZXnKf1BcWOkdWkHwLVtcG6rOUKa0xPIHaNoC5wlGcJrjNNvzKObBDzJBOjvdlZiq3J+gQJtD1559NeIHw=="}
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 28ms (Views: 10.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/doctor/login" for ::1 at 2019-09-24 11:28:15 -0400
+Processing by DoctorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CCXP131n+NGdhBDjd4m4tTRp0BhWI49MI9dYZjoaYaNpSJ8VZFO+4H9ud3vL5Fea91LC3Y9kTNSdy84CbaXiIA==", "doctor"=>{"username"=>"drwho", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."username" = ? LIMIT ?[0m  [["username", "drwho"], ["LIMIT", 1]]
+  ↳ app/controllers/doctor_sessions_controller.rb:8
+Redirected to http://localhost:3000/doctors/1/home
+Completed 302 Found in 234ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/doctors/1/home" for ::1 at 2019-09-24 11:28:15 -0400
+Processing by DoctorsController#home as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering doctors/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date = '2019-09-24')[0m  [["doctor_id", 1]]
+  ↳ app/views/doctors/home.html.erb:11
+  Rendered doctors/home.html.erb within layouts/application (3.9ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/appointments/50/edit" for ::1 at 2019-09-24 11:28:23 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:20
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  [1m[36mPatientMed Load (0.2ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/appointments/edit.html.erb:95
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  Rendered appointments/edit.html.erb within layouts/application (14.6ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 59ms (Views: 22.8ms | ActiveRecord: 2.2ms)
+
+
+Started PATCH "/patients/1" for ::1 at 2019-09-24 11:29:51 -0400
+Processing by PatientsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xnSNJ8d2j9awF4wVjGyU+eWOhTqvvByx6O79ZTKcfIenGd3l3kLJ51L9640wAXvWJrWX/3b73ylW8msBZSP/BA==", "patient"=>{"appointments_attributes"=>{"id"=>"50", "height"=>"110", "weight"=>"150", "bmi"=>"12", "temp"=>"98", "systolic"=>"109", "diastolic"=>"88", "heart_rate"=>"88", "rr"=>"23", "visit_reason"=>"Test", "history"=>"Test", "neuro"=>"Test", "heent"=>"Test", "cardiac"=>"Test", "respiratory"=>"Test", "skin"=>"Test", "musculoskeletal"=>"Test", "psychosocial"=>"Test", "tests_ordered"=>"Test", "therapies"=>"Test", "follow_up"=>"Test"}, "patient_meds_attributes"=>{"0"=>{"medication_id"=>"3", "dosage"=>"30 mg tablets", "instructions"=>"", "id"=>"1"}, "1"=>{"medication_id"=>"2", "dosage"=>"", "instructions"=>"", "id"=>"2"}, "2"=>{"medication_id"=>"2", "dosage"=>"15mg tablets", "instructions"=>"test"}, "3"=>{"medication_id"=>"", "dosage"=>"", "instructions"=>""}}}, "commit"=>"Submit Changes", "id"=>"1"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:17
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):2
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:12
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:13
+  [1m[36mAppointment Update (0.2ms)[0m  [1m[33mUPDATE "appointments" SET "visit_reason" = ?, "history" = ?, "neuro" = ?, "heent" = ?, "cardiac" = ?, "respiratory" = ?, "skin" = ?, "musculoskeletal" = ?, "psychosocial" = ?, "therapies" = ?, "tests_ordered" = ?, "follow_up" = ? WHERE "appointments"."id" = ?[0m  [["visit_reason", "Test"], ["history", "Test"], ["neuro", "Test"], ["heent", "Test"], ["cardiac", "Test"], ["respiratory", "Test"], ["skin", "Test"], ["musculoskeletal", "Test"], ["psychosocial", "Test"], ["therapies", "Test"], ["tests_ordered", "Test"], ["follow_up", "Test"], ["id", 50]]
+  ↳ app/models/patient.rb:13
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ (pry):2
+  [1m[36mMedication Load (0.0ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ (pry):2
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ (pry):2
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (pry):2
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:12
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:13
+  [1m[36mAppointment Update (0.8ms)[0m  [1m[33mUPDATE "appointments" SET "visit_reason" = ?, "history" = ?, "neuro" = ?, "heent" = ?, "cardiac" = ?, "respiratory" = ?, "skin" = ?, "musculoskeletal" = ?, "psychosocial" = ?, "therapies" = ?, "tests_ordered" = ?, "follow_up" = ? WHERE "appointments"."id" = ?[0m  [["visit_reason", "Test"], ["history", "Test"], ["neuro", "Test"], ["heent", "Test"], ["cardiac", "Test"], ["respiratory", "Test"], ["skin", "Test"], ["musculoskeletal", "Test"], ["psychosocial", "Test"], ["therapies", "Test"], ["tests_ordered", "Test"], ["follow_up", "Test"], ["id", 50]]
+  ↳ app/models/patient.rb:13
+  [1m[36mMedication Load (0.2ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mMedication Load (0.2ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Redirected to http://localhost:3000/doctors/1/home
+Completed 302 Found in 95394ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/doctors/1/home" for ::1 at 2019-09-24 11:31:26 -0400
+Processing by DoctorsController#home as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering doctors/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date = '2019-09-24')[0m  [["doctor_id", 1]]
+  ↳ app/views/doctors/home.html.erb:11
+  Rendered doctors/home.html.erb within layouts/application (2.8ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/patients/1" for ::1 at 2019-09-24 11:32:00 -0400
+Processing by PatientsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xnSNJ8d2j9awF4wVjGyU+eWOhTqvvByx6O79ZTKcfIenGd3l3kLJ51L9640wAXvWJrWX/3b73ylW8msBZSP/BA==", "patient"=>{"appointments_attributes"=>{"id"=>"50", "height"=>"110", "weight"=>"150", "bmi"=>"12", "temp"=>"98", "systolic"=>"109", "diastolic"=>"88", "heart_rate"=>"88", "rr"=>"23", "visit_reason"=>"Test", "history"=>"Test", "neuro"=>"Test", "heent"=>"Test", "cardiac"=>"Test", "respiratory"=>"Test", "skin"=>"Test", "musculoskeletal"=>"Test", "psychosocial"=>"Test", "tests_ordered"=>"Test", "therapies"=>"Test", "follow_up"=>"Test"}, "patient_meds_attributes"=>{"0"=>{"medication_id"=>"3", "dosage"=>"30 mg tablets", "instructions"=>"", "id"=>"1"}, "1"=>{"medication_id"=>"2", "dosage"=>"", "instructions"=>"", "id"=>"2"}, "2"=>{"medication_id"=>"2", "dosage"=>"15mg tablets", "instructions"=>"test"}, "3"=>{"medication_id"=>"", "dosage"=>"", "instructions"=>""}}}, "commit"=>"Submit Changes", "id"=>"1"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:17
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):3
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:12
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:13
+  [1m[36mAppointment Update (0.7ms)[0m  [1m[33mUPDATE "appointments" SET "visit_reason" = ?, "history" = ?, "neuro" = ?, "heent" = ?, "cardiac" = ?, "respiratory" = ?, "skin" = ?, "musculoskeletal" = ?, "psychosocial" = ?, "therapies" = ?, "tests_ordered" = ?, "follow_up" = ? WHERE "appointments"."id" = ?[0m  [["visit_reason", "Test"], ["history", "Test"], ["neuro", "Test"], ["heent", "Test"], ["cardiac", "Test"], ["respiratory", "Test"], ["skin", "Test"], ["musculoskeletal", "Test"], ["psychosocial", "Test"], ["therapies", "Test"], ["tests_ordered", "Test"], ["follow_up", "Test"], ["id", 50]]
+  ↳ app/models/patient.rb:13
+  [1m[36mMedication Load (0.2ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ (pry):3
+  [1m[36mMedication Load (0.2ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ (pry):3
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ (pry):3
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (pry):3
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+Unpermitted parameter: :id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:12
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:13
+  [1m[36mAppointment Update (1.0ms)[0m  [1m[33mUPDATE "appointments" SET "visit_reason" = ?, "history" = ?, "neuro" = ?, "heent" = ?, "cardiac" = ?, "respiratory" = ?, "skin" = ?, "musculoskeletal" = ?, "psychosocial" = ?, "therapies" = ?, "tests_ordered" = ?, "follow_up" = ? WHERE "appointments"."id" = ?[0m  [["visit_reason", "Test"], ["history", "Test"], ["neuro", "Test"], ["heent", "Test"], ["cardiac", "Test"], ["respiratory", "Test"], ["skin", "Test"], ["musculoskeletal", "Test"], ["psychosocial", "Test"], ["therapies", "Test"], ["tests_ordered", "Test"], ["follow_up", "Test"], ["id", 50]]
+  ↳ app/models/patient.rb:13
+  [1m[36mMedication Load (0.2ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mMedication Load (0.2ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Redirected to http://localhost:3000/doctors/1/home
+Completed 302 Found in 40410ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/doctors/1/home" for ::1 at 2019-09-24 11:32:40 -0400
+Processing by DoctorsController#home as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering doctors/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date = '2019-09-24')[0m  [["doctor_id", 1]]
+  ↳ app/views/doctors/home.html.erb:11
+  Rendered doctors/home.html.erb within layouts/application (1.9ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/patients/1" for ::1 at 2019-09-24 11:32:52 -0400
+Processing by PatientsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xnSNJ8d2j9awF4wVjGyU+eWOhTqvvByx6O79ZTKcfIenGd3l3kLJ51L9640wAXvWJrWX/3b73ylW8msBZSP/BA==", "patient"=>{"appointments_attributes"=>{"id"=>"50", "height"=>"110", "weight"=>"150", "bmi"=>"12", "temp"=>"98", "systolic"=>"109", "diastolic"=>"88", "heart_rate"=>"88", "rr"=>"23", "visit_reason"=>"Test", "history"=>"Test", "neuro"=>"Test", "heent"=>"Test", "cardiac"=>"Test", "respiratory"=>"Test", "skin"=>"Test", "musculoskeletal"=>"Test", "psychosocial"=>"Test", "tests_ordered"=>"Test", "therapies"=>"Test", "follow_up"=>"Test"}, "patient_meds_attributes"=>{"0"=>{"medication_id"=>"3", "dosage"=>"30 mg tablets", "instructions"=>"", "id"=>"1"}, "1"=>{"medication_id"=>"2", "dosage"=>"", "instructions"=>"", "id"=>"2"}, "2"=>{"medication_id"=>"2", "dosage"=>"15mg tablets", "instructions"=>"test"}, "3"=>{"medication_id"=>"", "dosage"=>"", "instructions"=>""}}}, "commit"=>"Submit Changes", "id"=>"1"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:17
+Unpermitted parameter: :patient_meds_attributes
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):5
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:12
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:13
+  [1m[36mAppointment Update (0.2ms)[0m  [1m[33mUPDATE "appointments" SET "visit_reason" = ?, "history" = ?, "neuro" = ?, "heent" = ?, "cardiac" = ?, "respiratory" = ?, "skin" = ?, "musculoskeletal" = ?, "psychosocial" = ?, "therapies" = ?, "tests_ordered" = ?, "follow_up" = ? WHERE "appointments"."id" = ?[0m  [["visit_reason", "Test"], ["history", "Test"], ["neuro", "Test"], ["heent", "Test"], ["cardiac", "Test"], ["respiratory", "Test"], ["skin", "Test"], ["musculoskeletal", "Test"], ["psychosocial", "Test"], ["therapies", "Test"], ["tests_ordered", "Test"], ["follow_up", "Test"], ["id", 50]]
+  ↳ app/models/patient.rb:13
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (pry):5
+Unpermitted parameter: :patient_meds_attributes
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:12
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Redirected to http://localhost:3000/doctors/1/home
+Completed 302 Found in 65198ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/doctors/1/home" for ::1 at 2019-09-24 11:33:57 -0400
+Processing by DoctorsController#home as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering doctors/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date = '2019-09-24')[0m  [["doctor_id", 1]]
+  ↳ app/views/doctors/home.html.erb:11
+  Rendered doctors/home.html.erb within layouts/application (4.1ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/appointments/50" for ::1 at 2019-09-24 11:34:07 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:12
+  Rendering appointments/show.html.erb within layouts/application
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:1
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:2
+  Rendered appointments/show.html.erb within layouts/application (2.9ms)
+  [1m[36mCACHE Doctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/appointments/50/edit" for ::1 at 2019-09-24 11:39:49 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:20
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  [1m[36mPatientMed Load (0.2ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/appointments/edit.html.erb:95
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  Rendered appointments/edit.html.erb within layouts/application (22.7ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 72ms (Views: 33.4ms | ActiveRecord: 2.8ms)
+
+
+Started PATCH "/patients/1" for ::1 at 2019-09-24 11:41:57 -0400
+Processing by PatientsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"13DIohQby7vLddDe9utigEp4Len1Qy6PlTSJFoaTWn22HZhgDS+Niimft0ZKho2viUM/LCwE7RcrKB9y0SzZ/g==", "patient"=>{"appointments_attributes"=>{"id"=>"50", "height"=>"110", "weight"=>"150", "bmi"=>"12", "temp"=>"98", "systolic"=>"109", "diastolic"=>"88", "heart_rate"=>"88", "rr"=>"23", "visit_reason"=>"new test", "history"=>"new test", "neuro"=>"new test", "heent"=>"new test", "cardiac"=>"new test", "respiratory"=>"new test", "skin"=>"new test", "musculoskeletal"=>"new test", "psychosocial"=>"new test", "tests_ordered"=>"new test", "therapies"=>"new test", "follow_up"=>"new test"}, "patient_meds_attributes"=>{"0"=>{"medication_id"=>"3", "dosage"=>"30 mg tablets", "instructions"=>"new test", "id"=>"1"}, "1"=>{"medication_id"=>"2", "dosage"=>"", "instructions"=>"", "id"=>"2"}, "2"=>{"medication_id"=>"", "dosage"=>"", "instructions"=>""}, "3"=>{"medication_id"=>"", "dosage"=>"", "instructions"=>""}}}, "commit"=>"Submit Changes", "id"=>"1"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):6
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:12
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:13
+  [1m[36mAppointment Update (0.3ms)[0m  [1m[33mUPDATE "appointments" SET "visit_reason" = ?, "history" = ?, "neuro" = ?, "heent" = ?, "cardiac" = ?, "respiratory" = ?, "skin" = ?, "musculoskeletal" = ?, "psychosocial" = ?, "therapies" = ?, "tests_ordered" = ?, "follow_up" = ? WHERE "appointments"."id" = ?[0m  [["visit_reason", "new test"], ["history", "new test"], ["neuro", "new test"], ["heent", "new test"], ["cardiac", "new test"], ["respiratory", "new test"], ["skin", "new test"], ["musculoskeletal", "new test"], ["psychosocial", "new test"], ["therapies", "new test"], ["tests_ordered", "new test"], ["follow_up", "new test"], ["id", 50]]
+  ↳ app/models/patient.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (pry):6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:12
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:13
+  [1m[36mAppointment Update (0.5ms)[0m  [1m[33mUPDATE "appointments" SET "visit_reason" = ?, "history" = ?, "neuro" = ?, "heent" = ?, "cardiac" = ?, "respiratory" = ?, "skin" = ?, "musculoskeletal" = ?, "psychosocial" = ?, "therapies" = ?, "tests_ordered" = ?, "follow_up" = ? WHERE "appointments"."id" = ?[0m  [["visit_reason", "new test"], ["history", "new test"], ["neuro", "new test"], ["heent", "new test"], ["cardiac", "new test"], ["respiratory", "new test"], ["skin", "new test"], ["musculoskeletal", "new test"], ["psychosocial", "new test"], ["therapies", "new test"], ["tests_ordered", "new test"], ["follow_up", "new test"], ["id", 50]]
+  ↳ app/models/patient.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/patients_controller.rb:19
+Completed 500 Internal Server Error in 94954ms (ActiveRecord: 8.5ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/models/patient.rb:18:in `block in patient_meds_attributes='
+app/models/patient.rb:17:in `each'
+app/models/patient.rb:17:in `patient_meds_attributes='
+app/controllers/patients_controller.rb:19:in `update'
+Started PATCH "/patients/1" for ::1 at 2019-09-24 11:43:35 -0400
+Processing by PatientsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"13DIohQby7vLddDe9utigEp4Len1Qy6PlTSJFoaTWn22HZhgDS+Niimft0ZKho2viUM/LCwE7RcrKB9y0SzZ/g==", "patient"=>{"appointments_attributes"=>{"id"=>"50", "height"=>"110", "weight"=>"150", "bmi"=>"12", "temp"=>"98", "systolic"=>"109", "diastolic"=>"88", "heart_rate"=>"88", "rr"=>"23", "visit_reason"=>"new test", "history"=>"new test", "neuro"=>"new test", "heent"=>"new test", "cardiac"=>"new test", "respiratory"=>"new test", "skin"=>"new test", "musculoskeletal"=>"new test", "psychosocial"=>"new test", "tests_ordered"=>"new test", "therapies"=>"new test", "follow_up"=>"new test"}, "patient_meds_attributes"=>{"0"=>{"medication_id"=>"3", "dosage"=>"30 mg tablets", "instructions"=>"new test", "id"=>"1"}, "1"=>{"medication_id"=>"2", "dosage"=>"", "instructions"=>"", "id"=>"2"}, "2"=>{"medication_id"=>"", "dosage"=>"", "instructions"=>""}, "3"=>{"medication_id"=>"", "dosage"=>"", "instructions"=>""}}}, "commit"=>"Submit Changes", "id"=>"1"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):8
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:12
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:13
+  [1m[36mAppointment Update (0.2ms)[0m  [1m[33mUPDATE "appointments" SET "visit_reason" = ?, "history" = ?, "neuro" = ?, "heent" = ?, "cardiac" = ?, "respiratory" = ?, "skin" = ?, "musculoskeletal" = ?, "psychosocial" = ?, "therapies" = ?, "tests_ordered" = ?, "follow_up" = ? WHERE "appointments"."id" = ?[0m  [["visit_reason", "new test"], ["history", "new test"], ["neuro", "new test"], ["heent", "new test"], ["cardiac", "new test"], ["respiratory", "new test"], ["skin", "new test"], ["musculoskeletal", "new test"], ["psychosocial", "new test"], ["therapies", "new test"], ["tests_ordered", "new test"], ["follow_up", "new test"], ["id", 50]]
+  ↳ app/models/patient.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (pry):8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:12
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:13
+  [1m[36mAppointment Update (0.5ms)[0m  [1m[33mUPDATE "appointments" SET "visit_reason" = ?, "history" = ?, "neuro" = ?, "heent" = ?, "cardiac" = ?, "respiratory" = ?, "skin" = ?, "musculoskeletal" = ?, "psychosocial" = ?, "therapies" = ?, "tests_ordered" = ?, "follow_up" = ? WHERE "appointments"."id" = ?[0m  [["visit_reason", "new test"], ["history", "new test"], ["neuro", "new test"], ["heent", "new test"], ["cardiac", "new test"], ["respiratory", "new test"], ["skin", "new test"], ["musculoskeletal", "new test"], ["psychosocial", "new test"], ["therapies", "new test"], ["tests_ordered", "new test"], ["follow_up", "new test"], ["id", 50]]
+  ↳ app/models/patient.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/patients_controller.rb:19
+Completed 500 Internal Server Error in 97338ms (ActiveRecord: 5.2ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/models/patient.rb:18:in `[]'
+app/models/patient.rb:18:in `block in patient_meds_attributes='
+app/models/patient.rb:17:in `each'
+app/models/patient.rb:17:in `patient_meds_attributes='
+app/controllers/patients_controller.rb:19:in `update'
+Started PATCH "/patients/1" for ::1 at 2019-09-24 11:45:19 -0400
+Processing by PatientsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"13DIohQby7vLddDe9utigEp4Len1Qy6PlTSJFoaTWn22HZhgDS+Niimft0ZKho2viUM/LCwE7RcrKB9y0SzZ/g==", "patient"=>{"appointments_attributes"=>{"id"=>"50", "height"=>"110", "weight"=>"150", "bmi"=>"12", "temp"=>"98", "systolic"=>"109", "diastolic"=>"88", "heart_rate"=>"88", "rr"=>"23", "visit_reason"=>"new test", "history"=>"new test", "neuro"=>"new test", "heent"=>"new test", "cardiac"=>"new test", "respiratory"=>"new test", "skin"=>"new test", "musculoskeletal"=>"new test", "psychosocial"=>"new test", "tests_ordered"=>"new test", "therapies"=>"new test", "follow_up"=>"new test"}, "patient_meds_attributes"=>{"0"=>{"medication_id"=>"3", "dosage"=>"30 mg tablets", "instructions"=>"new test", "id"=>"1"}, "1"=>{"medication_id"=>"2", "dosage"=>"", "instructions"=>"", "id"=>"2"}, "2"=>{"medication_id"=>"", "dosage"=>"", "instructions"=>""}, "3"=>{"medication_id"=>"", "dosage"=>"", "instructions"=>""}}}, "commit"=>"Submit Changes", "id"=>"1"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):9
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:12
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:13
+  [1m[36mAppointment Update (0.3ms)[0m  [1m[33mUPDATE "appointments" SET "visit_reason" = ?, "history" = ?, "neuro" = ?, "heent" = ?, "cardiac" = ?, "respiratory" = ?, "skin" = ?, "musculoskeletal" = ?, "psychosocial" = ?, "therapies" = ?, "tests_ordered" = ?, "follow_up" = ? WHERE "appointments"."id" = ?[0m  [["visit_reason", "new test"], ["history", "new test"], ["neuro", "new test"], ["heent", "new test"], ["cardiac", "new test"], ["respiratory", "new test"], ["skin", "new test"], ["musculoskeletal", "new test"], ["psychosocial", "new test"], ["therapies", "new test"], ["tests_ordered", "new test"], ["follow_up", "new test"], ["id", 50]]
+  ↳ app/models/patient.rb:13
+  [1m[36mPatientMed Load (0.2ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ? AND "patient_meds"."id" IN (?, ?)[0m  [["patient_id", 1], ["id", 1], ["id", 2]]
+  ↳ (pry):9
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ (pry):9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (pry):9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:12
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/patient.rb:13
+  [1m[36mAppointment Update (0.8ms)[0m  [1m[33mUPDATE "appointments" SET "visit_reason" = ?, "history" = ?, "neuro" = ?, "heent" = ?, "cardiac" = ?, "respiratory" = ?, "skin" = ?, "musculoskeletal" = ?, "psychosocial" = ?, "therapies" = ?, "tests_ordered" = ?, "follow_up" = ? WHERE "appointments"."id" = ?[0m  [["visit_reason", "new test"], ["history", "new test"], ["neuro", "new test"], ["heent", "new test"], ["cardiac", "new test"], ["respiratory", "new test"], ["skin", "new test"], ["musculoskeletal", "new test"], ["psychosocial", "new test"], ["therapies", "new test"], ["tests_ordered", "new test"], ["follow_up", "new test"], ["id", 50]]
+  ↳ app/models/patient.rb:13
+  [1m[36mPatientMed Load (0.5ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ? AND "patient_meds"."id" IN (?, ?)[0m  [["patient_id", 1], ["id", 1], ["id", 2]]
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/patients_controller.rb:19
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Redirected to http://localhost:3000/doctors/1/home
+Completed 302 Found in 73351ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/doctors/1/home" for ::1 at 2019-09-24 11:46:32 -0400
+Processing by DoctorsController#home as HTML
+  Parameters: {"doctor_id"=>"1"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering doctors/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date = '2019-09-24')[0m  [["doctor_id", 1]]
+  ↳ app/views/doctors/home.html.erb:11
+  Rendered doctors/home.html.erb within layouts/application (3.5ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-09-24 16:07:14 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.6ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 190ms (Views: 184.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/appointments" for ::1 at 2019-09-24 16:07:25 -0400
+Processing by AppointmentsController#index as HTML
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (date >= '2019-09-24')[0m
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:12
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:12
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  Rendered appointments/index.html.erb within layouts/application (65.1ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 79ms (Views: 71.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/appointments/50/edit" for ::1 at 2019-09-24 16:07:28 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:20
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  [1m[36mPatientMed Load (0.2ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/appointments/edit.html.erb:95
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  Rendered appointments/edit.html.erb within layouts/application (19.0ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 45ms (Views: 27.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/appointments/50/edit" for ::1 at 2019-09-24 16:07:43 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:20
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  [1m[36mPatientMed Load (0.1ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/appointments/edit.html.erb:95
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  Rendered appointments/edit.html.erb within layouts/application (9.4ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 26ms (Views: 21.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/appointments/50/edit" for ::1 at 2019-09-24 16:09:20 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:20
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  Rendered appointments/edit.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `weight' for nil:NilClass):
+    12:     <td>Height:</td>
+    13:     <td><%= f.text_field :height, value: @appointment.height %></td>
+    14:     <td>Weight:</td>
+    15:     <td><%= f.text_field :weight, value: @appoitnment.weight %></td>
+    16:   </tr>
+    17:   <tr>
+    18:     <td>BMI: </td>
+  
+app/views/appointments/edit.html.erb:15:in `block (2 levels) in _app_views_appointments_edit_html_erb___1208481572102667633_70181209652260'
+app/views/appointments/edit.html.erb:5:in `block in _app_views_appointments_edit_html_erb___1208481572102667633_70181209652260'
+app/views/appointments/edit.html.erb:4:in `_app_views_appointments_edit_html_erb___1208481572102667633_70181209652260'
+Started GET "/appointments/50/edit" for ::1 at 2019-09-24 16:10:16 -0400
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:20
+  Rendering appointments/edit.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/edit.html.erb:2
+  [1m[36mPatientMed Load (0.2ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/appointments/edit.html.erb:95
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  [1m[36mCACHE Medication Load (0.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/appointments/edit.html.erb:98
+  Rendered appointments/edit.html.erb within layouts/application (18.8ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 39ms (Views: 31.3ms | ActiveRecord: 1.0ms)
+
+

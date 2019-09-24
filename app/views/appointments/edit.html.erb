@@ -10,83 +10,83 @@
   </tr>
   <tr>
     <td>Height:</td>
-    <td><%= f.text_field :height %></td>
+    <td><%= f.text_field :height, value: @appointment.height %></td>
     <td>Weight:</td>
-    <td><%= f.text_field :weight %></td>
+    <td><%= f.text_field :weight, value: @appointment.weight %></td>
   </tr>
   <tr>
     <td>BMI: </td>
-    <td><%= f.text_field :bmi %></td>
+    <td><%= f.text_field :bmi, value: @appointment.bmi %></td>
     <td>Temperature:</td>
-    <td><%= f.text_field :temp %></td>
+    <td><%= f.text_field :temp, value: @appointment.temp %></td>
   </tr>
   <tr>
     <td colspan="2">Blood Pressure:</td>
-    <td><%= f.text_field :systolic %> / </td>
-    <td><%= f.text_field :diastolic %> </td>
+    <td><%= f.text_field :systolic, value: @appointment.systolic %> / </td>
+    <td><%= f.text_field :diastolic, value: @appointment.diastolic %> </td>
   </tr>
   <tr>
     <td> Heart Rate: </td>
-    <td> <%= f.text_field :heart_rate %></td>
+    <td> <%= f.text_field :heart_rate, value: @appointment.heart_rate %></td>
     <td> Resperation Rate: </td>
-    <td> <%= f.text_field :rr %></td>
+    <td> <%= f.text_field :rr, value: @appointment.rr %></td>
   </tr>
   <tr>
     <th colspan="4"> Reason For Visit </th>
   <tr>
-    <td colspan="4"><%= f.text_area :visit_reason %></td>
+    <td colspan="4"><%= f.text_area :visit_reason, value: @appointment.visit_reason %></td>
   </tr>
   <tr>
     <th colspan="4"> Past Medical History </th>
   </tr>
   <tr>
-    <td colspan="4"> <%= f.text_area :history %> </td>
+    <td colspan="4"> <%= f.text_area :history, value: @appointment.history %> </td>
   </tr>
   <tr>
     <th colspan="4"> Assessment </th>
   </tr>
   <tr>
     <td> Neuro </td>
-    <td colspan="3"><%= f.text_area :neuro %></td>
+    <td colspan="3"><%= f.text_area :neuro, value: @appointment.neuro %></td>
   </tr>
   <tr>
     <td> HEENT </td>
-    <td colspan="3"><%= f.text_area :heent %></td>
+    <td colspan="3"><%= f.text_area :heent, value: @appointment.heent %></td>
   </tr>
   <tr>
     <td> Cardiac </td>
-    <td colspan="3"><%= f.text_area :cardiac%></td>
+    <td colspan="3"><%= f.text_area :cardiac, value: @appointment.cardiac%></td>
   </tr>
   <tr>
     <td>Respiratory</td>
-    <td coolspan="3"><%= f.text_area :respiratory%></td>
+    <td coolspan="3"><%= f.text_area :respiratory, value: @appointment.respiratory%></td>
   </tr>
   <tr>
     <td>Skin</td>
-    <td colspan="3"><%= f.text_area :skin%></td>
+    <td colspan="3"><%= f.text_area :skin, value: @appointment.skin%></td>
   </tr>
   <tr>
     <td>Musculoskeletal</td>
-    <td colspan="3"><%= f.text_area :musculoskeletal%></td>
+    <td colspan="3"><%= f.text_area :musculoskeletal, value: @appointment.musculoskeletal%></td>
   </tr>
   <tr>
     <td>Psychosocial</td>
-    <td colspan="3"><%= f.text_area :psychosocial%></td>
+    <td colspan="3"><%= f.text_area :psychosocial, value: @appointment.psychosocial%></td>
   </tr>
   <tr>
     <th colspan="4">Treatment Plan</th>
   </tr>
   <tr>
     <td>Tests Ordered</td>
-    <td colspan="4"><%= f.text_area :tests_ordered%></td>
+    <td colspan="4"><%= f.text_area :tests_ordered, value: @appointment.tests_ordered%></td>
   </tr>
   <tr>
     <td>Therapies</td>
-    <td colspan="3"><%= f.text_area :therapies%></td>
+    <td colspan="3"><%= f.text_area :therapies, value: @appointment.therapies%></td>
   </tr>
   <tr>
     <td>Follow Up Instructions</td>
-    <td colspan="3"><%= f.text_area :follow_up%></td>
+    <td colspan="3"><%= f.text_area :follow_up, value: @appointment.follow_up%></td>
   </tr>
     <% end %>
   <tr>
