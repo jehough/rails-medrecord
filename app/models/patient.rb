@@ -18,6 +18,7 @@ class Patient < ApplicationRecord
       if @patient_med = PatientMed.find_by(id: v[:id])
         @patient_med.update(v)
       else
+        v[:patient_id] = self.id
         @patient_med = PatientMed.create(v)
       end
     end

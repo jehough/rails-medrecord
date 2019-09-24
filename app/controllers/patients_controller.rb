@@ -17,7 +17,7 @@ class PatientsController < ApplicationController
         @patients = @patients.where('last_name LIKE ?', "%#{params[:search]}%")
       end
     else
-      @patients = @doctor.patients
+      @patients = @doctor.patients.uniq
       if params[:search]
         @patients = @patients.where('last_name LIKE ?', "%#{params[:search]}%")
       end
