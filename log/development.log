@@ -16963,3 +16963,193 @@ Processing by AppointmentsController#show as HTML
 Completed 200 OK in 25ms (Views: 15.7ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/patient/logout" for ::1 at 2019-09-24 16:29:20 -0400
+Processing by PatientSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eSPUoU1E8F1vleMmAzsoYsR7Qvcxo1Au5RvgUCrGoEIYToRjVHC2bI1/hL6/VsdNB0BQMujkk7ZbB3Y0fXkjwQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-24 16:29:20 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctor/login" for ::1 at 2019-09-24 16:29:21 -0400
+Processing by DoctorSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"lsvcxn2PatiQIQEzuhTcxservI7jgcIKLZ5lWhGzNnH3powEZLss6XLLZqsGeTPpBJCuSzrGAZKTgvM+Rgy18g=="}
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 23ms (Views: 12.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/doctor/login" for ::1 at 2019-09-24 16:29:26 -0400
+Processing by DoctorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KIcn20T17D8CKkj1PHOdIJbhGZ7MqgCF6v6GvGpxUT5J6ncZXcGqDuDAL22AHnIPVdoLWxXtwx1U4hDYPc7SvQ==", "doctor"=>{"username"=>"drsuess", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."username" = ? LIMIT ?[0m  [["username", "drsuess"], ["LIMIT", 1]]
+  ↳ app/controllers/doctor_sessions_controller.rb:8
+Redirected to http://localhost:3000/doctors/2/home
+Completed 302 Found in 234ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/doctors/2/home" for ::1 at 2019-09-24 16:29:27 -0400
+Processing by DoctorsController#home as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering doctors/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date = '2019-09-24')[0m  [["doctor_id", 2]]
+  ↳ app/views/doctors/home.html.erb:11
+  Rendered doctors/home.html.erb within layouts/application (3.7ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/medications" for ::1 at 2019-09-24 16:29:51 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering medications/index.html.erb within layouts/application
+  [1m[36mMedication Load (0.2ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/medications/index.html.erb:10
+  Rendered medications/index.html.erb within layouts/application (3.9ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/medications/new" for ::1 at 2019-09-24 16:29:55 -0400
+Processing by MedicationsController#new as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering medications/new.html.erb within layouts/application
+  Rendered medications/_form.html.erb (2.8ms)
+  Rendered medications/new.html.erb within layouts/application (4.3ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 24ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/medications" for ::1 at 2019-09-24 16:30:13 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ocIL7x/w2uzrusOC/pOSO7tbYZurzepVSKFumCMor9HAr1stBsSc3QlQpBpC/n0UeGBzXnKKKc32vfj8dJcsUg==", "medication"=>{"name"=>"Tylenol", "treats"=>"Headaches, Pain, Fever, Swelling"}, "commit"=>"Create Medication"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mCACHE Doctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/medications_controller.rb:18
+  [1m[36mMedication Create (0.6ms)[0m  [1m[32mINSERT INTO "medications" ("name", "treats") VALUES (?, ?)[0m  [["name", "Tylenol"], ["treats", "Headaches, Pain, Fever, Swelling"]]
+  ↳ app/controllers/medications_controller.rb:18
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/medications_controller.rb:18
+Redirected to http://localhost:3000/medications
+Completed 302 Found in 17ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/medications" for ::1 at 2019-09-24 16:30:13 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering medications/index.html.erb within layouts/application
+  [1m[36mMedication Load (0.2ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/medications/index.html.erb:10
+  Rendered medications/index.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/medications/new" for ::1 at 2019-09-24 16:30:23 -0400
+Processing by MedicationsController#new as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering medications/new.html.erb within layouts/application
+  Rendered medications/_form.html.erb (3.2ms)
+  Rendered medications/new.html.erb within layouts/application (4.9ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 29ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/medications" for ::1 at 2019-09-24 16:30:40 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RQB4cJVB7FwMPXixSufC/d83TgMBtbbkPjuXL/Equ+ckbSiyjHWqbe7XHyn2ii3SHAxcxtjydXyAJwFLppU4ZA==", "medication"=>{"name"=>"Wonder Drug", "treats"=>"Everything"}, "commit"=>"Create Medication"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/medications_controller.rb:18
+  [1m[36mMedication Create (0.3ms)[0m  [1m[32mINSERT INTO "medications" ("name", "treats") VALUES (?, ?)[0m  [["name", "Wonder Drug"], ["treats", "Everything"]]
+  ↳ app/controllers/medications_controller.rb:18
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/medications_controller.rb:18
+Redirected to http://localhost:3000/medications
+Completed 302 Found in 8ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/medications" for ::1 at 2019-09-24 16:30:40 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering medications/index.html.erb within layouts/application
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/medications/index.html.erb:10
+  Rendered medications/index.html.erb within layouts/application (1.7ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/medications/new" for ::1 at 2019-09-24 16:30:46 -0400
+Processing by MedicationsController#new as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering medications/new.html.erb within layouts/application
+  Rendered medications/_form.html.erb (3.1ms)
+  Rendered medications/new.html.erb within layouts/application (4.7ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 30ms (Views: 24.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/medications" for ::1 at 2019-09-24 16:31:12 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XC6kxPxnVfNKAQF1007n0xJbhahFBmeCyumbOWrdUR09Q/QG5VMTwqjrZu1vIwj80WCXbZxBpBp09Q1dPWLSng==", "medication"=>{"name"=>"Postassium", "treats"=>"Weakness"}, "commit"=>"Create Medication"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mCACHE Doctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/medications_controller.rb:18
+  [1m[36mMedication Create (0.4ms)[0m  [1m[32mINSERT INTO "medications" ("name", "treats") VALUES (?, ?)[0m  [["name", "Postassium"], ["treats", "Weakness"]]
+  ↳ app/controllers/medications_controller.rb:18
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/medications_controller.rb:18
+Redirected to http://localhost:3000/medications
+Completed 302 Found in 14ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/medications" for ::1 at 2019-09-24 16:31:12 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering medications/index.html.erb within layouts/application
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications"[0m
+  ↳ app/views/medications/index.html.erb:10
+  Rendered medications/index.html.erb within layouts/application (1.4ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+
+

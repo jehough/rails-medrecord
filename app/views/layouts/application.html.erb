@@ -25,6 +25,8 @@
             <%= link_to "Admin Tools", admin_tools_tools_path, class: "nav_button", method: :get%>
           <% end %>
         <%= link_to "Todays Appointments", doctor_home_path(@doctor), class: "nav_button", method: :get%>
+        <%= link_to "All Appointments", appointments_path, class: "nav_button", method: :get%>
+        <%= link_to "Find Patient", patients_path, class: "nav_button", method: :get%>
         <%= link_to "Logout", doctor_logout_path, class: "nav_button", method: :get%>
       <% else %>
         <%= link_to "Patient Login", patient_login_path, class: "nav_button", method: :get%>
