@@ -7,9 +7,10 @@ Rails.application.routes.draw do
 
   resources :patients do
     get '/home' => 'patients#home'
-    resources :medications
+
   end
 
+  resources :medications
   resources :appointments do
     get '/add_patient' => 'appointments#add_patient'
   end
