@@ -1,2 +1,7 @@
 <h2>Edit Medication</h2>
 <%= render "form" %>
+
+
+<%= form_tag(medication_path(@medication), :method => :delete) do %>
+  <%= submit_tag 'Delete' %>
+<% end %>
