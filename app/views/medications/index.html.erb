@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th> Name </th>
+    <th colspan = "2"> Treats </th>
+  </tr>
+  <% @medications.each do |med| %>
+    <tr>
+      <td> <%= med.name %></td>
+      <td colspan= "2"><%= med.treats %></td>
+    </tr>
+  <% end %>
+</table>

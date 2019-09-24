@@ -2,7 +2,7 @@ class MedicationsController < ApplicationController
   before_action :current_doctor
   before_action :is_admin?, only: [:new, :edit, :create, :update, :destroy]
   def index
-
+    @medications = Medication.all
   end
 
   def new
@@ -11,7 +11,8 @@ class MedicationsController < ApplicationController
 
 
   def create
-    @medication = Medication.new(med_params)
+    @medication = Medication.create(med_params)
+    redirect_to medications_path
   end
 
   def show

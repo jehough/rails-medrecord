@@ -9287,3 +9287,14 @@ Processing by MedicationsController#new as HTML
 Completed 200 OK in 27ms (Views: 10.7ms | ActiveRecord: 1.0ms)
 
 
+Started POST "/medications" for ::1 at 2019-09-23 21:28:41 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GE+41WaeOgKYfIrtLV454IaRkuDBSd4PboGSTj79mS95IugXf6p8M3qW7XWRM9bPRaqAJRgOHZfQnQQqaUIarA==", "medication"=>{"name"=>"Tromodol", "treats"=>"Dead People"}, "commit"=>"Create Medication"}
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+  [1m[36mCACHE Doctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25
+No template found for MedicationsController#create, rendering head :no_content
+Completed 204 No Content in 31ms (ActiveRecord: 0.6ms)
+
+
