@@ -10278,3 +10278,15 @@ Processing by MedicationsController#index as HTML
 Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/appointments/109" for ::1 at 2019-09-23 23:03:22 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"109"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (No association found for name `patient_meds'. Has it been defined yet?):
+  
+app/models/appointment.rb:4:in `<class:Appointment>'
+app/models/appointment.rb:1:in `<main>'
+app/controllers/appointments_controller.rb:5:in `show'

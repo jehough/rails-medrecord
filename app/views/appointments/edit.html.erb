@@ -84,7 +84,22 @@
     <td>Follow Up Instructions</td>
     <td colspan="3"><%= f.text_area :follow_up%></td>
   </tr>
+  <tr>
+    <th colspan="4">Medications </th>
+  </tr>
+  <%= f.fields_for :patient_meds do |med| %>
+    <%= f.hidden_field :patient_id, value: @appointment.patient.id %>
+    <tr>
+      <td> Medication: </td>
+      <td> <%= med.collection_select :medication_id, Medication.all, :id, :name %></td>
+      <td> Dosage: </td>
+      <td> <%= med.text_field :dosage %>
+    </tr>
+    <tr>
+      <td> Instructions: </td>
+      <td colspan = "3"> <%= med.text_area :instructions %></td>
+    </tr>
+  </table>
   <br>
   <%= f.submit "Submit Changes" %>
 <% end %>
-</table>
