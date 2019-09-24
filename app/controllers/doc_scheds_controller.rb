@@ -5,7 +5,14 @@ class DocSchedsController < ApplicationController
   end
 
   def create
-    raise params
+    @sched = DocSched.new(sched_params)
+    if @sched.valid?
+      @sched.save
+      redirect_to doctor_path(current_doctor)
+    else
+      flash[:alert] = "Schedule is not valid"
+      redirect_to new_doc_sched_path
+    end
   end
 
   private
