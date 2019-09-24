@@ -1,6 +1,8 @@
 require 'pry'
 class PatientsController < ApplicationController
   before_action :current_patient, only: :home
+  before_action :is_doctor?, only: :show
+
 
 
   def home
@@ -10,7 +12,7 @@ class PatientsController < ApplicationController
   def show
     @patient = Patient.find(params[:id])
   end
-  
+
   def update
     @patient = Patient.find(params[:id])
     @patient.update(patient_params)

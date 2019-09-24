@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get '/home' => 'doctors#home'
   end
 
-  resources :patients, only: [:] do
+  resources :patients, only: [:show, :update] do
     get '/home' => 'patients#home'
 
   end
