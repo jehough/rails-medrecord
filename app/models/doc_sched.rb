@@ -14,7 +14,7 @@ class DocSched < ApplicationRecord
 
   def checks_shift_times
     if self.shift_end < self.shift_start
-      errors.add(:sched_error, "Shift cannot end before it starts")
+      errors.add(:schedule_error, "Shift cannot end before it starts")
     end
   end
 end

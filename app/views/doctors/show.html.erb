@@ -2,7 +2,7 @@
 
 <h3>Available Appointments</h3>
 <ul>
-  <% @doctor.appointments.each do |appt| %>
+  <% @doctor.appointments.future.available.each do |appt| %>
     <li><%= link_to appt.display_time, appointment_add_patient_path(appt) %></li>
   <% end %>
 </ul>

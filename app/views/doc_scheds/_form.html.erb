@@ -1,4 +1,12 @@
-
+<% if @sched.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @sched.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
   <%= form_for @sched do |f| %>
     <%= f.label :doctor_id %>
     <%= f.collection_select :doctor_id, Doctor.all, :id, :doc_name %><br>

@@ -8,10 +8,10 @@ class DocSchedsController < ApplicationController
     @sched = DocSched.new(sched_params)
     if @sched.valid?
       @sched.save
-      redirect_to doctor_path(current_doctor)
+      @sched.make_appointments
+      redirect_to doctors_path(params[:doc_sched][:doctor_id])
     else
-      flash[:alert] = "Schedule is not valid"
-      redirect_to new_doc_sched_path
+      render :new
     end
   end
 
