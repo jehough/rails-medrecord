@@ -7631,3 +7631,36 @@ Processing by DocSchedsController#new as HTML
 Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/doc_scheds/new" for ::1 at 2019-09-23 20:30:30 -0400
+Processing by DocSchedsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/jim/github/rails-medrecord/app/models/doc_sched.rb:17: syntax error, unexpected ',', expecting end
+      errors.add(:sched_error), "Shift cannot end before it ...
+                              ^):
+  
+app/models/doc_sched.rb:17: syntax error, unexpected ',', expecting end
+app/controllers/doc_scheds_controller.rb:4:in `new'
+Started GET "/doc_scheds/new" for ::1 at 2019-09-23 20:30:58 -0400
+Processing by DocSchedsController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/doc_sched.rb:4:in `<class:DocSched>'
+app/models/doc_sched.rb:1:in `<main>'
+app/controllers/doc_scheds_controller.rb:4:in `new'
+Started GET "/doc_scheds/new" for ::1 at 2019-09-23 20:31:25 -0400
+Processing by DocSchedsController#new as HTML
+  Rendering doc_scheds/new.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doc_scheds/_form.html.erb:4
+  Rendered doc_scheds/_form.html.erb (10.3ms)
+  Rendered doc_scheds/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 26ms (Views: 19.0ms | ActiveRecord: 1.0ms)
+
+

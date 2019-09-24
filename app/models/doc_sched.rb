@@ -1,7 +1,7 @@
 class DocSched < ApplicationRecord
   belongs_to :doctor
   validates :date, :shift_start, :shift_end, presence: true
-  validates :checks_shift_times
+  validate :checks_shift_times
 
 
   def make_appointments
@@ -14,7 +14,7 @@ class DocSched < ApplicationRecord
 
   def checks_shift_times
     if self.shift_end < self.shift_start
-      errors.add(:sched_error), "Shift cannot end before it starts"
+      errors.add(:sched_error, "Shift cannot end before it starts")
     end
   end
 end
