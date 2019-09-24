@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
   helper_method :is_patient?
   helper_method :is_doctor?
-  helper_method :is_admin?
-  
+  helper_method :set_patient
+  helper_method :set_doctor
+
   def home
 
   end
@@ -15,9 +16,17 @@ class ApplicationController < ActionController::Base
     !!session[:doctor_id]
   end
 
+  def set_patient
+    @patient = Patient.find(session[:patient_id])
+  end
+
+  def set_doctor
+    @doctor = Doctor.find(session[:doctor_id])
+  end
+
   def current_patient
     if is_patient?
-      @patient = Patient.find(session[:patient_id])
+      @patient = set_patient
     else
       redirect_to '/'
     end
@@ -25,7 +34,7 @@ class ApplicationController < ActionController::Base
 
   def current_doctor
     if is_doctor?
-      @doctor = Doctor.find(session[:doctor_id])
+      @patient = set_doctor
     else
       redirect_to '/'
     end

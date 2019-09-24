@@ -31,5 +31,6 @@ Rails.application.routes.draw do
     get '/patient/logout' => 'patient_sessions#destroy'
 
     get '/patient_med/delete' => 'patient_meds#destroy'
+    get '/admin_tools/tools' => 'admin_tools#tools'
 
 end

@@ -10,6 +10,27 @@
   </head>
 
   <body>
+    <header>
+      <h1>Wonder Medical Center Primary Care </h1>
+    </header>
+    <nav>
+      <% if is_patient? %>
+        <% @patient = set_patient %>
+        <%= link_to "Make Appointment", doctors_path, class: "nav_button", method: :get%>
+        <%= link_to "My Home Page", patient_home_path(@patient), class: "nav_button", method: :get%>
+        <%= link_to "Logout", patient_logout_path, class: "nav_button", method: :get%>
+      <% elsif is_doctor? %>
+        <% @doctor = set_doctor %>
+          <% if !!@doctor.admin %>
+            <%= link_to "Admin Tools", admin_tools_tools_path, class: "nav_button", method: :get%>
+          <% end %>
+        <%= link_to "Todays Appointments", doctor_home_path(@doctor), class: "nav_button", method: :get%>
+        <%= link_to "Logout", doctor_logout_path, class: "nav_button", method: :get%>
+      <% else %>
+        <%= link_to "Patient Login", patient_login_path, class: "nav_button", method: :get%>
+        <%= link_to "Doctor Login", doctor_login_path, class: "nav_button", method: :get%>
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>
