@@ -6,11 +6,11 @@ class Patient < ApplicationRecord
   has_many :medications, through: :patient_meds
   validates :email, presence: true
   accepts_nested_attributes_for :patient_meds
-  accepts_nested_attributes_for :appointments
 
-  def appointment_attributes=(appointment)
-    self.appointment = Appointment.find(appointment[:appointment_id])
-    self.appointment.update(appointment)
+
+  def appointments_attributes=(appointment)
+    @appointment = Appointment.find(appointment[:id])
+    @appointment.update(appointment)
   end
 
 

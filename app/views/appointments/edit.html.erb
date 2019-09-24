@@ -2,8 +2,8 @@
 <h3>With: <%= @appointment.doctor.doc_name %> on <%= @appointment.display_time %></h3>
 
 <%= form_for @patient do |pat| %>
-<%= pat.fields_for :appointments do |f| %>
-  <%= f.hidden_field :appointment_id, value: @appointment.id %>
+<%= pat.fields_for :appointments_attributes do |f| %>
+  <%= f.hidden_field :id, value: @appointment.id %>
 <table>
   <tr>
     <th colspan="4">Check-in Data</th>

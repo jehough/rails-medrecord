@@ -12,7 +12,7 @@
 </table>
 
 <ul>
-  <% @patient.medications.each do |med| %>
-    <li><%= med.name %> - <%= med.dosage %></li>
+  <% @patient.patient_meds.each do |med| %>
+    <li><%= med.medication.name %> - <%= med.dosage %></li>
   <% end %>
 </ul>
