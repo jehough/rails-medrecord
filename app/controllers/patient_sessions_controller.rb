@@ -1,4 +1,5 @@
 class PatientSessionsController < ApplicationController
+  before_action :logged_in?, only: [:new]
 
   def new
     @patient = Patient.new

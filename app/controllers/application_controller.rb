@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def logged_in?
+    if is_patient?
+      redirect_to patient_home_path(current_patient)
+    elsif is_doctor?
+      redirect_to doctor_home_path(current_doctor)
+    end
+  end
+  
   def is_patient?
     !!session[:patient_id]
   end

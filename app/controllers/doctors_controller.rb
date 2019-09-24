@@ -3,6 +3,7 @@ class DoctorsController < ApplicationController
   before_action :is_admin?, only: [:new, :create, :destroy]
   before_action :current_doctor, only: [:home]
 
+
   def home
 
   end
