@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "application#home"
-  resources :doctors do
+  resources :doctors, only: [:index, :show] do
     get '/home' => 'doctors#home'
   end
 
-  resources :patients do
+  resources :patients, only: [:] do
     get '/home' => 'patients#home'
 
   end
