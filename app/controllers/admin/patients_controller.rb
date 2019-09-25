@@ -14,11 +14,18 @@ class Admin::PatientsController < ApplicationController
   end
 
   def create
-    
+    @patient = Patient.new(patient_params)
+    if @patient.valid?
+      @patient.save
+      redirect_to admin_patients_path
+    else
+      render :new
+    end
   end
 
   def edit
     @patient = Patient.find(params[:id])
+
   end
 
   def update
@@ -27,5 +34,10 @@ class Admin::PatientsController < ApplicationController
 
   def destroy
 
+  end
+
+  private
+  def patient_params
+    params.require(:patient).permit(:email, :password, :first_name, :last_name, :birthday, :allergies)
   end
 end
