@@ -3,6 +3,7 @@ class PatientsController < ApplicationController
   before_action :current_patient, only: :home
   before_action :is_doctor?, only: [:show, :update]
   before_action :current_doctor, only: [:index]
+  before_action :is_admin?, only: [:new, :create, :edit, :destroy]
 
 
 
@@ -40,10 +41,32 @@ class PatientsController < ApplicationController
     redirect_to doctor_home_path(current_doctor)
   end
 
+  def new
+    @patient = Patient.new
+  end
+
+  def create
+    @patient = Patient.new(patient_params)
+    if @patient.valid?
+      @patient.save
+      redirect_to admin_patients_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @patient = Patient.find(params[:id])
+  end
+
+
+  def destroy
+
+  end
   private
 
   def patient_params
-    params.require(:patient).permit(appointments_attributes: [:id, :height, :weight, :bmi, :temp, :systolic, :diastolic, :heart_rate, :spo2, :rr, :visit_reason, :history, :neuro, :heent, :cardiac, :respiratory, :skin, :musculoskeletal, :psychosocial, :therapies, :tests_ordered, :follow_up], patient_meds_attributes: [:medication_id, :dosage, :instructions, :id])
+    params.require(:patient).permit(:email, :password, :first_name, :last_name, :birthday, :allergies, appointments_attributes: [:id, :height, :weight, :bmi, :temp, :systolic, :diastolic, :heart_rate, :spo2, :rr, :visit_reason, :history, :neuro, :heent, :cardiac, :respiratory, :skin, :musculoskeletal, :psychosocial, :therapies, :tests_ordered, :follow_up], patient_meds_attributes: [:medication_id, :dosage, :instructions, :id])
   end
 
 end
