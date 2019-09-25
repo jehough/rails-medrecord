@@ -8,7 +8,13 @@ class DoctorsController < ApplicationController
   end
 
   def index
-    @doctors = Doctor.all
+    if is_patient?
+      current_patient
+      @doctors = Doctor.all
+    elsif is_admin?
+      @doctors = Doctor.all
+      render :admin_index
+    end
   end
 
   def show

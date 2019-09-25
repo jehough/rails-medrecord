@@ -1,7 +1,0 @@
-<h1> Patients </h1>
-
-<ul>
-<% @patients.each do |pat| %>
-  <li> <%= link_to pat.display_name, edit_admin_patient_path(pat) %> </li>
-<% end %>
-</ul>
