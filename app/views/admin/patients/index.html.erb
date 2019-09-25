@@ -2,6 +2,6 @@
 
 <ul>
 <% @patients.each do |pat| %>
-  <li> <%= pat.display_name %> </li>
+  <li> <%= link_to pat.display_name, edit_admin_patient_path(pat) %> </li>
 <% end %>
 </ul>

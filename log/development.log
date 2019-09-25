@@ -19779,3 +19779,27 @@ Processing by Admin::PatientsController#index as HTML
 Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/admin/patients" for ::1 at 2019-09-24 20:21:28 -0400
+Processing by Admin::PatientsController#index as HTML
+  Rendering admin/patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/admin/patients/index.html.erb:4
+  Rendered admin/patients/index.html.erb within layouts/application (3.3ms)
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/patients/3/edit" for ::1 at 2019-09-24 20:21:30 -0400
+Processing by Admin::PatientsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/patients_controller.rb:27
+  Rendering admin/patients/edit.html.erb within layouts/application
+  Rendered admin/patients/_form.html.erb (6.8ms)
+  Rendered admin/patients/edit.html.erb within layouts/application (8.6ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 27ms (Views: 21.4ms | ActiveRecord: 0.7ms)
+
+
