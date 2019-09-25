@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "application#home"
-  resources :doctors, only: [:index, :show] do
+  resources :doctors do
     get '/home' => 'doctors#home'
   end
 
-  resources :patients, only: [:index, :show, :update] do
+  resources :patients do
     get '/home' => 'patients#home'
 
   end
@@ -18,10 +18,7 @@ Rails.application.routes.draw do
 
   resources :doc_scheds, only: [:new, :create]
 
-  namespace :admin do
-    resources :patients
-    resources :doctors
-  end
+
     get '/doctor/login' => 'doctor_sessions#new'
     post '/doctor/login' => 'doctor_sessions#create'
     get '/patient/login' => 'patient_sessions#new'

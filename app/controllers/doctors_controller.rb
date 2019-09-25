@@ -1,6 +1,7 @@
 class DoctorsController < ApplicationController
-  before_action :current_patient, only: [:index, :show]
+  before_action :current_patient, only: [:show]
   before_action :current_doctor, only: [:home]
+  before_action :is_admin?, only: [:new, :edit, :update, :create, :destroy]
 
 
   def home
@@ -17,10 +18,36 @@ class DoctorsController < ApplicationController
     end
   end
 
+  def new
+    @doctor = Doctor.new
+  end
+
+  def edit
+    @doctor = Doctor.find(params[:id])
+  end
+
+  def update
+    @doctor = Doctor.find(params[:id])
+    @doctor.update(doc_params)
+  end
+
+  def create
+    @doctor = Doctor.new(doc_params)
+    if @doctor.valid?
+      @doctor.save
+      redirect_to doctors_path(@doctor)
+    else
+      redirect_to new_doctor_path
+    end
+  end
+
   def show
     @doctor = Doctor.find(params[:id])
   end
 
+ private
 
-
+ def doc_params
+   params.require(:doctor).permit(:username, :password, :first_name, :last_name, :admin)
+ end
 end

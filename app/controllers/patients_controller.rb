@@ -1,8 +1,8 @@
 require 'pry'
 class PatientsController < ApplicationController
   before_action :current_patient, only: :home
-  before_action :is_doctor?, only: [:show, :update]
-  before_action :current_doctor, only: [:index]
+  before_action :is_doctor?, only: [:update]
+  before_action :current_doctor, only: [:index, :show]
   before_action :is_admin?, only: [:new, :create, :edit, :destroy]
 
 

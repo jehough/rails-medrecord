@@ -4,8 +4,11 @@
   <%= submit_tag 'Search', name: nil %>
 <% end %>
 
-<ul>
+<table>
 <% @patients.each do |p| %>
-  <li><%= link_to p.display_name, patient_path(p) %></li>
+  <tr>
+    <td><%= p.display_name %></td>
+    <td><%= link_to "Add Appointments", patient_path(p) %></td>
+    <td><%= link_to "Edit Patient Information", edit_patient_path(p) %></td>
 <% end %>
-</ul>
+</table>
