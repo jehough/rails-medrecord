@@ -29,7 +29,8 @@ class Admin::PatientsController < ApplicationController
   end
 
   def update
-
+    @patient = Patient.find(params[:id])
+    @patient.update(patient_params)
   end
 
   def destroy
