@@ -1,0 +1,15 @@
+<%= form_for @patient do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %><br>
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %><br>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %><br>
+  <%= f.label :birthday %>
+  <%= f.date_field :birthday, min: Date.new(1980, 1, 1) %><br>
+  <%= f.label :allergies %>
+  <%= f.text_area :allergies %><br>
+  <%= f.submit %>
+<% end %>

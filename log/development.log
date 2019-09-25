@@ -19530,3 +19530,100 @@ ActionController::ParameterMissing (param is missing or the value is empty: doct
   
 app/controllers/admin/doctors_controller.rb:30:in `doc_params'
 app/controllers/admin/doctors_controller.rb:14:in `edit'
+Started GET "/admin/doctors/1/edit" for ::1 at 2019-09-24 19:56:29 -0400
+Processing by Admin::DoctorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/doctors_controller.rb:13
+  Rendering admin/doctors/edit.html.erb within layouts/application
+  Rendered admin/doctors/_form.html.erb (2.1ms)
+  Rendered admin/doctors/edit.html.erb within layouts/application (2.8ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 25ms (Views: 13.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/doctors" for ::1 at 2019-09-24 19:56:31 -0400
+Processing by Admin::DoctorsController#index as HTML
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  Rendering admin/doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/admin/doctors/index.html.erb:4
+  Rendered admin/doctors/index.html.erb within layouts/application (3.2ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 28ms (Views: 21.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/doctors/2/edit" for ::1 at 2019-09-24 19:56:32 -0400
+Processing by Admin::DoctorsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/doctors_controller.rb:13
+  Rendering admin/doctors/edit.html.erb within layouts/application
+  Rendered admin/doctors/_form.html.erb (10.3ms)
+  Rendered admin/doctors/edit.html.erb within layouts/application (14.2ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 39ms (Views: 31.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin_tools/tools" for ::1 at 2019-09-24 19:56:35 -0400
+Processing by AdminToolsController#tools as HTML
+  Rendering admin_tools/tools.html.erb within layouts/application
+  Rendered admin_tools/tools.html.erb within layouts/application (0.8ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin_tools/tools" for ::1 at 2019-09-24 20:11:59 -0400
+Processing by AdminToolsController#tools as HTML
+  Rendering admin_tools/tools.html.erb within layouts/application
+  Rendered admin_tools/tools.html.erb within layouts/application (1.2ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/patients/new" for ::1 at 2019-09-24 20:12:00 -0400
+Processing by Admin::PatientsController#new as HTML
+  Rendering admin/patients/new.html.erb within layouts/application
+  Rendered admin/patients/_form.html.erb (2.7ms)
+  Rendered admin/patients/new.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @patient do |f| %>
+    2:   <%= f.label :email %>
+    3:   <%= f.text_field :email %><br>
+    4:   <%= f.label :password %>
+  
+app/views/admin/patients/_form.html.erb:1:in `_app_views_admin_patients__form_html_erb__2093949286508781273_70084136180600'
+app/views/admin/patients/new.html.erb:3:in `_app_views_admin_patients_new_html_erb___559656643035633862_70084136164940'
+Started GET "/admin_tools/tools" for ::1 at 2019-09-24 20:12:34 -0400
+Processing by AdminToolsController#tools as HTML
+  Rendering admin_tools/tools.html.erb within layouts/application
+  Rendered admin_tools/tools.html.erb within layouts/application (0.6ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/patients/new" for ::1 at 2019-09-24 20:12:38 -0400
+Processing by Admin::PatientsController#new as HTML
+  Rendering admin/patients/new.html.erb within layouts/application
+  Rendered admin/patients/_form.html.erb (3.1ms)
+  Rendered admin/patients/new.html.erb within layouts/application (3.8ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 35ms (Views: 14.5ms | ActiveRecord: 0.9ms)
+
+
