@@ -7,7 +7,7 @@
     </ul>
   </div>
 <% end %>
-<%= form_for @patient, url: admin_patients_path do |f| %>
+<%= form_for @patient do |f| %>
   <%= f.label :email %>
   <%= f.text_field :email %><br>
   <%= f.label :password %>
