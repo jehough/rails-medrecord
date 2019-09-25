@@ -25,7 +25,13 @@ class PatientsController < ApplicationController
   end
 
   def show
-    @patient = Patient.find(params[:id])
+    if @doctor.admin
+      @patient = Patient.find(params[:id])
+      @appointments = Appointment.future.available
+      render :admin_show
+    else
+      @patient = Patient.find(params[:id])
+    end
   end
 
   def update
