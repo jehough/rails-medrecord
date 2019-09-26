@@ -9,6 +9,12 @@
   <tr>
     <td><%= link_to appt.display_time, edit_appointment_path(appt) %></td>
     <td><%= appt.doctor.doc_name %></td>
-    <td><%= appt.patient.display_name unless appt.patient.nil? %></td>
+    <td>
+      <% if admin? && appt.patient.nil? %>
+        <%= button_to "Remove Appointment", appointment_path(appt), method: :delete %>
+      <% else %>
+        <%= appt.patient.display_name unless appt.patient.nil? %>
+      <% end %>
+    </td>
   </tr>
 <% end %>

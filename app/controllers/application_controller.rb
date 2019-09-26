@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :is_doctor?
   helper_method :set_patient
   helper_method :set_doctor
+  helper_method :admin?
 
   def home
 
@@ -19,7 +20,7 @@ class ApplicationController < ActionController::Base
   def is_user?
     !!session[:patient_id] || !!session[:doctor_id]
   end
-  
+
   def is_patient?
     !!session[:patient_id]
   end
@@ -46,9 +47,16 @@ class ApplicationController < ActionController::Base
 
   def current_doctor
     if is_doctor?
-      @patient = set_doctor
+      @doctor = set_doctor
     else
       redirect_to '/'
+    end
+  end
+
+  def admin?
+    if is_doctor?
+      set_doctor
+      !!@doctor.admin
     end
   end
 
