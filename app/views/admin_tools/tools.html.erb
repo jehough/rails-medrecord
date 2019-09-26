@@ -1,4 +1,8 @@
 <h2>Administrator Tools</h2>
+<% if !flash[:alert].nil? %>
+  <%= flash[:alert] %>
+<% end %>
+
 <h4>Edit Doctors</h4>
   <%= link_to "Add Doctor", new_doctor_path%><br>
   <%= link_to "Edit Doctors", doctors_path%>
@@ -7,5 +11,5 @@
   <%= link_to "Edit Patients", patients_path%>
 
 <h4>Edit Schedules</h4>
-  <%= link_to "Add Schedule", new_doc_sched_path %>
-  <%= link_to "Clear Unused Appointments", appoitnment_destroy_past_path %>
+  <%= link_to "Add Schedule", new_doc_sched_path %><br>
+  <%= link_to "Clear Unused Appointments", appointment_destroy_past_path %>

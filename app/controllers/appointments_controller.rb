@@ -8,6 +8,13 @@ class AppointmentsController < ApplicationController
     @appointments = Appointment.future
   end
 
+  def destroy_past
+    @appts = Appointment.all.past.available
+    @appts.destroy_all
+    flash[:alert] = "Unused Past Appoinments have been cleared."
+    render "/admin_tools/tools.html.erb"
+  end
+
   def show
     @appointment = Appointment.find(params[:id])
     if is_patient?
@@ -50,12 +57,7 @@ class AppointmentsController < ApplicationController
     redirect_to admin_tools_tools_path
   end
 
-  def destroy_past
-    @appts = Appointments.all.past.available
-    @appts.destroy_all
-    flash[:alert] = "Unused Past Appoinments have been cleared."
-    render "/admin_tools/tools.html.erb"
-  end
+
 
   private
   def appointment_params

@@ -13,12 +13,12 @@ Rails.application.routes.draw do
   resources :medications
   resources :appointments, only: [:index, :show, :edit, :update, :destroy] do
     get '/add_patient' => 'appointments#add_patient'
-    get '/destroy_past' => 'appointments#destroy_past'
+    
   end
 
   resources :doc_scheds, only: [:new, :create]
 
-
+    get '/appointment/destroy_past' => 'appointments#destroy_past'
     get '/doctor/login' => 'doctor_sessions#new'
     post '/doctor/login' => 'doctor_sessions#create'
     get '/patient/login' => 'patient_sessions#new'
