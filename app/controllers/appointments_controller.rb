@@ -52,6 +52,8 @@ class AppointmentsController < ApplicationController
   def destroy_past
     @appts = Appointments.all.past.available
     @appts.destroy_all
+    flash[:alert] = "Unused Past Appoinments have been cleared."
+    render "/admin_tools/tools.html.erb"
   end
 
   private

@@ -63,6 +63,7 @@ class PatientsController < ApplicationController
   def destroy
     @patient = Patient.find(params[:id])
     @patient.destroy
+    redirect_to admin_tools_tools_path
   end
   private
 

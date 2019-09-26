@@ -20531,3 +20531,13 @@ Processing by AppointmentsController#edit as HTML
 Completed 200 OK in 67ms (Views: 38.8ms | ActiveRecord: 3.2ms)
 
 
+Started GET "/admin_tools/tools" for ::1 at 2019-09-25 20:05:56 -0400
+Processing by AdminToolsController#tools as HTML
+  Parameters: {"authenticity_token"=>"iuUpnZhLFRMubgkDviOze+Pww+gH5+WMMK6S0PrhlaDriHlfgX9TIsyEbpsCTlxUIMvRLd6gJhSOsgS0rV4WIw=="}
+  Rendering admin_tools/tools.html.erb within layouts/application
+  Rendered admin_tools/tools.html.erb within layouts/application (2.0ms)
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
