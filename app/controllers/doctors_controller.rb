@@ -29,6 +29,7 @@ class DoctorsController < ApplicationController
   def update
     @doctor = Doctor.find(params[:id])
     @doctor.update(doc_params)
+    redirect_to doctors_path
   end
 
   def create
@@ -48,6 +49,6 @@ class DoctorsController < ApplicationController
  private
 
  def doc_params
-   params.require(:doctor).permit(:username, :password, :first_name, :last_name, :admin)
+   params.require(:doctor).permit(:username, :password, :first_name, :last_name, :admin, :profile_pic)
  end
 end

@@ -1,5 +1,6 @@
 <h1><%= @doctor.doc_name %></h1>
 
+<img href="<%= url_for(@doctor.profile_pic) %>" />
 <h3>Available Appointments</h3>
 <ul>
   <% @doctor.appointments.future.available.each do |appt| %>
