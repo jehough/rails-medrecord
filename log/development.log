@@ -23336,3 +23336,1042 @@ Processing by DoctorsController#show as HTML
 Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/patient/logout" for ::1 at 2019-09-26 11:40:47 -0400
+Processing by PatientSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eNtS5JgaARYuqWq1NJ2KR8yyERXd5YFGU9/srLrNuMcZtgImgS5HJ8xDDS2I8GVoD4kD0ASiQt7tw3rI7XI7RA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/logout" for ::1 at 2019-09-26 11:40:49 -0400
+Processing by PatientSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fSsOfpzUS1nk397RnMZ0PI3Oero9QebrlQDhMEYw/LYcRl68heANaAY1uUkgq5sTTvVof+QGJXMrHHdUEY9/NQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-26 11:40:49 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 45ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctor/login" for ::1 at 2019-09-26 11:40:51 -0400
+Processing by DoctorSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"Fo4GjTkKrogc9bRswKuYIO/OyQe5CrF5vfreC9pioiJ341ZPID7ouf4f0/R8xncPLPXbwmBNcuED5khvjd0hoQ=="}
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/doctor/login" for ::1 at 2019-09-26 11:41:26 -0400
+Processing by DoctorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"at96j0BCsFqe0XkLgITwnSBMKsXqnec3pNUKJPaahBoLsipNWXb2a3w7HpM86R+y43c4ADPaJK8ayZxAoSUHmQ==", "doctor"=>{"username"=>"drsuess", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."username" = ? LIMIT ?[0m  [["username", "drsuess"], ["LIMIT", 1]]
+  ↳ app/controllers/doctor_sessions_controller.rb:8
+Redirected to http://localhost:3000/doctors/2/home
+Completed 302 Found in 232ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors/2/home" for ::1 at 2019-09-26 11:41:27 -0400
+Processing by DoctorsController#home as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date = '2019-09-26')[0m  [["doctor_id", 2]]
+  ↳ app/views/doctors/home.html.erb:11
+  Rendered doctors/home.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin_tools/tools" for ::1 at 2019-09-26 11:41:31 -0400
+Processing by AdminToolsController#tools as HTML
+  Parameters: {"authenticity_token"=>"p2/KuZVTxusPAlbdFWNyOLPBVr4ni4v/AlHF3ZFkanTGApp7jGeA2u3oMUWpDp0XcPpEe/7MSGe8TVO5xtvp9w=="}
+  Rendering admin_tools/tools.html.erb within layouts/application
+  Rendered admin_tools/tools.html.erb within layouts/application (0.9ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-26 11:41:32 -0400
+Processing by DoctorsController#index as HTML
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/admin_index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/admin_index.html.erb:4
+  Rendered doctors/admin_index.html.erb within layouts/application (2.3ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/doctors/3/edit" for ::1 at 2019-09-26 11:41:33 -0400
+Processing by DoctorsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:26
+  Rendering doctors/edit.html.erb within layouts/application
+  Rendered doctors/_form.html.erb (12.4ms)
+  Rendered doctors/edit.html.erb within layouts/application (16.1ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 50ms (Views: 43.8ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/doctors/3" for ::1 at 2019-09-26 11:41:39 -0400
+Processing by DoctorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B4rJ0p+HE7HJKeoPFLYI3NRHwApvb2TQwHMy5Er7sY2m+q99uvxdzA8eqPcjLM3ZL5NqoQrUqV5sp5UpTdNPZA==", "doctor"=>{"username"=>"dococ", "password"=>"[FILTERED]", "first_name"=>"Otto", "last_name"=>"Octavius", "profile_pic"=>#<ActionDispatch::Http::UploadedFile:0x00007f81b4a061e8 @tempfile=#<Tempfile:/tmp/RackMultipart20190926-4143-653ei2.jpg>, @original_filename="250px-Dr._Octopus_Marvel.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"doctor[profile_pic]\"; filename=\"250px-Dr._Octopus_Marvel.jpg\"\r\nContent-Type: image/jpeg\r\n">, "admin"=>"0"}, "commit"=>"Update Doctor", "id"=>"3"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:31
+[36m  Disk Storage (1.3ms) [0m[32mUploaded file to key: z74B2KhsDKZxspjhucnjFyxA (checksum: 5NM9aeS3VG2px6YKfYS5gQ==)[0m
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "z74B2KhsDKZxspjhucnjFyxA"], ["filename", "250px-Dr._Octopus_Marvel.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 35595], ["checksum", "5NM9aeS3VG2px6YKfYS5gQ=="], ["created_at", "2019-09-26 15:41:39.785516"]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "profile_pic"], ["record_type", "Doctor"], ["record_id", 3], ["blob_id", 2], ["created_at", "2019-09-26 15:41:39.790056"]]
+  ↳ app/controllers/doctors_controller.rb:31
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 5e5c2653-f9af-4f0b-b84b-a84b3f03ed36) to Async(default) with arguments: #<GlobalID:0x00007f81c4017730 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/1>>
+  [1m[36mDoctor Update (0.5ms)[0m  [1m[33mUPDATE "doctors" SET "updated_at" = ? WHERE "doctors"."id" = ?[0m  [["updated_at", "2019-09-26 15:41:39.790998"], ["id", 3]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ app/controllers/doctors_controller.rb:31
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36] Performing ActiveStorage::PurgeJob (Job ID: 5e5c2653-f9af-4f0b-b84b-a84b3f03ed36) from Async(default) with arguments: #<GlobalID:0x00007f81c403dbb0 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36]   [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36]   [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36]   [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36] [36m  Disk Storage (0.2ms) [0m[31mDeleted file from key: UT2iiBtq8AnkDgFtRkjUxybD[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36] [36m  Disk Storage (0.1ms) [0m[31mDeleted files by key prefix: variants/UT2iiBtq8AnkDgFtRkjUxybD/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [5e5c2653-f9af-4f0b-b84b-a84b3f03ed36] Performed ActiveStorage::PurgeJob (Job ID: 5e5c2653-f9af-4f0b-b84b-a84b3f03ed36) from Async(default) in 23.43ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 52432818-b326-440f-87d2-a49c1f344016) to Async(default) with arguments: #<GlobalID:0x00007f81c40c1de8 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/2>>
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/doctors
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 302 Found in 94ms (ActiveRecord: 5.3ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [52432818-b326-440f-87d2-a49c1f344016] Performing ActiveStorage::AnalyzeJob (Job ID: 52432818-b326-440f-87d2-a49c1f344016) from Async(default) with arguments: #<GlobalID:0x00007f81c40d31d8 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [52432818-b326-440f-87d2-a49c1f344016] [36m  Disk Storage (0.6ms) [0m[34mDownloaded file from key: z74B2KhsDKZxspjhucnjFyxA[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [52432818-b326-440f-87d2-a49c1f344016] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [52432818-b326-440f-87d2-a49c1f344016]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [52432818-b326-440f-87d2-a49c1f344016]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [52432818-b326-440f-87d2-a49c1f344016]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+Started GET "/doctors" for ::1 at 2019-09-26 11:41:39 -0400
+[ActiveJob] [ActiveStorage::AnalyzeJob] [52432818-b326-440f-87d2-a49c1f344016]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [52432818-b326-440f-87d2-a49c1f344016]   [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Processing by DoctorsController#index as HTML
+[ActiveJob] [ActiveStorage::AnalyzeJob] [52432818-b326-440f-87d2-a49c1f344016]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [52432818-b326-440f-87d2-a49c1f344016] Performed ActiveStorage::AnalyzeJob (Job ID: 52432818-b326-440f-87d2-a49c1f344016) from Async(default) in 15.33ms
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/admin_index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/admin_index.html.erb:4
+  Rendered doctors/admin_index.html.erb within layouts/application (2.6ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/doctor/logout" for ::1 at 2019-09-26 11:41:51 -0400
+Processing by DoctorSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"119IuldkmJuNpTKqS4vIYHRd/B8JX0Xx8dsBJqUNpxK2Mhh4TlDeqm9PVTL35idPt2bu2tAYhmlPx5dC8rIkkQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-26 11:41:51 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/login" for ::1 at 2019-09-26 11:41:53 -0400
+Processing by PatientSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"UqTmEffbXdQApJYjkNTR5hk/UOW8UQBiFyniYXYost8zybbT7u8b5eJO8bssuT7J2gRCIGUWw/qpNXQFIZcxXA=="}
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patient/login" for ::1 at 2019-09-26 11:41:58 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hWlPh0pshVtBRViolCvv5UJKoWuwi7awgOrTphNq8MXkBB9FU1jDaqOvPzAoRgDKgXGzrmnMdSg+9kXCRNVzRg==", "patient"=>{"email"=>"joe@sample.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "joe@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:9
+Redirected to http://localhost:3000/patients/1/home
+Completed 302 Found in 234ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/patients/1/home" for ::1 at 2019-09-26 11:41:58 -0400
+Processing by PatientsController#home as HTML
+  Parameters: {"patient_id"=>"1"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering patients/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/patients/_table.html.erb:4
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  [1m[36mDoctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  Rendered patients/_table.html.erb (2.5ms)
+  [1m[36mPatientMed Load (0.1ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/patients/home.html.erb:6
+  [1m[36mMedication Load (0.0ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/patients/home.html.erb:7
+  [1m[36mMedication Load (0.0ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/patients/home.html.erb:7
+  Rendered patients/home.html.erb within layouts/application (4.5ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-26 11:42:00 -0400
+Processing by DoctorsController#index as HTML
+  Parameters: {"authenticity_token"=>"esdkQpr3qvcBI4L95Vi3zV5jiZagt4yGSEasvCeFMOUbqjSAg8PsxuPJ5WVZNVjinVibU3nwTx72WjrYcDqzZg=="}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/index.html.erb:2
+  Rendered doctors/index.html.erb within layouts/application (2.7ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 28ms (Views: 22.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/doctors/3" for ::1 at 2019-09-26 11:42:01 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:46
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date >= '2019-09-26') AND (patient_id IS NULL)[0m  [["doctor_id", 3]]
+  ↳ app/views/doctors/show.html.erb:6
+  Rendered doctors/show.html.erb within layouts/application (7.1ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 39ms (Views: 35.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/patient/logout" for ::1 at 2019-09-26 11:42:49 -0400
+Processing by PatientSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SMvmNgQtWWL6uCYpPeAWy6hZbwsiqC0xJIx8B/c6PtYpprb0HRkfUxhSQbGBjfnka2J9zvvv7qmakOpjoIW9VQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-26 11:42:49 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctor/login" for ::1 at 2019-09-26 11:42:51 -0400
+Processing by DoctorSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"Jni0wXUt/Jlb9HwqGnvHObw/bO7mrApZNuz/VyrnYClHFeQDbBm6qLkeG7KmFigWfwR+Kz/rycGI8GkzfVjjqg=="}
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 32ms (Views: 11.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/doctor/login" for ::1 at 2019-09-26 11:42:56 -0400
+Processing by DoctorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TOnY3DeYZd6Kt9cvD3/TfzXH8tdMBZbZf3Iz2szItZgthIgeLqwj72hdsLezEjxQ9vzgEpVCVUHBbqW+m3c2Gw==", "doctor"=>{"username"=>"drsuess", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."username" = ? LIMIT ?[0m  [["username", "drsuess"], ["LIMIT", 1]]
+  ↳ app/controllers/doctor_sessions_controller.rb:8
+Redirected to http://localhost:3000/
+Completed 302 Found in 235ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-09-26 11:42:56 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctor/login" for ::1 at 2019-09-26 11:42:59 -0400
+Processing by DoctorSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"fH+Z24tsY8q2RI67Un5TSog8Yfwxi9gmkK85i4/aePsdEskZklgl+1Su6SPuE7xlSwdzOejMG74us6/v2GX7eA=="}
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/doctor/login" for ::1 at 2019-09-26 11:43:13 -0400
+Processing by DoctorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wArtSLZzcWff5Z3NQ+6cM7xZat2bgmaK4XRClDUEj/ShZ72Kr0c3Vj0P+lX/g3Mcf2J4GELFpRJfaNTwYrsMdw==", "doctor"=>{"username"=>"drsuess", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."username" = ? LIMIT ?[0m  [["username", "drsuess"], ["LIMIT", 1]]
+  ↳ app/controllers/doctor_sessions_controller.rb:8
+Redirected to http://localhost:3000/doctors/2/home
+Completed 302 Found in 234ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/doctors/2/home" for ::1 at 2019-09-26 11:43:13 -0400
+Processing by DoctorsController#home as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date = '2019-09-26')[0m  [["doctor_id", 2]]
+  ↳ app/views/doctors/home.html.erb:11
+  Rendered doctors/home.html.erb within layouts/application (3.7ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin_tools/tools" for ::1 at 2019-09-26 11:43:16 -0400
+Processing by AdminToolsController#tools as HTML
+  Parameters: {"authenticity_token"=>"7nJPpwgBDuJNYtNp9pWifaGD6SUJ61Ux8CaI6Eg82gSPHx9lETVI06+ItPFK+E1SYrj74NCslqlOOh6MH4NZhw=="}
+  Rendering admin_tools/tools.html.erb within layouts/application
+  Rendered admin_tools/tools.html.erb within layouts/application (1.0ms)
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-26 11:43:18 -0400
+Processing by DoctorsController#index as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/admin_index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.7ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/admin_index.html.erb:4
+  Rendered doctors/admin_index.html.erb within layouts/application (5.6ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 32ms (Views: 28.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/doctors/3/edit" for ::1 at 2019-09-26 11:43:19 -0400
+Processing by DoctorsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:26
+  Rendering doctors/edit.html.erb within layouts/application
+  Rendered doctors/_form.html.erb (8.0ms)
+  Rendered doctors/edit.html.erb within layouts/application (11.0ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 35ms (Views: 28.9ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/doctors/3" for ::1 at 2019-09-26 11:43:25 -0400
+Processing by DoctorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Fqr5X4AojdNUeumYps3frAs053JgB4JTtez1545DnWe32p/wpVPDrpJNq2CRVxqp8OBN2QW8T90ZOFIqiWtjjg==", "doctor"=>{"username"=>"dococ", "password"=>"[FILTERED]", "first_name"=>"Otto", "last_name"=>"Octavius", "profile_pic"=>#<ActionDispatch::Http::UploadedFile:0x00007f81c4447008 @tempfile=#<Tempfile:/tmp/RackMultipart20190926-4143-18ot606.jpg>, @original_filename="250px-Dr._Octopus_Marvel.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"doctor[profile_pic]\"; filename=\"250px-Dr._Octopus_Marvel.jpg\"\r\nContent-Type: image/jpeg\r\n">, "admin"=>"0"}, "commit"=>"Update Doctor", "id"=>"3"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:31
+[36m  Disk Storage (0.8ms) [0m[32mUploaded file to key: SAx3h4yopgTw7PiKeTnWP8Lt (checksum: 5NM9aeS3VG2px6YKfYS5gQ==)[0m
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "SAx3h4yopgTw7PiKeTnWP8Lt"], ["filename", "250px-Dr._Octopus_Marvel.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 35595], ["checksum", "5NM9aeS3VG2px6YKfYS5gQ=="], ["created_at", "2019-09-26 15:43:25.361092"]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "profile_pic"], ["record_type", "Doctor"], ["record_id", 3], ["blob_id", 3], ["created_at", "2019-09-26 15:43:25.364913"]]
+  ↳ app/controllers/doctors_controller.rb:31
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 8cccfe87-ca8e-40c5-88a6-e65c528fd564) to Async(default) with arguments: #<GlobalID:0x00007f81b4d9b150 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/2>>
+  [1m[36mDoctor Update (0.2ms)[0m  [1m[33mUPDATE "doctors" SET "updated_at" = ? WHERE "doctors"."id" = ?[0m  [["updated_at", "2019-09-26 15:43:25.366044"], ["id", 3]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564] Performing ActiveStorage::PurgeJob (Job ID: 8cccfe87-ca8e-40c5-88a6-e65c528fd564) from Async(default) with arguments: #<GlobalID:0x00007f81bde14df8 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564]   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564]   [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564]   [1m[36mActiveStorage::Blob Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564]   [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564]   [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: z74B2KhsDKZxspjhucnjFyxA[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564] [36m  Disk Storage (0.0ms) [0m[31mDeleted files by key prefix: variants/z74B2KhsDKZxspjhucnjFyxA/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8cccfe87-ca8e-40c5-88a6-e65c528fd564] Performed ActiveStorage::PurgeJob (Job ID: 8cccfe87-ca8e-40c5-88a6-e65c528fd564) from Async(default) in 28.06ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: fd41ab71-fbde-4941-a721-2fec383bf7c4) to Async(default) with arguments: #<GlobalID:0x00007f81bca3c5b0 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/3>>
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 6.8ms)
+
+
+  
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+NoMethodError (undefined method `attach' for #<Doctor:0x00007f81c4460738>):
+  
+app/controllers/doctors_controller.rb:32:in `update'
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fd41ab71-fbde-4941-a721-2fec383bf7c4] Performing ActiveStorage::AnalyzeJob (Job ID: fd41ab71-fbde-4941-a721-2fec383bf7c4) from Async(default) with arguments: #<GlobalID:0x00007f81bd0cdd20 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fd41ab71-fbde-4941-a721-2fec383bf7c4] [36m  Disk Storage (0.4ms) [0m[34mDownloaded file from key: SAx3h4yopgTw7PiKeTnWP8Lt[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fd41ab71-fbde-4941-a721-2fec383bf7c4] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fd41ab71-fbde-4941-a721-2fec383bf7c4]   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fd41ab71-fbde-4941-a721-2fec383bf7c4]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fd41ab71-fbde-4941-a721-2fec383bf7c4]   [1m[36mActiveStorage::Blob Update (0.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fd41ab71-fbde-4941-a721-2fec383bf7c4]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fd41ab71-fbde-4941-a721-2fec383bf7c4]   [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fd41ab71-fbde-4941-a721-2fec383bf7c4]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fd41ab71-fbde-4941-a721-2fec383bf7c4] Performed ActiveStorage::AnalyzeJob (Job ID: fd41ab71-fbde-4941-a721-2fec383bf7c4) from Async(default) in 7.68ms
+Started PATCH "/doctors/3" for ::1 at 2019-09-26 11:44:19 -0400
+Processing by DoctorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Fqr5X4AojdNUeumYps3frAs053JgB4JTtez1545DnWe32p/wpVPDrpJNq2CRVxqp8OBN2QW8T90ZOFIqiWtjjg==", "doctor"=>{"username"=>"dococ", "password"=>"[FILTERED]", "first_name"=>"Otto", "last_name"=>"Octavius", "profile_pic"=>#<ActionDispatch::Http::UploadedFile:0x00007f81b4c0c410 @tempfile=#<Tempfile:/tmp/RackMultipart20190926-4143-1fnuzrn.jpg>, @original_filename="250px-Dr._Octopus_Marvel.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"doctor[profile_pic]\"; filename=\"250px-Dr._Octopus_Marvel.jpg\"\r\nContent-Type: image/jpeg\r\n">, "admin"=>"0"}, "commit"=>"Update Doctor", "id"=>"3"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:31
+[36m  Disk Storage (0.7ms) [0m[32mUploaded file to key: TXDkZNve2WQAT1N83cLvq1JQ (checksum: 5NM9aeS3VG2px6YKfYS5gQ==)[0m
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "TXDkZNve2WQAT1N83cLvq1JQ"], ["filename", "250px-Dr._Octopus_Marvel.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 35595], ["checksum", "5NM9aeS3VG2px6YKfYS5gQ=="], ["created_at", "2019-09-26 15:44:19.875116"]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "profile_pic"], ["record_type", "Doctor"], ["record_id", 3], ["blob_id", 4], ["created_at", "2019-09-26 15:44:19.878313"]]
+  ↳ app/controllers/doctors_controller.rb:31
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 77cf013a-29f1-4ebd-862c-e7002723485a) to Async(default) with arguments: #<GlobalID:0x00007f81bdc12078 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/3>>
+  [1m[36mDoctor Update (0.1ms)[0m  [1m[33mUPDATE "doctors" SET "updated_at" = ? WHERE "doctors"."id" = ?[0m  [["updated_at", "2019-09-26 15:44:19.878981"], ["id", 3]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/doctors_controller.rb:31
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 0000ff95-db45-4159-8d8b-505bc867032e) to Async(default) with arguments: #<GlobalID:0x00007f81c0139518 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/4>>
+[36m  Disk Storage (0.7ms) [0m[32mUploaded file to key: F5XVaRJ3k8cJe7rMaoCZ97ik (checksum: 5NM9aeS3VG2px6YKfYS5gQ==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "F5XVaRJ3k8cJe7rMaoCZ97ik"], ["filename", "250px-Dr._Octopus_Marvel.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 35595], ["checksum", "5NM9aeS3VG2px6YKfYS5gQ=="], ["created_at", "2019-09-26 15:44:19.889111"]]
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "profile_pic"], ["record_type", "Doctor"], ["record_id", 3], ["blob_id", 5], ["created_at", "2019-09-26 15:44:19.896047"]]
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[36mDoctor Update (0.1ms)[0m  [1m[33mUPDATE "doctors" SET "updated_at" = ? WHERE "doctors"."id" = ?[0m  [["updated_at", "2019-09-26 15:44:19.897110"], ["id", 3]]
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/doctors_controller.rb:32
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: da9ae6ee-88f8-440d-91bd-a4e9dead9960) to Async(default) with arguments: #<GlobalID:0x00007f81c01d6390 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/5>>
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 8b8ca66a-48f8-4598-87ef-3f0397ca4a32) to Async(default) with arguments: #<GlobalID:0x00007f81c01df440 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/4>>
+Redirected to http://localhost:3000/doctors
+Completed 302 Found in 65ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-26 11:44:19 -0400
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a] Performing ActiveStorage::PurgeJob (Job ID: 77cf013a-29f1-4ebd-862c-e7002723485a) from Async(default) with arguments: #<GlobalID:0x00007f81c44421e8 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a]   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by DoctorsController#index as HTML
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a]   [1m[36mActiveStorage::Attachment Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 3], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a]   [1m[36mActiveStorage::Blob Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 3]]
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da9ae6ee-88f8-440d-91bd-a4e9dead9960] Performing ActiveStorage::AnalyzeJob (Job ID: da9ae6ee-88f8-440d-91bd-a4e9dead9960) from Async(default) with arguments: #<GlobalID:0x00007f81c450e518 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/5>>
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32] Performing ActiveStorage::PurgeJob (Job ID: 8b8ca66a-48f8-4598-87ef-3f0397ca4a32) from Async(default) with arguments: #<GlobalID:0x00007f81c4512c58 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0000ff95-db45-4159-8d8b-505bc867032e] Performing ActiveStorage::AnalyzeJob (Job ID: 0000ff95-db45-4159-8d8b-505bc867032e) from Async(default) with arguments: #<GlobalID:0x00007f81c4516c68 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a]   [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32]   [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a]   [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32]   [1m[36mActiveStorage::Blob Destroy (0.3ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a] [36m  Disk Storage (0.7ms) [0m[31mDeleted file from key: SAx3h4yopgTw7PiKeTnWP8Lt[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32]   [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a] [36m  Disk Storage (0.0ms) [0m[31mDeleted files by key prefix: variants/SAx3h4yopgTw7PiKeTnWP8Lt/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [77cf013a-29f1-4ebd-862c-e7002723485a] Performed ActiveStorage::PurgeJob (Job ID: 77cf013a-29f1-4ebd-862c-e7002723485a) from Async(default) in 31.53ms
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: TXDkZNve2WQAT1N83cLvq1JQ[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32] [36m  Disk Storage (0.0ms) [0m[31mDeleted files by key prefix: variants/TXDkZNve2WQAT1N83cLvq1JQ/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8b8ca66a-48f8-4598-87ef-3f0397ca4a32] Performed ActiveStorage::PurgeJob (Job ID: 8b8ca66a-48f8-4598-87ef-3f0397ca4a32) from Async(default) in 13.66ms
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0000ff95-db45-4159-8d8b-505bc867032e] [36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: TXDkZNve2WQAT1N83cLvq1JQ[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0000ff95-db45-4159-8d8b-505bc867032e] Error performing ActiveStorage::AnalyzeJob (Job ID: 0000ff95-db45-4159-8d8b-505bc867032e) from Async(default) in 27.35ms: Errno::ENOENT (No such file or directory @ rb_sysopen - /home/jim/github/rails-medrecord/storage/TX/Dk/TXDkZNve2WQAT1N83cLvq1JQ):
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/lib/active_storage/service/disk_service.rb:28:in `initialize'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/lib/active_storage/service/disk_service.rb:28:in `open'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/lib/active_storage/service/disk_service.rb:28:in `block in download'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `block in instrument'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `instrument'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/lib/active_storage/service.rb:124:in `instrument'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/lib/active_storage/service/disk_service.rb:27:in `download'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/app/models/active_storage/blob.rb:165:in `download'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/lib/active_storage/downloading.rb:29:in `download_blob_to'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/lib/active_storage/downloading.rb:11:in `block in download_blob_to_tempfile'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/lib/active_storage/downloading.rb:20:in `open_tempfile_for_blob'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/lib/active_storage/downloading.rb:10:in `download_blob_to_tempfile'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/lib/active_storage/analyzer/image_analyzer.rb:35:in `read_image'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/lib/active_storage/analyzer/image_analyzer.rb:21:in `metadata'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb:47:in `extract_metadata_via_analyzer'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb:29:in `analyze'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activestorage-5.2.3/app/jobs/active_storage/analyze_job.rb:6:in `perform'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/execution.rb:39:in `block in perform_now'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/i18n-1.6.0/lib/i18n.rb:297:in `with_locale'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `block in instrument'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `instrument'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/logging.rb:46:in `block in tag_logger'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/logging.rb:46:in `tag_logger'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/execution.rb:38:in `perform_now'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/execution.rb:24:in `block in execute'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/reloader.rb:73:in `block in wrap'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/reloader.rb:72:in `wrap'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `instance_exec'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/execution.rb:22:in `execute'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activejob-5.2.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:348:in `run_task'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:337:in `block (3 levels) in create_worker'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `loop'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:320:in `block (2 levels) in create_worker'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `catch'
+/home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/concurrent-ruby-1.1.5/lib/concurrent/executor/ruby_thread_pool_executor.rb:319:in `block in create_worker'
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da9ae6ee-88f8-440d-91bd-a4e9dead9960] [36m  Disk Storage (6.9ms) [0m[34mDownloaded file from key: F5XVaRJ3k8cJe7rMaoCZ97ik[0m
+  Rendering doctors/admin_index.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da9ae6ee-88f8-440d-91bd-a4e9dead9960] Skipping image analysis because the mini_magick gem isn't installed
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/admin_index.html.erb:4
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da9ae6ee-88f8-440d-91bd-a4e9dead9960]   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  Rendered doctors/admin_index.html.erb within layouts/application (1.5ms)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da9ae6ee-88f8-440d-91bd-a4e9dead9960]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da9ae6ee-88f8-440d-91bd-a4e9dead9960]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da9ae6ee-88f8-440d-91bd-a4e9dead9960]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da9ae6ee-88f8-440d-91bd-a4e9dead9960]   [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da9ae6ee-88f8-440d-91bd-a4e9dead9960]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da9ae6ee-88f8-440d-91bd-a4e9dead9960] Performed ActiveStorage::AnalyzeJob (Job ID: da9ae6ee-88f8-440d-91bd-a4e9dead9960) from Async(default) in 63.9ms
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 77ms (Views: 41.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/doctor/logout" for ::1 at 2019-09-26 11:44:25 -0400
+Processing by DoctorSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ag6fT0bk8ND97jFVf5bQE2i8BIZbE5AfnNrnEgcZFskLY8+NX9C24R8EVs3D+z88q4cWQ4JUU4cixnF2UKaVSg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-26 11:44:25 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/login" for ::1 at 2019-09-26 11:44:28 -0400
+Processing by PatientSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"UEpGzr4TU5x6y0pMWL56d958EXbJcNV3ON+EyPL/JFUxJxYMpycVrZghLdTk05VYHUcDsxA3Fu+GwxKspUCn1g=="}
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 20ms (Views: 11.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/patient/login" for ::1 at 2019-09-26 11:44:33 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5cnWPSIs6HZhUR9xgFcTOo7iXfIFN7wPPsUtXZxS6OWEpIb/OxiuR4O7eOk8OvwVTdlPN9xwf5eA2bs5y+1rZg==", "patient"=>{"email"=>"joe@sample.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "joe@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:9
+Redirected to http://localhost:3000/patients/1/home
+Completed 302 Found in 236ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/patients/1/home" for ::1 at 2019-09-26 11:44:33 -0400
+Processing by PatientsController#home as HTML
+  Parameters: {"patient_id"=>"1"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering patients/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/patients/_table.html.erb:4
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  Rendered patients/_table.html.erb (20.5ms)
+  [1m[36mPatientMed Load (0.1ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/patients/home.html.erb:6
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/patients/home.html.erb:7
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/patients/home.html.erb:7
+  Rendered patients/home.html.erb within layouts/application (48.6ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-26 11:44:36 -0400
+Processing by DoctorsController#index as HTML
+  Parameters: {"authenticity_token"=>"O7c+hmUzw2UB0ES1OWeZgjMez6YpAjKGXbixIyva/JZa2m5EfAeFVOM6Iy2FCnat8CXdY/BF8R7jpCdHfGV/FQ=="}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/index.html.erb:2
+  Rendered doctors/index.html.erb within layouts/application (3.9ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 38ms (Views: 31.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/doctors/3" for ::1 at 2019-09-26 11:44:37 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date >= '2019-09-26') AND (patient_id IS NULL)[0m  [["doctor_id", 3]]
+  ↳ app/views/doctors/show.html.erb:6
+  Rendered doctors/show.html.erb within layouts/application (27.3ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 54ms (Views: 44.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9f84bfa54fc7fb76e22e52cb54ddca8b5bfffc86/250px-Dr._Octopus_Marvel.jpg" for ::1 at 2019-09-26 11:45:01 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9f84bfa54fc7fb76e22e52cb54ddca8b5bfffc86", "filename"=>"250px-Dr._Octopus_Marvel"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: F5XVaRJ3k8cJe7rMaoCZ97ik (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSalZZVm1GU1NqTnJPR05LWlRkeVRXRnZRMW81TjJsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlNalV3Y0hndFJISXVYMDlqZEc5d2RYTmZUV0Z5ZG1Wc0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuTWpVd2NIZ3RSSEl1WDA5amRHOXdkWE5mVFdGeWRtVnNMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wOS0yNlQxNTo1MDowMS44NTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--2038e84a956e1765d8d98c2807fa21e2b1b3d861/250px-Dr._Octopus_Marvel.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22250px-Dr._Octopus_Marvel.jpg%22%3B+filename%2A%3DUTF-8%27%27250px-Dr._Octopus_Marvel.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSalZZVm1GU1NqTnJPR05LWlRkeVRXRnZRMW81TjJsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlNalV3Y0hndFJISXVYMDlqZEc5d2RYTmZUV0Z5ZG1Wc0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuTWpVd2NIZ3RSSEl1WDA5amRHOXdkWE5mVFdGeWRtVnNMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wOS0yNlQxNTo1MDowMS44NTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--2038e84a956e1765d8d98c2807fa21e2b1b3d861/250px-Dr._Octopus_Marvel.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22250px-Dr._Octopus_Marvel.jpg%22%3B+filename%2A%3DUTF-8%27%27250px-Dr._Octopus_Marvel.jpg
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSalZZVm1GU1NqTnJPR05LWlRkeVRXRnZRMW81TjJsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlNalV3Y0hndFJISXVYMDlqZEc5d2RYTmZUV0Z5ZG1Wc0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuTWpVd2NIZ3RSSEl1WDA5amRHOXdkWE5mVFdGeWRtVnNMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wOS0yNlQxNTo1MDowMS44NTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--2038e84a956e1765d8d98c2807fa21e2b1b3d861/250px-Dr._Octopus_Marvel.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22250px-Dr._Octopus_Marvel.jpg%22%3B+filename%2A%3DUTF-8%27%27250px-Dr._Octopus_Marvel.jpg" for ::1 at 2019-09-26 11:45:01 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"250px-Dr._Octopus_Marvel.jpg\"; filename*=UTF-8''250px-Dr._Octopus_Marvel.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSalZZVm1GU1NqTnJPR05LWlRkeVRXRnZRMW81TjJsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlNalV3Y0hndFJISXVYMDlqZEc5d2RYTmZUV0Z5ZG1Wc0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuTWpVd2NIZ3RSSEl1WDA5amRHOXdkWE5mVFdGeWRtVnNMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wOS0yNlQxNTo1MDowMS44NTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--2038e84a956e1765d8d98c2807fa21e2b1b3d861", "filename"=>"250px-Dr._Octopus_Marvel"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors/3" for ::1 at 2019-09-26 11:45:34 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date >= '2019-09-26') AND (patient_id IS NULL)[0m  [["doctor_id", 3]]
+  ↳ app/views/doctors/show.html.erb:6
+  Rendered doctors/show.html.erb within layouts/application (9.1ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 35ms (Views: 29.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSalZZVm1GU1NqTnJPR05LWlRkeVRXRnZRMW81TjJsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlNalV3Y0hndFJISXVYMDlqZEc5d2RYTmZUV0Z5ZG1Wc0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuTWpVd2NIZ3RSSEl1WDA5amRHOXdkWE5mVFdGeWRtVnNMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wOS0yNlQxNTo1MDowMS44NTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--2038e84a956e1765d8d98c2807fa21e2b1b3d861/250px-Dr._Octopus_Marvel.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22250px-Dr._Octopus_Marvel.jpg%22%3B+filename%2A%3DUTF-8%27%27250px-Dr._Octopus_Marvel.jpg" for ::1 at 2019-09-26 11:45:34 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"250px-Dr._Octopus_Marvel.jpg\"; filename*=UTF-8''250px-Dr._Octopus_Marvel.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSalZZVm1GU1NqTnJPR05LWlRkeVRXRnZRMW81TjJsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlNalV3Y0hndFJISXVYMDlqZEc5d2RYTmZUV0Z5ZG1Wc0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuTWpVd2NIZ3RSSEl1WDA5amRHOXdkWE5mVFdGeWRtVnNMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wOS0yNlQxNTo1MDowMS44NTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--2038e84a956e1765d8d98c2807fa21e2b1b3d861", "filename"=>"250px-Dr._Octopus_Marvel"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/logout" for ::1 at 2019-09-26 11:46:42 -0400
+Processing by PatientSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"C2BGto7bdHbNEfUvVXqmYeD3jCNatRVPW/ZMxe7FEThqDRZ0l+8yRy/7krfpF0lOI8ye5oPy1tfl6tqhuXqSuw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-26 11:46:42 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctor/login" for ::1 at 2019-09-26 11:46:44 -0400
+Processing by DoctorSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"1zHeYcwnSTe9v5DVnRpH88t8FlQsvQAL/0dvxfAiDxq2XI6j1RMPBl9V900hd6jcCEcEkfX6w5NBW/mhp52MmQ=="}
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/doctor/login" for ::1 at 2019-09-26 11:46:54 -0400
+Processing by DoctorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HNbkAX1UxCZqS46eMZWr6Ey/tuwL2UpXMId+zAILD259u7TDZGCCF4ih6QaN+ETHj4SkKdKeic+Om+ioVbSM7Q==", "doctor"=>{"username"=>"drsuess", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."username" = ? LIMIT ?[0m  [["username", "drsuess"], ["LIMIT", 1]]
+  ↳ app/controllers/doctor_sessions_controller.rb:8
+Redirected to http://localhost:3000/doctors/2/home
+Completed 302 Found in 233ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors/2/home" for ::1 at 2019-09-26 11:46:55 -0400
+Processing by DoctorsController#home as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date = '2019-09-26')[0m  [["doctor_id", 2]]
+  ↳ app/views/doctors/home.html.erb:11
+  Rendered doctors/home.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin_tools/tools" for ::1 at 2019-09-26 11:46:57 -0400
+Processing by AdminToolsController#tools as HTML
+  Parameters: {"authenticity_token"=>"ow2JSUdbpwAuwhjEtqPb4nEqgoJ8SklUZki1MiZQGzHCYNmLXm/hMcwof1wKzjTNshGQR6UNiszYVCNWce+Ysg=="}
+  Rendering admin_tools/tools.html.erb within layouts/application
+  Rendered admin_tools/tools.html.erb within layouts/application (1.4ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/doctors/new" for ::1 at 2019-09-26 11:46:58 -0400
+Processing by DoctorsController#new as HTML
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/new.html.erb within layouts/application
+  Rendered doctors/_form.html.erb (9.4ms)
+  Rendered doctors/new.html.erb within layouts/application (12.4ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 37ms (Views: 31.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-26 11:47:02 -0400
+Processing by DoctorsController#index as HTML
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/admin_index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/admin_index.html.erb:4
+  Rendered doctors/admin_index.html.erb within layouts/application (3.5ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/doctors/3/edit" for ::1 at 2019-09-26 11:47:03 -0400
+Processing by DoctorsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:26
+  Rendering doctors/edit.html.erb within layouts/application
+  Rendered doctors/_form.html.erb (5.4ms)
+  Rendered doctors/edit.html.erb within layouts/application (6.9ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 28ms (Views: 21.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/doctors/1/edit" for ::1 at 2019-09-26 11:47:11 -0400
+Processing by DoctorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:26
+  Rendering doctors/edit.html.erb within layouts/application
+  Rendered doctors/_form.html.erb (9.0ms)
+  Rendered doctors/edit.html.erb within layouts/application (12.8ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 38ms (Views: 30.5ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/doctors/1" for ::1 at 2019-09-26 11:47:23 -0400
+Processing by DoctorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xuBsS993oVK135WuRoLLT6e1H0uBcklUzBUOe4YUKlzm/2vYgjGRBlSgxuIduRjuCgfp/7T1Vqrk1wyaK2f/Mg==", "doctor"=>{"username"=>"drwho", "password"=>"[FILTERED]", "first_name"=>"No One", "last_name"=>"Knows", "profile_pic"=>#<ActionDispatch::Http::UploadedFile:0x00007f81bdca92e8 @tempfile=#<Tempfile:/tmp/RackMultipart20190926-4143-seiqjk.jpg>, @original_filename="drwho.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"doctor[profile_pic]\"; filename=\"drwho.jpg\"\r\nContent-Type: image/jpeg\r\n">, "admin"=>"0"}, "commit"=>"Update Doctor", "id"=>"1"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:31
+[36m  Disk Storage (0.8ms) [0m[32mUploaded file to key: o8a493534UPa4AEAbfjf2JTi (checksum: Nw5jw6uczJWd9+nOIMpxdw==)[0m
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "o8a493534UPa4AEAbfjf2JTi"], ["filename", "drwho.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 51790], ["checksum", "Nw5jw6uczJWd9+nOIMpxdw=="], ["created_at", "2019-09-26 15:47:23.140335"]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "profile_pic"], ["record_type", "Doctor"], ["record_id", 1], ["blob_id", 6], ["created_at", "2019-09-26 15:47:23.142759"]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[36mDoctor Update (0.1ms)[0m  [1m[33mUPDATE "doctors" SET "updated_at" = ? WHERE "doctors"."id" = ?[0m  [["updated_at", "2019-09-26 15:47:23.143915"], ["id", 1]]
+  ↳ app/controllers/doctors_controller.rb:31
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/doctors_controller.rb:31
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 7a6d1d69-c231-4764-b82f-594e0b06a2e9) to Async(default) with arguments: #<GlobalID:0x00007f81c0151ac8 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/6>>
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7a6d1d69-c231-4764-b82f-594e0b06a2e9] Performing ActiveStorage::AnalyzeJob (Job ID: 7a6d1d69-c231-4764-b82f-594e0b06a2e9) from Async(default) with arguments: #<GlobalID:0x00007f81c0161748 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7a6d1d69-c231-4764-b82f-594e0b06a2e9] [36m  Disk Storage (1.3ms) [0m[34mDownloaded file from key: o8a493534UPa4AEAbfjf2JTi[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7a6d1d69-c231-4764-b82f-594e0b06a2e9] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7a6d1d69-c231-4764-b82f-594e0b06a2e9]   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7a6d1d69-c231-4764-b82f-594e0b06a2e9]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7a6d1d69-c231-4764-b82f-594e0b06a2e9]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7a6d1d69-c231-4764-b82f-594e0b06a2e9]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7a6d1d69-c231-4764-b82f-594e0b06a2e9]   [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+[36m  Disk Storage (21.5ms) [0m[32mUploaded file to key: reZjJveBnDUjiCP2pqEBvhYr (checksum: Nw5jw6uczJWd9+nOIMpxdw==)[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7a6d1d69-c231-4764-b82f-594e0b06a2e9]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7a6d1d69-c231-4764-b82f-594e0b06a2e9] Performed ActiveStorage::AnalyzeJob (Job ID: 7a6d1d69-c231-4764-b82f-594e0b06a2e9) from Async(default) in 21.49ms
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "reZjJveBnDUjiCP2pqEBvhYr"], ["filename", "drwho.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 51790], ["checksum", "Nw5jw6uczJWd9+nOIMpxdw=="], ["created_at", "2019-09-26 15:47:23.187239"]]
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[36mActiveStorage::Attachment Destroy (0.3ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "profile_pic"], ["record_type", "Doctor"], ["record_id", 1], ["blob_id", 7], ["created_at", "2019-09-26 15:47:23.196524"]]
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[36mDoctor Update (0.2ms)[0m  [1m[33mUPDATE "doctors" SET "updated_at" = ? WHERE "doctors"."id" = ?[0m  [["updated_at", "2019-09-26 15:47:23.197691"], ["id", 1]]
+  ↳ app/controllers/doctors_controller.rb:32
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/doctors_controller.rb:32
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c5d95c54-3163-4475-829c-1a43ad70eae6) to Async(default) with arguments: #<GlobalID:0x00007f81c0230cc8 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/7>>
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 28be3932-7ff6-4819-980f-87784bebf8a2) to Async(default) with arguments: #<GlobalID:0x00007f81c0238568 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/6>>
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/doctors
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5d95c54-3163-4475-829c-1a43ad70eae6] Performing ActiveStorage::AnalyzeJob (Job ID: c5d95c54-3163-4475-829c-1a43ad70eae6) from Async(default) with arguments: #<GlobalID:0x00007f81c02532c8 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/7>>
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 302 Found in 75ms (ActiveRecord: 12.9ms)
+
+
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2] Performing ActiveStorage::PurgeJob (Job ID: 28be3932-7ff6-4819-980f-87784bebf8a2) from Async(default) with arguments: #<GlobalID:0x00007f81c0261a30 @uri=#<URI::GID gid://rails-medrecord/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2]   [1m[36mActiveStorage::Attachment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2]   [1m[36mActiveStorage::Blob Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 6]]
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2]   [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5d95c54-3163-4475-829c-1a43ad70eae6] [36m  Disk Storage (3.9ms) [0m[34mDownloaded file from key: reZjJveBnDUjiCP2pqEBvhYr[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2]   [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/doctors" for ::1 at 2019-09-26 11:47:23 -0400
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5d95c54-3163-4475-829c-1a43ad70eae6] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: o8a493534UPa4AEAbfjf2JTi[0m
+Processing by DoctorsController#index as HTML
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2] [36m  Disk Storage (0.1ms) [0m[31mDeleted files by key prefix: variants/o8a493534UPa4AEAbfjf2JTi/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [28be3932-7ff6-4819-980f-87784bebf8a2] Performed ActiveStorage::PurgeJob (Job ID: 28be3932-7ff6-4819-980f-87784bebf8a2) from Async(default) in 16.3ms
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5d95c54-3163-4475-829c-1a43ad70eae6]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5d95c54-3163-4475-829c-1a43ad70eae6]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5d95c54-3163-4475-829c-1a43ad70eae6]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+  Rendering doctors/admin_index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5d95c54-3163-4475-829c-1a43ad70eae6]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ app/views/doctors/admin_index.html.erb:4
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5d95c54-3163-4475-829c-1a43ad70eae6]   [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5d95c54-3163-4475-829c-1a43ad70eae6]   ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c5d95c54-3163-4475-829c-1a43ad70eae6] Performed ActiveStorage::AnalyzeJob (Job ID: c5d95c54-3163-4475-829c-1a43ad70eae6) from Async(default) in 29.75ms
+  Rendered doctors/admin_index.html.erb within layouts/application (5.5ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/doctor/logout" for ::1 at 2019-09-26 11:47:26 -0400
+Processing by DoctorSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KBaqWaOQjSdS9Ex1pYsnkmuLBXhPZfKeOtOsBmmQ7lNJe/qbuqTLFrAeK+0Z5si9qLAXvZYiMQaEzzpiPi9t0A=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-26 11:47:26 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/login" for ::1 at 2019-09-26 11:47:28 -0400
+Processing by PatientSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"qWYaTGu8qXpqDhMv9pUu+0ksvXN5utxJQp3YhzCluvHIC0qOcojvS4jkdLdK+MHUihevtqD9H9H8gU7jZxo5cg=="}
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patient/login" for ::1 at 2019-09-26 11:47:33 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D3BSoRxMuv3G3FdoD096+dIKuY93rZX+BfHo2MmC1O9uHQJjBXj8zCQ2MPCzIpXWETGrSq7qVma77X68nj1XbA==", "patient"=>{"email"=>"joe@sample.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "joe@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:9
+Redirected to http://localhost:3000/patients/1/home
+Completed 302 Found in 235ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/patients/1/home" for ::1 at 2019-09-26 11:47:33 -0400
+Processing by PatientsController#home as HTML
+  Parameters: {"patient_id"=>"1"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering patients/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/patients/_table.html.erb:4
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  Rendered patients/_table.html.erb (3.1ms)
+  [1m[36mPatientMed Load (0.1ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/patients/home.html.erb:6
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/patients/home.html.erb:7
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/patients/home.html.erb:7
+  Rendered patients/home.html.erb within layouts/application (5.6ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-26 11:47:35 -0400
+Processing by DoctorsController#index as HTML
+  Parameters: {"authenticity_token"=>"2E9xXhx5hZKsWErKBhVtzIMLPwNNjKFszMS9cKP+yxy5IiGcBU3Do06yLVK6eILjQDAtxpTLYvRy2CsU9EFInw=="}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/index.html.erb:2
+  Rendered doctors/index.html.erb within layouts/application (2.9ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/doctors/1" for ::1 at 2019-09-26 11:47:36 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date >= '2019-09-26') AND (patient_id IS NULL)[0m  [["doctor_id", 1]]
+  ↳ app/views/doctors/show.html.erb:6
+  Rendered doctors/show.html.erb within layouts/application (15.9ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 39ms (Views: 29.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--36d6e597581b0357753f9e003f3bde24007ba73a/drwho.jpg" for ::1 at 2019-09-26 11:47:36 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--36d6e597581b0357753f9e003f3bde24007ba73a", "filename"=>"drwho"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: reZjJveBnDUjiCP2pqEBvhYr (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjbVZhYWtwMlpVSnVSRlZxYVVOUU1uQnhSVUoyYUZseUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaSEozYUc4dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRrY25kb2J5NXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wOS0yNlQxNTo1MjozNi41NTNaIiwicHVyIjoiYmxvYl9rZXkifX0=--d2e12fc58aa671013991a6bf426e4fae30ebc79c/drwho.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22drwho.jpg%22%3B+filename%2A%3DUTF-8%27%27drwho.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjbVZhYWtwMlpVSnVSRlZxYVVOUU1uQnhSVUoyYUZseUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaSEozYUc4dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRrY25kb2J5NXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wOS0yNlQxNTo1MjozNi41NTNaIiwicHVyIjoiYmxvYl9rZXkifX0=--d2e12fc58aa671013991a6bf426e4fae30ebc79c/drwho.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22drwho.jpg%22%3B+filename%2A%3DUTF-8%27%27drwho.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjbVZhYWtwMlpVSnVSRlZxYVVOUU1uQnhSVUoyYUZseUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaSEozYUc4dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRrY25kb2J5NXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wOS0yNlQxNTo1MjozNi41NTNaIiwicHVyIjoiYmxvYl9rZXkifX0=--d2e12fc58aa671013991a6bf426e4fae30ebc79c/drwho.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22drwho.jpg%22%3B+filename%2A%3DUTF-8%27%27drwho.jpg" for ::1 at 2019-09-26 11:47:36 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"drwho.jpg\"; filename*=UTF-8''drwho.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjbVZhYWtwMlpVSnVSRlZxYVVOUU1uQnhSVUoyYUZseUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaSEozYUc4dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRrY25kb2J5NXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wOS0yNlQxNTo1MjozNi41NTNaIiwicHVyIjoiYmxvYl9rZXkifX0=--d2e12fc58aa671013991a6bf426e4fae30ebc79c", "filename"=>"drwho"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+

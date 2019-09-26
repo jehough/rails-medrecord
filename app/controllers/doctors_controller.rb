@@ -29,6 +29,7 @@ class DoctorsController < ApplicationController
   def update
     @doctor = Doctor.find(params[:id])
     @doctor.update(doc_params)
+    @doctor.profile_pic.attach(params[:doctor][:profile_pic])
     redirect_to doctors_path
   end
 
