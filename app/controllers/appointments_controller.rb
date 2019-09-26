@@ -52,7 +52,7 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    @appointment = Appointment.find(params[:appointment_id])
+    @appointment = Appointment.find(params[:id])
     @appointment.destroy
     redirect_to admin_tools_tools_path
   end
