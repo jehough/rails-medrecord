@@ -30,6 +30,6 @@ Rails.application.routes.draw do
     get '/patient_med/delete' => 'patient_meds#destroy'
     get '/admin_tools/tools' => 'admin_tools#tools'
 
-    get '/auth/:provider/callback' => 'patient_sessions#create'
+    get '/auth/google_oauth2/callback' => 'patient_sessions#create'
 
 end

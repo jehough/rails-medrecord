@@ -26293,3 +26293,115 @@ Processing by PatientSessionsController#new as HTML
 Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/patient/login?url=%2Fauth%2Fgoogle_oauth2" for ::1 at 2019-09-27 10:56:24 -0400
+Processing by PatientSessionsController#new as HTML
+  Parameters: {"url"=>"/auth/google_oauth2"}
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 19ms (Views: 9.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patient/login?url=%2Fauth%2Fgoogle_oauth2" for ::1 at 2019-09-27 10:56:30 -0400
+Processing by PatientSessionsController#new as HTML
+  Parameters: {"url"=>"/auth/google_oauth2"}
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/login?url=%2Fauth%2Fgoogle_oauth2" for ::1 at 2019-09-27 10:56:59 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PatientSessionsController#new as HTML
+  Parameters: {"url"=>"/auth/google_oauth2"}
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 168ms (Views: 154.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/doctor/login" for ::1 at 2019-09-27 10:57:32 -0400
+Processing by DoctorSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"ZTHbqr9tPlNPsismjapmW3DKu5a2KPTVkTKM9Gf+gLYEXItopll4Yq1YTL4xx4l0s/GpU29vN00vLhqQMEEDNQ=="}
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 10.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/doctor/login" for ::1 at 2019-09-27 10:57:38 -0400
+Processing by DoctorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7GIJblKFUskAMruqKTghbUYBp6rw2SSefMDOshzkH4mND1msS7EU+OLY3DKVVc5ChTq1byme5wbC3FjWS1ucCg==", "doctor"=>{"username"=>"drsuess", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."username" = ? LIMIT ?[0m  [["username", "drsuess"], ["LIMIT", 1]]
+  ↳ app/controllers/doctor_sessions_controller.rb:8
+Redirected to http://localhost:3000/doctors/2/home
+Completed 302 Found in 239ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/doctors/2/home" for ::1 at 2019-09-27 10:57:38 -0400
+Processing by DoctorsController#home as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date = '2019-09-27')[0m  [["doctor_id", 2]]
+  ↳ app/views/doctors/home.html.erb:11
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/doctors/home.html.erb:14
+  Rendered doctors/home.html.erb within layouts/application (33.1ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 43ms (Views: 39.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin_tools/tools" for ::1 at 2019-09-27 10:57:40 -0400
+Processing by AdminToolsController#tools as HTML
+  Parameters: {"authenticity_token"=>"Q2nN2xgiOESJNF1EQ5sCG5+DCytdRh5CXwFNWanKpUsiBJ0ZARZ+dWveOtz/9u00XLgZ7oQB3drhHds9/nUmyA=="}
+  Rendering admin_tools/tools.html.erb within layouts/application
+  Rendered admin_tools/tools.html.erb within layouts/application (1.9ms)
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/patients" for ::1 at 2019-09-27 10:57:42 -0400
+Processing by PatientsController#index as HTML
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/patients/index.html.erb:8
+  Rendered patients/index.html.erb within layouts/application (2.2ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/doctor/logout" for ::1 at 2019-09-27 10:57:49 -0400
+Processing by DoctorSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GpTnbMo8EvPkKEVUhYCLwnQT01UkuAVHuTCfCOO5UaB7+beu0whUwgbCIsw57WTttyjBkP3/xt8HLAlstAbSIw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-27 10:57:49 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/login" for ::1 at 2019-09-27 10:57:51 -0400
+Processing by PatientSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"zPVmvAHyyN6sTF/bjB1G7cLsXV9qKp/8vKtcvuqpmpStmDZ+GMaO706mOEMwcKnCAddPmrNtXGQCt8ravRYZFw=="}
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/login?url=%2Fauth%2Fgoogle_oauth2" for ::1 at 2019-09-27 10:58:52 -0400
+Processing by PatientSessionsController#new as HTML
+  Parameters: {"url"=>"/auth/google_oauth2"}
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 19ms (Views: 9.5ms | ActiveRecord: 0.6ms)
+
+
