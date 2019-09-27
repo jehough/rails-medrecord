@@ -88,6 +88,9 @@
     <td>Follow Up Instructions</td>
     <td colspan="3"><%= f.text_area :follow_up, value: @appointment.follow_up%></td>
   </tr>
+
+    <% end %>
+  <tr>
     <th colspan="4">Medications </th>
   </tr>
   <%= pat.fields_for :patient_meds do |med| %>

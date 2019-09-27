@@ -11,11 +11,11 @@ class DoctorSessionsController < ApplicationController
         redirect_to "/doctors/#{@doctor.id}/home"
       else
         flash[:alert] = "Incorrect Email/Password Combination"
-        redirect_to '/'
+        render :new
       end
     else
       flash[:alert] = "Incorrect Email/Password Combination"
-      redirect_to '/'
+      render :new
     end
   end
 
