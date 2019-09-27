@@ -24375,3 +24375,222 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
 
 
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjbVZhYWtwMlpVSnVSRlZxYVVOUU1uQnhSVUoyYUZseUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaSEozYUc4dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRrY25kb2J5NXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wOS0yNlQxNTo1MjozNi41NTNaIiwicHVyIjoiYmxvYl9rZXkifX0=--d2e12fc58aa671013991a6bf426e4fae30ebc79c/drwho.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22drwho.jpg%22%3B+filename%2A%3DUTF-8%27%27drwho.jpg" for ::1 at 2019-09-26 11:48:52 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"drwho.jpg\"; filename*=UTF-8''drwho.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjbVZhYWtwMlpVSnVSRlZxYVVOUU1uQnhSVUoyYUZseUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaSEozYUc4dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRrY25kb2J5NXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wOS0yNlQxNTo1MjozNi41NTNaIiwicHVyIjoiYmxvYl9rZXkifX0=--d2e12fc58aa671013991a6bf426e4fae30ebc79c", "filename"=>"drwho"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-27 09:10:00 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.9ms)
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 361ms (Views: 348.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/patient/logout" for ::1 at 2019-09-27 09:10:04 -0400
+Processing by PatientSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EPX6rkI8wuH11qLqDLQg8vBFhTIia3UwtuEb2FyJfgRxmKpsWwiE0Bc8xXKw2c/dM36X9/sstqgI/Y28Czb9hw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-27 09:10:04 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctor/login" for ::1 at 2019-09-27 09:10:05 -0400
+Processing by DoctorSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"4I7hF4pM5XFbUN06WH781QMIzZ54N4Xs2t9GtQgbse+B47HVk3ijQLm6uqLkExP6wDPfW6FwRnRkw9DRX6QybA=="}
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 30ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patient/login" for ::1 at 2019-09-27 09:10:23 -0400
+Processing by PatientSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"Yd/S+lcEja6ZCyIHiajaavPfunv/S/w9js0C/oM/f6IAsoI4TjDLn3vhRZ81xTVFMOSoviYMP6Uw0ZSa1ID8IQ=="}
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/patient/login" for ::1 at 2019-09-27 09:10:30 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L9Lv/OcjD3v4OzZ04K62Fj3t0NPWasaBPwBk7kMQ+PdOv78+/hdJShrRUexcw1k5/tbCFg8tBRmBHPKKFK97dA==", "patient"=>{"email"=>"joe@sample.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "joe@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:9
+Redirected to http://localhost:3000/patients/1/home
+Completed 302 Found in 260ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/patients/1/home" for ::1 at 2019-09-27 09:10:30 -0400
+Processing by PatientsController#home as HTML
+  Parameters: {"patient_id"=>"1"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering patients/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/patients/_table.html.erb:4
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  Rendered patients/_table.html.erb (32.3ms)
+  [1m[36mPatientMed Load (0.4ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 1]]
+  ↳ app/views/patients/home.html.erb:6
+  [1m[36mMedication Load (0.3ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/patients/home.html.erb:7
+  [1m[36mMedication Load (0.1ms)[0m  [1m[34mSELECT  "medications".* FROM "medications" WHERE "medications"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/patients/home.html.erb:7
+  Rendered patients/home.html.erb within layouts/application (48.5ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 60ms (Views: 55.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-27 09:10:32 -0400
+Processing by DoctorsController#index as HTML
+  Parameters: {"authenticity_token"=>"QMkkWlVSvAN86BCOTxLy1J+FdvealUEtRa1iC7VJFOohpHSYTGb6Mp4Cdxbzfx37XL5kMkPSgrX7sfRv4vaXaQ=="}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/index.html.erb:2
+  Rendered doctors/index.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/1" for ::1 at 2019-09-27 09:10:33 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date >= '2019-09-27') AND (patient_id IS NULL)[0m  [["doctor_id", 1]]
+  ↳ app/views/doctors/show.html.erb:6
+  Rendered doctors/show.html.erb within layouts/application (34.4ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 47ms (Views: 41.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--36d6e597581b0357753f9e003f3bde24007ba73a/drwho.jpg" for ::1 at 2019-09-27 09:10:33 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--36d6e597581b0357753f9e003f3bde24007ba73a", "filename"=>"drwho"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: reZjJveBnDUjiCP2pqEBvhYr (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjbVZhYWtwMlpVSnVSRlZxYVVOUU1uQnhSVUoyYUZseUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaSEozYUc4dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRrY25kb2J5NXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wOS0yN1QxMzoxNTozMy45MjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--ad950f9d26ed5e6246091bf38ffece017548b42c/drwho.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22drwho.jpg%22%3B+filename%2A%3DUTF-8%27%27drwho.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjbVZhYWtwMlpVSnVSRlZxYVVOUU1uQnhSVUoyYUZseUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaSEozYUc4dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRrY25kb2J5NXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wOS0yN1QxMzoxNTozMy45MjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--ad950f9d26ed5e6246091bf38ffece017548b42c/drwho.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22drwho.jpg%22%3B+filename%2A%3DUTF-8%27%27drwho.jpg
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjbVZhYWtwMlpVSnVSRlZxYVVOUU1uQnhSVUoyYUZseUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaSEozYUc4dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRrY25kb2J5NXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wOS0yN1QxMzoxNTozMy45MjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--ad950f9d26ed5e6246091bf38ffece017548b42c/drwho.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22drwho.jpg%22%3B+filename%2A%3DUTF-8%27%27drwho.jpg" for ::1 at 2019-09-27 09:10:33 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"drwho.jpg\"; filename*=UTF-8''drwho.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjbVZhYWtwMlpVSnVSRlZxYVVOUU1uQnhSVUoyYUZseUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTlhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaSEozYUc4dWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRrY25kb2J5NXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAxOS0wOS0yN1QxMzoxNTozMy45MjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--ad950f9d26ed5e6246091bf38ffece017548b42c", "filename"=>"drwho"}
+Completed 200 OK in 26ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-27 09:10:37 -0400
+Processing by DoctorsController#index as HTML
+  Parameters: {"authenticity_token"=>"jPTC+tRweeuVbAeUxgsm8UUaC4FURv2Cz7FKT9qUUgHtmZI4zUQ/2neGYAx6ZsnehiEZRI0BPhpxrdwrjSvRgg=="}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/index.html.erb:2
+  Rendered doctors/index.html.erb within layouts/application (3.8ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/doctors/3" for ::1 at 2019-09-27 09:10:38 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date >= '2019-09-27') AND (patient_id IS NULL)[0m  [["doctor_id", 3]]
+  ↳ app/views/doctors/show.html.erb:6
+  Rendered doctors/show.html.erb within layouts/application (13.5ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 38ms (Views: 28.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9f84bfa54fc7fb76e22e52cb54ddca8b5bfffc86/250px-Dr._Octopus_Marvel.jpg" for ::1 at 2019-09-27 09:10:38 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9f84bfa54fc7fb76e22e52cb54ddca8b5bfffc86", "filename"=>"250px-Dr._Octopus_Marvel"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: F5XVaRJ3k8cJe7rMaoCZ97ik (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSalZZVm1GU1NqTnJPR05LWlRkeVRXRnZRMW81TjJsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlNalV3Y0hndFJISXVYMDlqZEc5d2RYTmZUV0Z5ZG1Wc0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuTWpVd2NIZ3RSSEl1WDA5amRHOXdkWE5mVFdGeWRtVnNMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wOS0yN1QxMzoxNTozOC43NzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--12c25ef6e3d7a4605a71030138321095d5333af2/250px-Dr._Octopus_Marvel.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22250px-Dr._Octopus_Marvel.jpg%22%3B+filename%2A%3DUTF-8%27%27250px-Dr._Octopus_Marvel.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSalZZVm1GU1NqTnJPR05LWlRkeVRXRnZRMW81TjJsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlNalV3Y0hndFJISXVYMDlqZEc5d2RYTmZUV0Z5ZG1Wc0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuTWpVd2NIZ3RSSEl1WDA5amRHOXdkWE5mVFdGeWRtVnNMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wOS0yN1QxMzoxNTozOC43NzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--12c25ef6e3d7a4605a71030138321095d5333af2/250px-Dr._Octopus_Marvel.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22250px-Dr._Octopus_Marvel.jpg%22%3B+filename%2A%3DUTF-8%27%27250px-Dr._Octopus_Marvel.jpg
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSalZZVm1GU1NqTnJPR05LWlRkeVRXRnZRMW81TjJsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlNalV3Y0hndFJISXVYMDlqZEc5d2RYTmZUV0Z5ZG1Wc0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuTWpVd2NIZ3RSSEl1WDA5amRHOXdkWE5mVFdGeWRtVnNMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wOS0yN1QxMzoxNTozOC43NzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--12c25ef6e3d7a4605a71030138321095d5333af2/250px-Dr._Octopus_Marvel.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22250px-Dr._Octopus_Marvel.jpg%22%3B+filename%2A%3DUTF-8%27%27250px-Dr._Octopus_Marvel.jpg" for ::1 at 2019-09-27 09:10:38 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"250px-Dr._Octopus_Marvel.jpg\"; filename*=UTF-8''250px-Dr._Octopus_Marvel.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSalZZVm1GU1NqTnJPR05LWlRkeVRXRnZRMW81TjJsckJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSmphVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlNalV3Y0hndFJISXVYMDlqZEc5d2RYTmZUV0Z5ZG1Wc0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuTWpVd2NIZ3RSSEl1WDA5amRHOXdkWE5mVFdGeWRtVnNMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAxOS0wOS0yN1QxMzoxNTozOC43NzJaIiwicHVyIjoiYmxvYl9rZXkifX0=--12c25ef6e3d7a4605a71030138321095d5333af2", "filename"=>"250px-Dr._Octopus_Marvel"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-27 09:10:44 -0400
+Processing by DoctorsController#index as HTML
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/index.html.erb:2
+  Rendered doctors/index.html.erb within layouts/application (4.9ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 32ms (Views: 26.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/patient/login" for ::1 at 2019-09-27 09:10:46 -0400
+Processing by PatientSessionsController#new as HTML
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Redirected to http://localhost:3000/patients/1/home
+Filter chain halted as :logged_in? rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/patient/logout" for ::1 at 2019-09-27 09:10:48 -0400
+Processing by PatientSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QMkkWlVSvAN86BCOTxLy1J+FdvealUEtRa1iC7VJFOohpHSYTGb6Mp4Cdxbzfx37XL5kMkPSgrX7sfRv4vaXaQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-27 09:10:48 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+

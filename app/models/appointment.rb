@@ -1,7 +1,7 @@
 class Appointment < ApplicationRecord
   belongs_to :patient, optional: true
   belongs_to :doctor
-  
+  has_many_attached :images
 
   scope :today, -> {where("date = ?", Date.today)}
   scope :future, -> {where("date >= ?", Date.today)}
