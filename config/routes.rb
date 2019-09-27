@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :medications
   resources :appointments, only: [:index, :show, :edit, :update, :destroy] do
     get '/add_patient' => 'appointments#add_patient'
-    
+
   end
 
   resources :doc_scheds, only: [:new, :create]
@@ -29,5 +29,7 @@ Rails.application.routes.draw do
 
     get '/patient_med/delete' => 'patient_meds#destroy'
     get '/admin_tools/tools' => 'admin_tools#tools'
+
+    get '/auth/:provider/callback' => 'patient_sessions#create'
 
 end
