@@ -1,11 +1,16 @@
 class AppointmentsController < ApplicationController
   before_action :current_patient, only: [:add_patient]
-  before_action :is_doctor?, only: [:edit, :update]
-  before_action :is_user?, only: [:index, :show]
+  before_action :current_doctor, only: [:edit]
+  before_action :is_user?, only: [:index, :show, :update]
   before_action :is_admin?, only: [:destroy, :destroy_past]
 
   def index
-    @appointments = Appointment.future
+    if params[:doctor_id]
+      @doctor = Doctor.find(params[:doctor_id])
+      @appointments = @doctor.appointments.future
+    else
+      @appointments = Appointment.future
+    end
   end
 
   def destroy_past
@@ -26,7 +31,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
     if @appointment.patient.nil?
       flash[:alert] = "No Scheduled Patient at that time"
-      redirect_to appointments_path
+      redirect_to doctor_appointments_path(@doctor)
     else
       @patient = @appointment.patient
       @patient.patient_meds.build

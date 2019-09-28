@@ -8,7 +8,7 @@ class DoctorSessionsController < ApplicationController
     if @doctor = Doctor.find_by(username: params[:doctor][:username])
       if @doctor.authenticate(params[:doctor][:password])
         session[:doctor_id] = @doctor.id
-        redirect_to "/doctors/#{@doctor.id}/home"
+        redirect_to doctor_home_path(@doctor)
       else
         flash[:alert] = "Incorrect Email/Password Combination"
         render :new

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "application#home"
   resources :doctors do
     get '/home' => 'doctors#home'
+    resources :appointments, only: [:index, :show, :edit, :update, :destroy]
   end
 
   resources :patients do
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :medications
-  resources :appointments, only: [:index, :show, :edit, :update, :destroy] do
+  resources :appointments, only: [:index] do
     get '/add_patient' => 'appointments#add_patient'
 
   end
