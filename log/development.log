@@ -26807,3 +26807,363 @@ ActionController::UrlGenerationError (No route matches {:action=>"home", :contro
 app/controllers/patient_sessions_controller.rb:16:in `create'
 Started PUT "/__web_console/repl_sessions/e5a0bb2c120f23215c001805be71bf2e" for ::1 at 2019-09-27 21:30:41 -0400
 Started PUT "/__web_console/repl_sessions/e5a0bb2c120f23215c001805be71bf2e" for ::1 at 2019-09-27 21:30:42 -0400
+Started GET "/patient/login" for ::1 at 2019-09-27 21:47:01 -0400
+Processing by PatientSessionsController#new as HTML
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 21ms (Views: 10.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:47:03 -0400
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:47:04 -0400
+Started GET "/auth/facebook/callback?code=AQAB4N9McWW-z4Ad87orciE9rBb-vkNA1fsRKkWTEHdvMFxBR-kVPegBtnkdfIuNSegsLlq3eELGxO-kvnajEg-yf4--zgb_WoYtnvOw2ImdB-zjkxKjfgaLnon66_8ONhjBLIo5cqokTLvrR0t66qwcSxX59_I4TbHSm3YK34LnZXY83m81T4om08XUZ1kTeQ-MP3cKUwTwf-9whSiZRuCnELxbFva-R8RxBT6h2umDu2aqcBwrnuPq9u5gXZ9QJGfi-_0IfeQAVWzIcmFrdxSWcbhZ74mJSideyYKqsy-lwyONHHBGOx2QnJyiZhWJYdVGpv-qz4f999oTaO5Doa7kNAvbU9bB4SOoHIlxqzQyDQ&state=99d4af7cb01f83b8e81f670531752280f132ee780ceb7463" for ::1 at 2019-09-27 21:47:04 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"code"=>"AQAB4N9McWW-z4Ad87orciE9rBb-vkNA1fsRKkWTEHdvMFxBR-kVPegBtnkdfIuNSegsLlq3eELGxO-kvnajEg-yf4--zgb_WoYtnvOw2ImdB-zjkxKjfgaLnon66_8ONhjBLIo5cqokTLvrR0t66qwcSxX59_I4TbHSm3YK34LnZXY83m81T4om08XUZ1kTeQ-MP3cKUwTwf-9whSiZRuCnELxbFva-R8RxBT6h2umDu2aqcBwrnuPq9u5gXZ9QJGfi-_0IfeQAVWzIcmFrdxSWcbhZ74mJSideyYKqsy-lwyONHHBGOx2QnJyiZhWJYdVGpv-qz4f999oTaO5Doa7kNAvbU9bB4SOoHIlxqzQyDQ", "state"=>"99d4af7cb01f83b8e81f670531752280f132ee780ceb7463"}
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "jandmhough@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:13
+  [1m[36mPatient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "jandmhough@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:13
+  [1m[36mPatient Create (2.1ms)[0m  [1m[32mINSERT INTO "patients" ("email", "password_digest") VALUES (?, ?)[0m  [["email", "jandmhough@gmail.com"], ["password_digest", "$2a$12$6yblXup7WM54CXaBDTWyAeGS3h7u8plbzmZk3t3Tx6HkRwGiDh1qG"]]
+  ↳ app/controllers/patient_sessions_controller.rb:13
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:16
+  [1m[36mPatient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "patients" WHERE "patients"."email" = ? AND "patients"."id" != ? LIMIT ?[0m  [["email", "jandmhough@gmail.com"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:16
+  [1m[36mPatient Update (0.1ms)[0m  [1m[33mUPDATE "patients" SET "first_name" = ?, "last_name" = ? WHERE "patients"."id" = ?[0m  [["first_name", "Morgan"], ["last_name", "Hough"], ["id", 4]]
+  ↳ app/controllers/patient_sessions_controller.rb:16
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:16
+Redirected to http://localhost:3000/patients/4/home
+Completed 302 Found in 260ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/patients/4/home" for ::1 at 2019-09-27 21:47:05 -0400
+Processing by PatientsController#home as HTML
+  Parameters: {"patient_id"=>"4"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering patients/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 4]]
+  ↳ app/views/patients/_table.html.erb:4
+  Rendered patients/_table.html.erb (10.5ms)
+  [1m[36mPatientMed Load (0.2ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 4]]
+  ↳ app/views/patients/home.html.erb:6
+  Rendered patients/home.html.erb within layouts/application (14.3ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-27 21:47:15 -0400
+Processing by DoctorsController#index as HTML
+  Parameters: {"authenticity_token"=>"d9tYdttinKIbz+q9+5Cy8DpK0dVjabw6eoxC7Q0DGykWtgi0wlbak/kljSVH/V3f+XHDELouf6LEkNSJWryYqg=="}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/index.html.erb:2
+  Rendered doctors/index.html.erb within layouts/application (8.0ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 26ms (Views: 18.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/doctors/2" for ::1 at 2019-09-27 21:47:17 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  Rendered doctors/show.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (to_model delegated to attachment, but attachment is nil):
+    1: <h1><%= @doctor.doc_name %></h1>
+    2: 
+    3: <img src="<%= url_for(@doctor.profile_pic) %>" class="profile_pic" />
+    4: <h3>Available Appointments</h3>
+    5: <ul>
+    6:   <% @doctor.appointments.future.available.each do |appt| %>
+  
+app/views/doctors/show.html.erb:3:in `_app_views_doctors_show_html_erb__2319096510369410031_47384884250220'
+Started GET "/doctors/2" for ::1 at 2019-09-27 21:48:49 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  Rendered doctors/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/jim/github/rails-medrecord/app/views/doctors/show.html.erb:3: syntax error, unexpected ';'
+...less @doctor.profile_pic.nil> ;@output_buffer.safe_append='
+...                              ^):
+  
+app/views/doctors/show.html.erb:3: syntax error, unexpected ';'
+Started GET "/doctors/2" for ::1 at 2019-09-27 21:49:25 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  Rendered doctors/show.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/jim/github/rails-medrecord/app/views/doctors/show.html.erb:3: syntax error, unexpected '<'
+...reeze;@output_buffer.append=( <img src="<%= url_for(@doctor....
+...                              ^
+/home/jim/github/rails-medrecord/app/views/doctors/show.html.erb:3: syntax error, unexpected class, expecting ')'
+...put_buffer.safe_append='" class="profile_pic" /> unless @doc...
+...                          ^~~~~
+/home/jim/github/rails-medrecord/app/views/doctors/show.html.erb:3: syntax error, unexpected '>'
+...ppend='" class="profile_pic" /> unless @doctor.profile_pic.n...
+...                              ^
+/home/jim/github/rails-medrecord/app/views/doctors/show.html.erb:4: syntax error, unexpected tCONSTANT, expecting then or ';' or '\n'
+<h3>Available Appointments</h3>
+    ^~~~~~~~~
+/home/jim/github/rails-medrecord/app/views/doctors/show.html.erb:7: unknown regexp option - l
+/home/jim/github/rails-medrecord/app/views/doctors/show.html.erb:14: unterminated regexp meets end of file
+          end
+              ^
+/home/jim/github/rails-medrecord/app/views/doctors/show.html.erb:14: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/doctors/show.html.erb:3: syntax error, unexpected '<'
+app/views/doctors/show.html.erb:3: syntax error, unexpected class, expecting ')'
+app/views/doctors/show.html.erb:3: syntax error, unexpected '>'
+app/views/doctors/show.html.erb:4: syntax error, unexpected tCONSTANT, expecting then or ';' or '\n'
+app/views/doctors/show.html.erb:7: unknown regexp option - l
+app/views/doctors/show.html.erb:14: unterminated regexp meets end of file
+app/views/doctors/show.html.erb:14: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/doctors/2" for ::1 at 2019-09-27 21:51:06 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  Rendered doctors/show.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: to_model delegated to attachment, but attachment is nil):
+    1: <h1><%= @doctor.doc_name %></h1>
+    2: 
+    3: <%= image_tag(@doctor.profile_pic) unless @doctor.profile_pic.nil? %>
+    4: <h3>Available Appointments</h3>
+    5: <ul>
+    6:   <% @doctor.appointments.future.available.each do |appt| %>
+  
+app/views/doctors/show.html.erb:3:in `_app_views_doctors_show_html_erb__2319096510369410031_70099820224060'
+Started GET "/doctors/2" for ::1 at 2019-09-27 21:51:19 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  Rendered doctors/show.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: to_model delegated to attachment, but attachment is nil):
+    1: <h1><%= @doctor.doc_name %></h1>
+    2: 
+    3: <%= image_tag(@doctor.profile_pic).unless @doctor.profile_pic.nil? %>
+    4: <h3>Available Appointments</h3>
+    5: <ul>
+    6:   <% @doctor.appointments.future.available.each do |appt| %>
+  
+app/views/doctors/show.html.erb:3:in `_app_views_doctors_show_html_erb__2319096510369410031_70099816916800'
+Started GET "/doctors/2" for ::1 at 2019-09-27 21:51:31 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  Rendered doctors/show.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: to_model delegated to attachment, but attachment is nil):
+    1: <h1><%= @doctor.doc_name %></h1>
+    2: 
+    3: <%= image_tag(@doctor.profile_pic)unless @doctor.profile_pic.nil? %>
+    4: <h3>Available Appointments</h3>
+    5: <ul>
+    6:   <% @doctor.appointments.future.available.each do |appt| %>
+  
+app/views/doctors/show.html.erb:3:in `_app_views_doctors_show_html_erb__2319096510369410031_70099877455200'
+Started GET "/doctors/2" for ::1 at 2019-09-27 21:52:30 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:4
+  Rendered doctors/show.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: to_model delegated to attachment, but attachment is nil):
+    1: <h1><%= @doctor.doc_name %></h1>
+    2: 
+    3: <%if !!@doctor.profile_pic%>
+    4:   <%= image_tag(@doctor.profile_pic)%>
+    5: <% end %>
+    6: <h3>Available Appointments</h3>
+    7: <ul>
+  
+app/views/doctors/show.html.erb:4:in `_app_views_doctors_show_html_erb__2319096510369410031_70099816529840'
+Started GET "/doctors/2" for ::1 at 2019-09-27 21:52:48 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:4
+  Rendered doctors/show.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: to_model delegated to attachment, but attachment is nil):
+    1: <h1><%= @doctor.doc_name %></h1>
+    2: 
+    3: <%if @doctor.profile_pic%>
+    4:   <%= image_tag(@doctor.profile_pic)%>
+    5: <% end %>
+    6: <h3>Available Appointments</h3>
+    7: <ul>
+  
+app/views/doctors/show.html.erb:4:in `_app_views_doctors_show_html_erb__2319096510369410031_70099877261040'
+Started GET "/doctors/2" for ::1 at 2019-09-27 21:53:10 -0400
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:47
+  Rendering doctors/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Doctor"], ["name", "profile_pic"], ["LIMIT", 1]]
+  ↳ app/views/doctors/show.html.erb:3
+  [1m[36mAppointment Load (0.8ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date >= '2019-09-27') AND (patient_id IS NULL)[0m  [["doctor_id", 2]]
+  ↳ app/views/doctors/show.html.erb:8
+  Rendered doctors/show.html.erb within layouts/application (42.1ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 59ms (Views: 52.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/appointments/92/add_patient" for ::1 at 2019-09-27 21:53:15 -0400
+Processing by AppointmentsController#add_patient as HTML
+  Parameters: {"appointment_id"=>"92"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 92], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:48
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:50
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:50
+  [1m[36mAppointment Update (0.2ms)[0m  [1m[33mUPDATE "appointments" SET "patient_id" = ? WHERE "appointments"."id" = ?[0m  [["patient_id", 4], ["id", 92]]
+  ↳ app/controllers/appointments_controller.rb:50
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/appointments_controller.rb:50
+Redirected to http://localhost:3000/patients/4/home
+Completed 302 Found in 9ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/patients/4/home" for ::1 at 2019-09-27 21:53:15 -0400
+Processing by PatientsController#home as HTML
+  Parameters: {"patient_id"=>"4"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering patients/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 4]]
+  ↳ app/views/patients/_table.html.erb:4
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  Rendered patients/_table.html.erb (2.0ms)
+  [1m[36mPatientMed Load (0.1ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 4]]
+  ↳ app/views/patients/home.html.erb:6
+  Rendered patients/home.html.erb within layouts/application (3.5ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/appointments/92" for ::1 at 2019-09-27 21:53:25 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"id"=>"92"}
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" WHERE "appointments"."id" = ? LIMIT ?[0m  [["id", 92], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  [1m[36mCACHE Patient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:21
+  Rendering appointments/show.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:2
+  Rendered appointments/show.html.erb within layouts/application (5.1ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 38ms (Views: 22.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/patients/4/home" for ::1 at 2019-09-27 21:53:28 -0400
+Processing by PatientsController#home as HTML
+  Parameters: {"patient_id"=>"4"}
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+  Rendering patients/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."patient_id" = ?[0m  [["patient_id", 4]]
+  ↳ app/views/patients/_table.html.erb:4
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/patients/_table.html.erb:7
+  Rendered patients/_table.html.erb (4.6ms)
+  [1m[36mPatientMed Load (0.1ms)[0m  [1m[34mSELECT "patient_meds".* FROM "patient_meds" WHERE "patient_meds"."patient_id" = ?[0m  [["patient_id", 4]]
+  ↳ app/views/patients/home.html.erb:6
+  Rendered patients/home.html.erb within layouts/application (8.1ms)
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:33
+Completed 200 OK in 29ms (Views: 23.3ms | ActiveRecord: 1.0ms)
+
+
