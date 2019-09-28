@@ -6,7 +6,18 @@ class PatientSessionsController < ApplicationController
   end
 
   def create
-    if @patient = Patient.find_by(email: params[:patient][:email])
+    if auth_hash = request.env["omniauth.auth"]
+      if @patient = Patient.find_by(email: auth_hash[:info][:email])
+        session[:patient_id] = @patient.id
+      else
+        @patient = Patient.create(email: auth_hash[:info][:email], password: SecureRandom.hex)
+        @patient.first_name = Patient.facebook_first(auth_hash[:info][:name])
+        @patient.last_name = Patient.facebook_last(auth_hash[:info][:name])
+        @patient.save
+      end
+      session[:patient_id] = @patient.id
+      redirect_to patient_home_path(@patient)
+    elsif @patient = Patient.find_by(email: params[:patient][:email])
       if @patient.authenticate(params[:patient][:password])
         session[:patient_id] = @patient.id
         redirect_to patient_home_path(@patient)
@@ -14,13 +25,6 @@ class PatientSessionsController < ApplicationController
         flash[:alert] = "Incorrect Email/Password Combination"
         render :new
       end
-    elsif @patient = Patient.find_or_create_by(email: auth[:info][:email])
-      @patient.first_name = auth[:info][:first_name]
-      @patient.last_name = auth[:info][:last_name]
-      @patient.birthday = auth[:info][:user_birthday]
-      @patient.save
-      session[:patient_id] = @patient.id
-      redirect_to patient_home_path(@patient)
     else
       flash[:alert] = "Incorrect Email/Password Combination"
       render :new
@@ -32,7 +36,4 @@ class PatientSessionsController < ApplicationController
     redirect_to root_path
   end
 
-  def auth
-    request.env['omniauth.auth']
-  end
 end

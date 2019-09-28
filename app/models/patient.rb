@@ -29,4 +29,14 @@ class Patient < ApplicationRecord
   def display_name
     "#{self.first_name} #{self.last_name}"
   end
+
+  def self.facebook_first(name)
+    name = name.split(' ')
+    name[0]
+  end
+
+  def self.facebook_last(name)
+    name = name.split(' ')
+    name[1]
+  end
 end

@@ -26590,3 +26590,220 @@ Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
 NoMethodError (undefined method `[]' for nil:NilClass):
   
 app/controllers/patient_sessions_controller.rb:9:in `create'
+Started GET "/auth/facebook/callback?code=AQCHlpLeP_Ol9IA6moL9lhA_41-6Z_0bXHdHCSq_LT8G4UOF4ixPyTLEgt_S9Hhmn-FPZs0QkOmdoErqzmISHrCOXUupOUHM0RoBtwNVToFs1WcYfMwxYjGvOaroNhspkD-f8aMdRHHBMTN19K3lz_VFR05CB4Z9-3vSLcW3JzbTZXtPydZAEEuNPelvCXZIB7XxdpmFGdoqXy3-HCNjUjjs2I-KzkdKOQySeVJyphsDGtEwVxgiDFaMwP8pKHxKb4qNNPw0CIW1Ucwpm0Iz5AogsaoNTODkDedoohxF9T4G45ZJzcB0hG-AK7NSS2Dxo5hx55ko9V-wHWpWBqMtG6sJPiHqi8jOTAqO6nsu7qqiGQ&state=6dc5ca76745b84b2dbd453e527480b659b294617014931f1" for ::1 at 2019-09-27 21:24:14 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"code"=>"AQCHlpLeP_Ol9IA6moL9lhA_41-6Z_0bXHdHCSq_LT8G4UOF4ixPyTLEgt_S9Hhmn-FPZs0QkOmdoErqzmISHrCOXUupOUHM0RoBtwNVToFs1WcYfMwxYjGvOaroNhspkD-f8aMdRHHBMTN19K3lz_VFR05CB4Z9-3vSLcW3JzbTZXtPydZAEEuNPelvCXZIB7XxdpmFGdoqXy3-HCNjUjjs2I-KzkdKOQySeVJyphsDGtEwVxgiDFaMwP8pKHxKb4qNNPw0CIW1Ucwpm0Iz5AogsaoNTODkDedoohxF9T4G45ZJzcB0hG-AK7NSS2Dxo5hx55ko9V-wHWpWBqMtG6sJPiHqi8jOTAqO6nsu7qqiGQ", "state"=>"6dc5ca76745b84b2dbd453e527480b659b294617014931f1"}
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `omniauth' for #<PatientSessionsController:0x00007f34743f34c8>):
+  
+app/controllers/patient_sessions_controller.rb:9:in `create'
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:24:16 -0400
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:24:16 -0400
+Started GET "/auth/facebook/callback?code=AQCQkkHtx9MOW7ej82Y7zumWWoBY88YO_C6vOwVl-CwufJxoEWt53itCV3IrcUtDvmhqwoH-hKcegYiqsD9R3AneDiqUPW0WcdEz6vQsX_OMgahq-txjMLnQrhlhU3izPOLSqsYDFmHjg9qd255LY_5cQ1i08KyByNngQEM9VStG2Tp_-Ojgq-Wj1B6i3aB4WV0AlF5M1_qQAGoISdO5sHza3WC-E0SkqUVIy7QiSOusYT-unG-XfQEAFHxhOHuSR-ReC2r-sOM4SBfXXi2GafTdPLhK-CEVTTfAyJdDdt8intiedMzki48NSLvFnh2Wxz0V2BgdFi7h31o2pT2PQPVqXzCRX3Y5SdxaK3Nl9ygAxQ&state=3f472beda0fe13151ceb3c10076b47370dff629a8519a20d" for ::1 at 2019-09-27 21:24:16 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"code"=>"AQCQkkHtx9MOW7ej82Y7zumWWoBY88YO_C6vOwVl-CwufJxoEWt53itCV3IrcUtDvmhqwoH-hKcegYiqsD9R3AneDiqUPW0WcdEz6vQsX_OMgahq-txjMLnQrhlhU3izPOLSqsYDFmHjg9qd255LY_5cQ1i08KyByNngQEM9VStG2Tp_-Ojgq-Wj1B6i3aB4WV0AlF5M1_qQAGoISdO5sHza3WC-E0SkqUVIy7QiSOusYT-unG-XfQEAFHxhOHuSR-ReC2r-sOM4SBfXXi2GafTdPLhK-CEVTTfAyJdDdt8intiedMzki48NSLvFnh2Wxz0V2BgdFi7h31o2pT2PQPVqXzCRX3Y5SdxaK3Nl9ygAxQ", "state"=>"3f472beda0fe13151ceb3c10076b47370dff629a8519a20d"}
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `omniauth' for #<PatientSessionsController:0x0000559bc8eb4740>):
+  
+app/controllers/patient_sessions_controller.rb:9:in `create'
+Started GET "/auth/facebook/callback?code=AQCQkkHtx9MOW7ej82Y7zumWWoBY88YO_C6vOwVl-CwufJxoEWt53itCV3IrcUtDvmhqwoH-hKcegYiqsD9R3AneDiqUPW0WcdEz6vQsX_OMgahq-txjMLnQrhlhU3izPOLSqsYDFmHjg9qd255LY_5cQ1i08KyByNngQEM9VStG2Tp_-Ojgq-Wj1B6i3aB4WV0AlF5M1_qQAGoISdO5sHza3WC-E0SkqUVIy7QiSOusYT-unG-XfQEAFHxhOHuSR-ReC2r-sOM4SBfXXi2GafTdPLhK-CEVTTfAyJdDdt8intiedMzki48NSLvFnh2Wxz0V2BgdFi7h31o2pT2PQPVqXzCRX3Y5SdxaK3Nl9ygAxQ&state=3f472beda0fe13151ceb3c10076b47370dff629a8519a20d" for ::1 at 2019-09-27 21:25:01 -0400
+  
+OAuth2::Error ({"message"=>"This authorization code has been used.", "type"=>"OAuthException", "code"=>100, "fbtrace_id"=>"A5P7wbbWt-HhafqjpDc3XsI"}: 
+{"error":{"message":"This authorization code has been used.","type":"OAuthException","code":100,"fbtrace_id":"A5P7wbbWt-HhafqjpDc3XsI"}}):
+  
+oauth2 (1.4.1) lib/oauth2/client.rb:119:in `request'
+oauth2 (1.4.1) lib/oauth2/client.rb:146:in `get_token'
+oauth2 (1.4.1) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:110:in `build_access_token'
+omniauth-oauth2 (1.6.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.9.0) lib/omniauth/strategy.rb:238:in `callback_call'
+omniauth (1.9.0) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.9.0) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.0) lib/omniauth/builder.rb:64:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/__web_console/repl_sessions/cb17ad770d4efd8658d12003c731c837" for ::1 at 2019-09-27 21:25:45 -0400
+Started PUT "/__web_console/repl_sessions/cb17ad770d4efd8658d12003c731c837" for ::1 at 2019-09-27 21:25:50 -0400
+Started PUT "/__web_console/repl_sessions/cb17ad770d4efd8658d12003c731c837" for ::1 at 2019-09-27 21:25:56 -0400
+Started PUT "/__web_console/repl_sessions/cb17ad770d4efd8658d12003c731c837" for ::1 at 2019-09-27 21:26:02 -0400
+Started PUT "/__web_console/repl_sessions/cb17ad770d4efd8658d12003c731c837" for ::1 at 2019-09-27 21:26:09 -0400
+Started PUT "/__web_console/repl_sessions/cb17ad770d4efd8658d12003c731c837" for ::1 at 2019-09-27 21:26:29 -0400
+Started PUT "/__web_console/repl_sessions/cb17ad770d4efd8658d12003c731c837" for ::1 at 2019-09-27 21:26:40 -0400
+Started PUT "/__web_console/repl_sessions/cb17ad770d4efd8658d12003c731c837" for ::1 at 2019-09-27 21:26:44 -0400
+Started PUT "/__web_console/repl_sessions/cb17ad770d4efd8658d12003c731c837" for ::1 at 2019-09-27 21:26:48 -0400
+Started PUT "/__web_console/repl_sessions/cb17ad770d4efd8658d12003c731c837" for ::1 at 2019-09-27 21:26:48 -0400
+Started PUT "/__web_console/repl_sessions/cb17ad770d4efd8658d12003c731c837" for ::1 at 2019-09-27 21:26:55 -0400
+Started GET "/patient/login" for ::1 at 2019-09-27 21:27:12 -0400
+Processing by PatientSessionsController#new as HTML
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 199ms (Views: 187.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:27:13 -0400
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:27:14 -0400
+Started GET "/auth/facebook/callback?code=AQALBco8ZrSLCcC6dpt_8Z8wJnavyEvWiv2FNp5L_q09qKTIND-DbZEkglQI8p56TOdkAG4v_g49kjxmCXODu2GL1UFeOAHqAAZGV_pfLQgHnsyVQ9qFTZhR1e1fZiOJy4UYlcNwpe2B_oafx938Z-UuxJyo3xvTEGVk96kpGM7hUnKt-stWMJIFynXDTuumjIto5qZxJG9MzlXhNZoyO5dwGrMZZDs7cDCLK-OG2qN-BXZav5IDMOpW5bKTCtdp4kMEnua_K5qdKsYYzp3l0MKjiNYXMbYkWXVDl6fBOH53qqbMCi4fLdUFyjVMAZimQ58u0WyJ0vpd2KHGfVFNvgVZHUBog-SaRx7OSWwyEu9TBQ&state=8d2fab0e4d6f2c7f5df502ebacaf8b2d3da32f06b3681448" for ::1 at 2019-09-27 21:27:14 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"code"=>"AQALBco8ZrSLCcC6dpt_8Z8wJnavyEvWiv2FNp5L_q09qKTIND-DbZEkglQI8p56TOdkAG4v_g49kjxmCXODu2GL1UFeOAHqAAZGV_pfLQgHnsyVQ9qFTZhR1e1fZiOJy4UYlcNwpe2B_oafx938Z-UuxJyo3xvTEGVk96kpGM7hUnKt-stWMJIFynXDTuumjIto5qZxJG9MzlXhNZoyO5dwGrMZZDs7cDCLK-OG2qN-BXZav5IDMOpW5bKTCtdp4kMEnua_K5qdKsYYzp3l0MKjiNYXMbYkWXVDl6fBOH53qqbMCi4fLdUFyjVMAZimQ58u0WyJ0vpd2KHGfVFNvgVZHUBog-SaRx7OSWwyEu9TBQ", "state"=>"8d2fab0e4d6f2c7f5df502ebacaf8b2d3da32f06b3681448"}
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `auth' for #<PatientSessionsController:0x00007f3464e75de8>):
+  
+app/controllers/patient_sessions_controller.rb:10:in `create'
+Started GET "/patient/login" for ::1 at 2019-09-27 21:27:28 -0400
+Processing by PatientSessionsController#new as HTML
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 20ms (Views: 10.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:27:29 -0400
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:27:29 -0400
+Started GET "/auth/facebook/callback?code=AQAk03X8Cpd4zNwr5crZrzCR_ObSyOiP17b6CATubcl2fZfBykqHRHOX5JXHb5a_he10Q41Thn6mmFsRP95h41-8a0-mR0nyr6arj-tLIeoeOtSnvLM7uoKYNxfUs0mLnlWF3wT7_Zgh5GcafOOmpa82mBTx13gHBKhwy9QoTD-a_tnTdZD5C0YaRS4MZ37LUiFYqor5HWtwR0QLG08AJ76-PNYB_4Zfst3ySbP-Kr_h-6dIkyuoIArW-BWqhgUybfv6x8pN0cbtWhzMJxXCk-ZzC05fqO0uSBKY5qWbFSKN-xjcZoEkv1k2_2Nc5bs5JRK7ra3IvPLaKWHyNC7QD_CHdyUXqkvHKChzU30uA1RgcQ&state=cfb714a354060776df989de33ccd699a3f85fc3a66786299" for ::1 at 2019-09-27 21:27:29 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"code"=>"AQAk03X8Cpd4zNwr5crZrzCR_ObSyOiP17b6CATubcl2fZfBykqHRHOX5JXHb5a_he10Q41Thn6mmFsRP95h41-8a0-mR0nyr6arj-tLIeoeOtSnvLM7uoKYNxfUs0mLnlWF3wT7_Zgh5GcafOOmpa82mBTx13gHBKhwy9QoTD-a_tnTdZD5C0YaRS4MZ37LUiFYqor5HWtwR0QLG08AJ76-PNYB_4Zfst3ySbP-Kr_h-6dIkyuoIArW-BWqhgUybfv6x8pN0cbtWhzMJxXCk-ZzC05fqO0uSBKY5qWbFSKN-xjcZoEkv1k2_2Nc5bs5JRK7ra3IvPLaKWHyNC7QD_CHdyUXqkvHKChzU30uA1RgcQ", "state"=>"cfb714a354060776df989de33ccd699a3f85fc3a66786299"}
+  [1m[36mPatient Load (0.8ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "jandmhough@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:10
+  [1m[36mPatient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "jandmhough@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:10
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 1.6ms)
+
+
+  
+NameError (undefined local variable or method `auth' for #<PatientSessionsController:0x00007f346c1a2140>):
+  
+app/controllers/patient_sessions_controller.rb:11:in `create'
+Started GET "/patient/login" for ::1 at 2019-09-27 21:27:54 -0400
+Processing by PatientSessionsController#new as HTML
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 41ms (Views: 21.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:27:55 -0400
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:27:55 -0400
+Started GET "/auth/facebook/callback?code=AQDxt_qu1p1ATeK9EU5XIaqJdDmNiSNS8n8u49vW5pgKpDB5HhOb105LRXEURzQycx55_5R7FvFRX4t9jvT5psfxExPVRcP3JfOYUAyxxMXIivay5LA_pL5qwTz06PTgzlb8GM-FsXnBK_oc6nKJFwuiVxgj-Arcs3XwIZm5vDvqZ4zy8uxt2boSB-qCLmMboh35rOV24iwisrtLbAgsghgaGGSieHSwzoX2T-4XwflQlRacorClflTo3RCjBY3prb18bP-HTDzg-7K9SbSnKEUJ47XmqZZqYVwL9hKM0f2_Yxq2QzMh6Rs4bU9LQZWckq-tv-noDMZVHOuI9lV7Uo1YnIpG5wiHfn883luGULgBPA&state=45cac6759a2b06f96e7980455981a936dbf7da999b50d215" for ::1 at 2019-09-27 21:27:56 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"code"=>"AQDxt_qu1p1ATeK9EU5XIaqJdDmNiSNS8n8u49vW5pgKpDB5HhOb105LRXEURzQycx55_5R7FvFRX4t9jvT5psfxExPVRcP3JfOYUAyxxMXIivay5LA_pL5qwTz06PTgzlb8GM-FsXnBK_oc6nKJFwuiVxgj-Arcs3XwIZm5vDvqZ4zy8uxt2boSB-qCLmMboh35rOV24iwisrtLbAgsghgaGGSieHSwzoX2T-4XwflQlRacorClflTo3RCjBY3prb18bP-HTDzg-7K9SbSnKEUJ47XmqZZqYVwL9hKM0f2_Yxq2QzMh6Rs4bU9LQZWckq-tv-noDMZVHOuI9lV7Uo1YnIpG5wiHfn883luGULgBPA", "state"=>"45cac6759a2b06f96e7980455981a936dbf7da999b50d215"}
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "jandmhough@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:10
+  [1m[36mPatient Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "jandmhough@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:14
+  [1m[36mPatient Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "jandmhough@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:14
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"home", :controller=>"patients", :patient_id=>nil}, missing required keys: [:patient_id]):
+  
+app/controllers/patient_sessions_controller.rb:16:in `create'
+Started PUT "/__web_console/repl_sessions/7b92cd8d0e87b314d5d683dfc62c114c" for ::1 at 2019-09-27 21:28:10 -0400
+Started PUT "/__web_console/repl_sessions/7b92cd8d0e87b314d5d683dfc62c114c" for ::1 at 2019-09-27 21:28:11 -0400
+Started PUT "/__web_console/repl_sessions/7b92cd8d0e87b314d5d683dfc62c114c" for ::1 at 2019-09-27 21:28:28 -0400
+Started GET "/patient/login" for ::1 at 2019-09-27 21:30:31 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PatientSessionsController#new as HTML
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 184ms (Views: 169.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/patient/login" for ::1 at 2019-09-27 21:30:32 -0400
+Processing by PatientSessionsController#new as HTML
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 52ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:30:34 -0400
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:30:34 -0400
+Started GET "/auth/facebook/callback?code=AQCcj7MEQL6m6H7rMcTBRoxtdqoLCCXn-xGohALXkFOotT5wZzMacfkzruIfMm75Qcu_FhO1TLwkb1X5PlLNLfFcTkv2ejI7s9rYwPcIkKIqRfmJihqHxPIe5mHFYoaOvUPO9wBBgdxMS1YiQGfrSGMilxh8NPXdI_7eolHLN6MxjdPltKMGrQQjo0S53ktuSizAHJ3wDY6cBCNU9GOMOKd8oFWGCJKwh6YvGJhbexH8Cn3s5kjoO6ZzwoIHxrhGAyX1vpdKkKMm-8rjKpe1MNLUjARFFGEZDksfL43Re7g_-2fsRhGW7Bv8KGQEAXBeLLRqULxMc6OA7PaZ2FdblO16BVLuLtvrcyMlA0w1Afg4Qg&state=29eeb8cf5aa7a10cf46b94052e27171025da26b994914627" for ::1 at 2019-09-27 21:30:34 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"code"=>"AQCcj7MEQL6m6H7rMcTBRoxtdqoLCCXn-xGohALXkFOotT5wZzMacfkzruIfMm75Qcu_FhO1TLwkb1X5PlLNLfFcTkv2ejI7s9rYwPcIkKIqRfmJihqHxPIe5mHFYoaOvUPO9wBBgdxMS1YiQGfrSGMilxh8NPXdI_7eolHLN6MxjdPltKMGrQQjo0S53ktuSizAHJ3wDY6cBCNU9GOMOKd8oFWGCJKwh6YvGJhbexH8Cn3s5kjoO6ZzwoIHxrhGAyX1vpdKkKMm-8rjKpe1MNLUjARFFGEZDksfL43Re7g_-2fsRhGW7Bv8KGQEAXBeLLRqULxMc6OA7PaZ2FdblO16BVLuLtvrcyMlA0w1Afg4Qg", "state"=>"29eeb8cf5aa7a10cf46b94052e27171025da26b994914627"}
+  [1m[36mPatient Load (0.8ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "jandmhough@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:10
+  [1m[36mPatient Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "jandmhough@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:14
+  [1m[36mPatient Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "jandmhough@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patient_sessions_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/patient_sessions_controller.rb:14
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"home", :controller=>"patients", :patient_id=>nil}, missing required keys: [:patient_id]):
+  
+app/controllers/patient_sessions_controller.rb:16:in `create'
+Started PUT "/__web_console/repl_sessions/e5a0bb2c120f23215c001805be71bf2e" for ::1 at 2019-09-27 21:30:41 -0400
+Started PUT "/__web_console/repl_sessions/e5a0bb2c120f23215c001805be71bf2e" for ::1 at 2019-09-27 21:30:42 -0400
