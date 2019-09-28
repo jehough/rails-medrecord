@@ -2,6 +2,6 @@
 
 <ul>
 <% @doctors.each do |doc| %>
-  <li> <%= link_to doc.doc_name, edit_doctor_path(doc) %> </li>
+  <li> <%= link_to doc.doc_name, edit_doctor_path(doc) %> <%= link_to "Add an Appointment", new_doctor_appointment_path(doc)%></li>
 <% end %>
 </ul>
