@@ -1,24 +1,20 @@
 # README
 
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+Needed for this application:
+Ruby 2.6.3
+Rails 5.2.3
+sqlite3
+Bundler 2.0.2
 
-* System dependencies
+When installing:
+Run Bundle install
+then run
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+rails db:migrate
+rails db:seed
