@@ -28772,3 +28772,25 @@ Processing by PatientsController#home as HTML
 Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/patient/logout" for ::1 at 2019-09-27 23:38:23 -0400
+Processing by PatientSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2t3TKYZig1v6l5WLLvYacn5O8JRXNPiQyH8RkdppQby7sIPrn1bFahh98hOSm/VdvXXiUY5zOwh2Y4f1jdbCPw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-27 23:38:23 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctor/login" for ::1 at 2019-09-27 23:38:25 -0400
+Processing by DoctorSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"uorSu9N0LeDLzRpGXKZ3dziRl8UFDT7Db/5w0o3Kohrb54J5ykBr0Sknfd7gy5hY+6qFANxK/VvR4ua22nUhmQ=="}
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 28ms (Views: 11.0ms | ActiveRecord: 0.9ms)
+
+
