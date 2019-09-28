@@ -27304,3 +27304,28 @@ Did you mean?  edit_patient_path
   
 app/views/appointments/index.html.erb:10:in `block in _app_views_appointments_index_html_erb___690269856541733970_70354248967900'
 app/views/appointments/index.html.erb:8:in `_app_views_appointments_index_html_erb___690269856541733970_70354248967900'
+Started GET "/appointments" for ::1 at 2019-09-27 22:49:24 -0400
+Processing by AppointmentsController#index as HTML
+  Parameters: {"authenticity_token"=>"gFQMVETKPWCFaUU4urDppCesWP6khBPfCz8CkjeSxIvhOVyWXf57UWeDIqAG3QaL5JdKO33D0Ee1I5T2YC1HCA=="}
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (date >= '2019-09-27')[0m
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (144.4ms)
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_appointment_path' for #<#<Class:0x00007ff939e8cb48>:0x00007ff939e93240>
+Did you mean?  edit_patient_path
+               doctor_appointment_path
+               doctor_appointments_path):
+     7:   <tr>
+     8: <% @appointments.each do |appt| %>
+     9:   <tr>
+    10:     <td><%= link_to appt.display_time, edit_appointment_path(appt) %></td>
+    11:     <td><%= appt.doctor.doc_name %></td>
+    12:     <td>
+    13:       <% if admin? && appt.patient.nil? %>
+  
+app/views/appointments/index.html.erb:10:in `block in _app_views_appointments_index_html_erb___690269856541733970_70354197571920'
+app/views/appointments/index.html.erb:8:in `_app_views_appointments_index_html_erb___690269856541733970_70354197571920'

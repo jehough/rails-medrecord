@@ -2,7 +2,7 @@ class AppointmentsController < ApplicationController
   before_action :current_patient, only: [:add_patient]
   before_action :current_doctor, only: [:edit]
   before_action :is_user?, only: [:index, :show, :update]
-  before_action :is_admin?, only: [:destroy, :destroy_past]
+  before_action :is_admin?, only: [:destroy, :destroy_past, :new]
 
   def index
     if params[:doctor_id]
@@ -12,6 +12,12 @@ class AppointmentsController < ApplicationController
       @appointments = Appointment.future
     end
   end
+
+  def new
+    @doctor = Doctor.find(params[:doctor_id])
+    @appointment= Appointment.new
+  end
+
 
   def destroy_past
     @appts = Appointment.all.past.available
