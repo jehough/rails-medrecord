@@ -7,11 +7,11 @@
   <tr>
 <% @appointments.each do |appt| %>
   <tr>
-    <td><%= link_to appt.display_time, edit_appointment_path(appt) %></td>
+    <td><%= link_to appt.display_time, edit_doctor_appointment_path(appt.doctor, appt) %></td>
     <td><%= appt.doctor.doc_name %></td>
     <td>
       <% if admin? && appt.patient.nil? %>
-        <%= button_to "Remove Appointment", appointment_path(appt), method: :delete %>
+        <%= button_to "Remove Appointment", doctor_appointment_path(appt.doctor, appt), method: :delete %>
       <% else %>
         <%= appt.patient.display_name unless appt.patient.nil? %>
       <% end %>

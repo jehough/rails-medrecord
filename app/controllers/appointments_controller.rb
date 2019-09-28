@@ -15,9 +15,18 @@ class AppointmentsController < ApplicationController
 
   def new
     @doctor = Doctor.find(params[:doctor_id])
-    @appointment= Appointment.new
+    @appointment = Appointment.new
   end
 
+  def create
+    @doctor = Doctor.find(params[:doctor_id])
+    @appointment = Appointment.new(appointment_params)
+    if @appointment.save
+      redirect_to doctor_appointments_path(@doctor)
+    else
+      render :new
+    end
+  end
 
   def destroy_past
     @appts = Appointment.all.past.available

@@ -1,3 +1,16 @@
 <h2> New Appointment </h2>
-
-<%= form_for @appointment %>
+<% if @appointment.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @appointment.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<%= form_for @appointment, url: doctor_appointments_path(@doctor) do |f|%>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <%= f.label :time %>
+  <%= f.time_field %>
+  <%= f.submit %>
+<% end %>
