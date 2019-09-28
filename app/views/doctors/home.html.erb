@@ -10,7 +10,7 @@
       </tr>
     <% @today.each do |appt| %>
       <tr>
-        <td><%= link_to appt.display_time, edit_appointment_path(appt) %></td>
+        <td><%= link_to appt.display_time, edit_doctor_appointment_path(@doctor, appt) %></td>
         <td><%= appt.patient.display_name unless appt.patient.nil? %></td>
       </tr>
     <% end %>

@@ -27785,3 +27785,79 @@ Processing by AppointmentsController#edit as HTML
 Completed 200 OK in 41ms (Views: 26.7ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/doctor/logout" for ::1 at 2019-09-27 23:11:26 -0400
+Processing by DoctorSessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"m0Inr8H5tISapPgnnLE+lBbmjtYec9CvfjMzNzMN9bT6L3dt2M3ytXhOn78g3NG71d2cE8c0EzfAL6VTZLJ2Nw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-27 23:11:26 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/doctor/login" for ::1 at 2019-09-27 23:11:28 -0400
+Processing by DoctorSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"Rh3j/BQZoHk8LkvWNRiBvU8CDrCNtF7zjMegWQT3sVQncLM+DS3mSN7ELE6JdW6SjDkcdVTznWsy2zY9U0gy1w=="}
+  Rendering doctor_sessions/new.html.erb within layouts/application
+  Rendered doctor_sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/doctor/login" for ::1 at 2019-09-27 23:11:33 -0400
+Processing by DoctorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8/j1RCpX0psIBMw/WCpWOFN3CQew2t/STAecysl+BUOSlaWGM2OUquruq6fkR7kXkEwbwmmdHEryGwqunsGGwA==", "doctor"=>{"username"=>"drsuess", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."username" = ? LIMIT ?[0m  [["username", "drsuess"], ["LIMIT", 1]]
+  ↳ app/controllers/doctor_sessions_controller.rb:8
+Redirected to http://localhost:3000/doctors/2/home
+Completed 302 Found in 234ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/doctors/2/home" for ::1 at 2019-09-27 23:11:33 -0400
+Processing by DoctorsController#home as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/home.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date = '2019-09-27')[0m  [["doctor_id", 2]]
+  ↳ app/views/doctors/home.html.erb:11
+  Rendered doctors/home.html.erb within layouts/application (119.4ms)
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_appointment_path' for #<#<Class:0x00007ff940299ca8>:0x00007ff9402a3f28>
+Did you mean?  edit_patient_path
+               doctor_appointment_path
+               doctor_appointments_path):
+    10:       </tr>
+    11:     <% @today.each do |appt| %>
+    12:       <tr>
+    13:         <td><%= link_to appt.display_time, edit_appointment_path(appt) %></td>
+    14:         <td><%= appt.patient.display_name unless appt.patient.nil? %></td>
+    15:       </tr>
+    16:     <% end %>
+  
+app/views/doctors/home.html.erb:13:in `block in _app_views_doctors_home_html_erb__844058459866148835_70354250027660'
+app/views/doctors/home.html.erb:11:in `_app_views_doctors_home_html_erb__844058459866148835_70354250027660'
+Started GET "/doctors/2/home" for ::1 at 2019-09-27 23:12:21 -0400
+Processing by DoctorsController#home as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/home.html.erb within layouts/application
+  [1m[36mAppointment Load (1.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date = '2019-09-27')[0m  [["doctor_id", 2]]
+  ↳ app/views/doctors/home.html.erb:11
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/doctors/home.html.erb:14
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/doctors/home.html.erb:14
+  Rendered doctors/home.html.erb within layouts/application (23.2ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 40ms (Views: 34.2ms | ActiveRecord: 2.3ms)
+
+
