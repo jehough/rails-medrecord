@@ -27861,3 +27861,709 @@ Processing by DoctorsController#home as HTML
 Completed 200 OK in 40ms (Views: 34.2ms | ActiveRecord: 2.3ms)
 
 
+Started GET "/admin_tools/tools" for ::1 at 2019-09-27 23:12:42 -0400
+Processing by AdminToolsController#tools as HTML
+  Parameters: {"authenticity_token"=>"eTE1qQPLd4mPmxoHEzQfZW0HBWVuNwyHkllC/K1C2HEYXGVrGv8xuG1xfZ+vWfBKrjwXoLdwzx8sRdSY+v1b8g=="}
+  Rendering admin_tools/tools.html.erb within layouts/application
+  Rendered admin_tools/tools.html.erb within layouts/application (1.1ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-27 23:12:44 -0400
+Processing by DoctorsController#index as HTML
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/admin_index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/admin_index.html.erb:4
+  Rendered doctors/admin_index.html.erb within layouts/application (7.1ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 34ms (Views: 28.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/doctors/2/appointments/new" for ::1 at 2019-09-27 23:12:52 -0400
+Processing by AppointmentsController#new as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:17
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (/home/jim/github/rails-medrecord/app/views/appointments/new.html.erb:18: syntax error, unexpected ensure, expecting end
+          ensure
+          ^~~~~~
+/home/jim/github/rails-medrecord/app/views/appointments/new.html.erb:20: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/appointments/new.html.erb:18: syntax error, unexpected ensure, expecting end
+app/views/appointments/new.html.erb:20: syntax error, unexpected end-of-input, expecting end
+Started GET "/doctors/2/appointments/new" for ::1 at 2019-09-27 23:13:25 -0400
+Processing by AppointmentsController#new as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:17
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2)):
+    12:   <%= f.label :date %>
+    13:   <%= f.date_field :date %>
+    14:   <%= f.label :time %>
+    15:   <%= f.time_field %>
+    16:   <%= f.submit %>
+    17: <% end %>
+  
+app/views/appointments/new.html.erb:15:in `block in _app_views_appointments_new_html_erb__3220425074598945469_70354248724400'
+app/views/appointments/new.html.erb:11:in `_app_views_appointments_new_html_erb__3220425074598945469_70354248724400'
+Started GET "/doctors/2/appointments/new" for ::1 at 2019-09-27 23:13:40 -0400
+Processing by AppointmentsController#new as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:17
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (4.7ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 24ms (Views: 18.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/doctors/2/appointments" for ::1 at 2019-09-27 23:13:56 -0400
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CHVotReYxRQfzXq4nHDdEGAMmbt29rdSzZijJWxTPbZpGDh3DqyDJf0nHSAgHTI/ozeLfq+xdMpzhDVBO+y+NQ==", "appointment"=>{"date"=>"2019-09-28", "time"=>"15:00"}, "commit"=>"Create Appointment", "doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:22
+Unpermitted parameters: :date, :time
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:24
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (3.0ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 25ms (Views: 18.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/doctors/2/appointments" for ::1 at 2019-09-27 23:16:26 -0400
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4xkG7Q7/fitKLMHHRUfrg1mDkCCr6+tLUMHqVfQVKR2CdFYvF8s4GqjGpl/5KgSsmriC5XKsKNPu3Xwxo6qqng==", "appointment"=>{"date"=>"2019-09-28", "time"=>"13:00"}, "commit"=>"Create Appointment", "doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:25
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (1.7ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 40ms (Views: 9.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/doctors/2/appointments" for ::1 at 2019-09-27 23:16:32 -0400
+Processing by AppointmentsController#index as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:9
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (1.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date >= '2019-09-27')[0m  [["doctor_id", 2]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:13
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:13
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendered appointments/index.html.erb within layouts/application (85.8ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 107ms (Views: 96.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admin_tools/tools" for ::1 at 2019-09-27 23:16:47 -0400
+Processing by AdminToolsController#tools as HTML
+  Parameters: {"authenticity_token"=>"b1CQjkiFrfM+8W66MA8P0UGXb4OBvpZMRs/LAfN0TJUOPcBMUbHrwtwbCSKMYuD+gqx9Rlj5VdT4011lpMvPFg=="}
+  Rendering admin_tools/tools.html.erb within layouts/application
+  Rendered admin_tools/tools.html.erb within layouts/application (1.2ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/doctors" for ::1 at 2019-09-27 23:16:49 -0400
+Processing by DoctorsController#index as HTML
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/admin_index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/admin_index.html.erb:4
+  Rendered doctors/admin_index.html.erb within layouts/application (3.1ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/doctors/3/appointments/new" for ::1 at 2019-09-27 23:16:50 -0400
+Processing by AppointmentsController#new as HTML
+  Parameters: {"doctor_id"=>"3"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:17
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/doctors/2/appointments/new" for ::1 at 2019-09-27 23:16:55 -0400
+Processing by AppointmentsController#new as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:17
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (5.9ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 31ms (Views: 22.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/doctors/2/appointments" for ::1 at 2019-09-27 23:17:06 -0400
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3J/RgCJFjrpUcaBbtMI4+VIoLZYq0x1dqryoJC1cEQipDDc+00tpNGV7BEfCciGdUDtUmzskHZxu+1GrTHAZEw==", "appointment"=>{"date"=>"2019-09-28", "time"=>"01:59"}, "commit"=>"Create Appointment", "doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:25
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (5.0ms)
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 35ms (Views: 22.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/doctors/2/appointments" for ::1 at 2019-09-27 23:17:26 -0400
+Processing by AppointmentsController#index as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:9
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date >= '2019-09-27')[0m  [["doctor_id", 2]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:13
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:13
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendered appointments/index.html.erb within layouts/application (74.4ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 118ms (Views: 81.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/doctors/2/appointments" for ::1 at 2019-09-27 23:17:29 -0400
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZiLan6+ww66jyAqkIHIGO2InubNnZM0RH8tXIyNKNE4HT4pdtoSFn0EibTycH+kUoRyrdr4jDomh18FHdPW3zQ==", "appointment"=>{"date"=>"2019-09-28", "time"=>"01:59"}, "commit"=>"Create Appointment", "doctor_id"=>"2"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (exception class/object expected):
+  
+app/controllers/appointments_controller.rb:22:in `raise'
+app/controllers/appointments_controller.rb:22:in `create'
+Started GET "/doctors/2/appointments/new" for ::1 at 2019-09-27 23:18:51 -0400
+  
+SyntaxError (/home/jim/github/rails-medrecord/app/controllers/appointments_controller.rb:23: syntax error, unexpected ')', expecting =>
+...@doctor.id, appointment_params)
+...                              ^):
+  
+app/controllers/appointments_controller.rb:23: syntax error, unexpected ')', expecting =>
+Started GET "/doctors" for ::1 at 2019-09-27 23:19:36 -0400
+Processing by DoctorsController#index as HTML
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendering doctors/admin_index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/doctors/admin_index.html.erb:4
+  Rendered doctors/admin_index.html.erb within layouts/application (1.5ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 21ms (Views: 10.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/doctors/2/appointments/new" for ::1 at 2019-09-27 23:19:39 -0400
+Processing by AppointmentsController#new as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:17
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (1.8ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 58ms (Views: 12.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/doctors/2/appointments" for ::1 at 2019-09-27 23:19:48 -0400
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+YV4YwzbQ98ueTwA6vQ1dBqeolEJRKMKAEs32+3d2/2MFp7d/dWkUR9zmBycRCwQGI3bXBizo8vEDM5UjPHT5g==", "appointment"=>{"date"=>"2019-09-28", "time"=>"01:00"}, "commit"=>"Create Appointment", "doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:22
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:24
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:24
+  [1m[36mAppointment Create (0.5ms)[0m  [1m[32mINSERT INTO "appointments" ("doctor_id", "date", "time") VALUES (?, ?, ?)[0m  [["doctor_id", 2], ["date", "2019-09-28"], ["time", "2000-01-01 01:00:00"]]
+  ↳ app/controllers/appointments_controller.rb:24
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/appointments_controller.rb:24
+Redirected to http://localhost:3000/doctors/2/appointments
+Completed 302 Found in 18ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/doctors/2/appointments" for ::1 at 2019-09-27 23:19:48 -0400
+Processing by AppointmentsController#index as HTML
+  Parameters: {"doctor_id"=>"2"}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:9
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."doctor_id" = ? AND (date >= '2019-09-27')[0m  [["doctor_id", 2]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:13
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:13
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+  Rendered appointments/index.html.erb within layouts/application (54.8ms)
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT  "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37
+Completed 200 OK in 65ms (Views: 61.0ms | ActiveRecord: 1.9ms)
+
+

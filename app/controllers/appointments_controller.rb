@@ -20,8 +20,8 @@ class AppointmentsController < ApplicationController
 
   def create
     @doctor = Doctor.find(params[:doctor_id])
-    @appointment = Appointment.new(appointment_params)
-    if @appointment.save
+    @appointment = Appointment.new(doctor_id: @doctor.id)
+    if @appointment.update(appointment_params)
       redirect_to doctor_appointments_path(@doctor)
     else
       render :new
@@ -81,6 +81,6 @@ class AppointmentsController < ApplicationController
 
   private
   def appointment_params
-    params.require(:appointment).permit(:patient_id, :height, :weight, :bmi, :temp, :systolic, :diastolic, :heart_rate, :spo2, :rr, :visit_reason, :history, :neuro, :heent, :cardiac, :respiratory, :skin, :musculoskeletal, :psychosocial, :therapies, :tests_ordered, :follow_up, images: [])
+    params.require(:appointment).permit(:date, :time, :patient_id, :height, :weight, :bmi, :temp, :systolic, :diastolic, :heart_rate, :spo2, :rr, :visit_reason, :history, :neuro, :heent, :cardiac, :respiratory, :skin, :musculoskeletal, :psychosocial, :therapies, :tests_ordered, :follow_up, images: [])
   end
 end

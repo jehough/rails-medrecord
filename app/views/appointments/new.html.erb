@@ -7,10 +7,11 @@
     <% end %>
     </ul>
   </div>
+<% end %>
 <%= form_for @appointment, url: doctor_appointments_path(@doctor) do |f|%>
   <%= f.label :date %>
   <%= f.date_field :date %>
   <%= f.label :time %>
-  <%= f.time_field %>
+  <%= f.time_field :time%>
   <%= f.submit %>
 <% end %>
