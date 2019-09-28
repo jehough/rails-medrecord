@@ -26543,3 +26543,50 @@ Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
 
 Started GET "/auth/google_oauth2" for ::1 at 2019-09-27 11:24:01 -0400
 Started GET "/auth/google_oauth2" for ::1 at 2019-09-27 11:24:01 -0400
+Started GET "/" for ::1 at 2019-09-27 21:16:02 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 182ms (Views: 177.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/login" for ::1 at 2019-09-27 21:16:04 -0400
+Processing by PatientSessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"CbHeCqhSm16d2ZpnB4NdY85ZuZEnQquI/T+KVdLzuydo3I7IsWbdb38z/f+77rJMDWKrVP4FaBBDIxwxhUw4pA=="}
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 35ms (Views: 16.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:16:07 -0400
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:16:07 -0400
+Started GET "/patient/login" for ::1 at 2019-09-27 21:17:04 -0400
+Processing by PatientSessionsController#new as HTML
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/patient/login" for ::1 at 2019-09-27 21:17:05 -0400
+Processing by PatientSessionsController#new as HTML
+  Rendering patient_sessions/new.html.erb within layouts/application
+  Rendered patient_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:17:18 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jim/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started GET "/auth/facebook" for ::1 at 2019-09-27 21:17:19 -0400
+Started GET "/auth/facebook/callback?code=AQAHQ_p4t8nl4EkoD_NtCPQzDowoYtnA1WEpih1-oMz0fRZxpbdJEJMl1s3anGrp2DUENBb9EhgCD53c1f9YDIlGebEpybEYcxpnN4B67oMG0OT2-DF-rf06Q9YWs9Nwmie4ytqjiMSrYnwZVZaQXT5gQemTY4Yuvr8vY1DGxn8vafdh7kaJDu7JqgTtTUNiI3xvX2gZ9Zxxasi4DA92RSJTheuxPIrY3CG-cq0j6YusrsMqY82j2_Sh-qLf8RTakcs297l-OS-UkPl_XXqC8P5Wtp08Sj50VMMv-0YfT8P0XD6tDN8qj_blo2WiKJNlXgkz1ABAO5ZkGYqQ3IB5wxKnjSPVKSMR5v9CQ7XnzajPpA&state=6dc5ca76745b84b2dbd453e527480b659b294617014931f1" for ::1 at 2019-09-27 21:17:36 -0400
+Processing by PatientSessionsController#create as HTML
+  Parameters: {"code"=>"AQAHQ_p4t8nl4EkoD_NtCPQzDowoYtnA1WEpih1-oMz0fRZxpbdJEJMl1s3anGrp2DUENBb9EhgCD53c1f9YDIlGebEpybEYcxpnN4B67oMG0OT2-DF-rf06Q9YWs9Nwmie4ytqjiMSrYnwZVZaQXT5gQemTY4Yuvr8vY1DGxn8vafdh7kaJDu7JqgTtTUNiI3xvX2gZ9Zxxasi4DA92RSJTheuxPIrY3CG-cq0j6YusrsMqY82j2_Sh-qLf8RTakcs297l-OS-UkPl_XXqC8P5Wtp08Sj50VMMv-0YfT8P0XD6tDN8qj_blo2WiKJNlXgkz1ABAO5ZkGYqQ3IB5wxKnjSPVKSMR5v9CQ7XnzajPpA", "state"=>"6dc5ca76745b84b2dbd453e527480b659b294617014931f1"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/patient_sessions_controller.rb:9:in `create'
