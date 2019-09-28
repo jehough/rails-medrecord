@@ -1,6 +1,14 @@
 <h3>Appointment for: <%= @appointment.patient.display_name unless @appointment.patient.nil?%></h3>
 <h3>With: <%= @appointment.doctor.doc_name %> on <%= @appointment.display_time %></h3>
-
+<% if @patient.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @patient.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <%= form_for @patient do |pat| %>
 <%= pat.fields_for :appointments_attributes do |f| %>
   <%= f.hidden_field :id, value: @appointment.id %>

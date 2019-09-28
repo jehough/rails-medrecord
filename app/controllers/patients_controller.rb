@@ -36,8 +36,11 @@ class PatientsController < ApplicationController
 
   def update
     @patient = Patient.find(params[:id])
-    @patient.update(patient_params)
-    redirect_to doctor_home_path(@doctor)
+    if @patient.update(patient_params)
+      redirect_to doctor_home_path(@doctor)
+    else
+      render "/appointments/edit"
+    end
   end
 
   def new
