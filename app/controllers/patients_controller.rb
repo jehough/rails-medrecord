@@ -1,8 +1,7 @@
-require 'pry'
+
 class PatientsController < ApplicationController
   before_action :current_patient, only: :home
-  before_action :is_doctor?, only: [:update]
-  before_action :current_doctor, only: [:index, :show]
+  before_action :current_doctor, only: [:index, :show, :update]
   before_action :is_admin?, only: [:new, :create, :edit, :destroy]
 
 
@@ -38,7 +37,7 @@ class PatientsController < ApplicationController
   def update
     @patient = Patient.find(params[:id])
     @patient.update(patient_params)
-    redirect_to doctor_home_path(current_doctor)
+    redirect_to doctor_home_path(@doctor)
   end
 
   def new

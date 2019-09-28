@@ -1,5 +1,6 @@
 class DoctorSessionsController < ApplicationController
   before_action :logged_in?, only: [:new]
+  
   def new
     @doctor= Doctor.new
   end

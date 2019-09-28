@@ -1,6 +1,7 @@
 class DoctorsController < ApplicationController
   before_action :current_patient, only: [:show]
   before_action :current_doctor, only: [:home]
+  before_action :is_user?, only: [:index]
   before_action :is_admin?, only: [:new, :edit, :update, :create, :destroy]
 
 

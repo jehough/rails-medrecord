@@ -2,7 +2,7 @@ class AppointmentsController < ApplicationController
   before_action :current_patient, only: [:add_patient]
   before_action :current_doctor, only: [:edit]
   before_action :is_user?, only: [:index, :show, :update]
-  before_action :is_admin?, only: [:destroy, :destroy_past, :new]
+  before_action :is_admin?, only: [:destroy, :destroy_past, :new, :create]
 
   def index
     if params[:doctor_id]

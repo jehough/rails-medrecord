@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def is_user?
-    !!session[:patient_id] || !!session[:doctor_id]
+    redirect_to root_path unless !!session[:patient_id] || !!session[:doctor_id]
   end
 
   def is_patient?
