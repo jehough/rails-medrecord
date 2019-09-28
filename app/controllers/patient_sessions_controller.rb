@@ -14,6 +14,8 @@ class PatientSessionsController < ApplicationController
         flash[:alert] = "Incorrect Email/Password Combination"
         render :new
       end
+    elsif @patient = Patient.find_or_create_by(email: auth[:info][:email])
+
     else
       flash[:alert] = "Incorrect Email/Password Combination"
       render :new
