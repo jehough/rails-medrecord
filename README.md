@@ -18,3 +18,6 @@ then run
 
 rails db:migrate
 rails db:seed
+
+
+This application is designed to be a starting framework for an electronic medical record.
