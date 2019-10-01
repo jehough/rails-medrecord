@@ -6,7 +6,6 @@ class Patient < ApplicationRecord
   has_many :medications, through: :patient_meds
   validates :email, presence: true
   validates :email, uniqueness: true
-  validates :password, presence: true
 
 
   def appointments_attributes=(appointment)

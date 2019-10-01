@@ -39,6 +39,7 @@ class PatientsController < ApplicationController
     if @patient.update(patient_params)
       redirect_to doctor_home_path(@doctor)
     else
+      @appointment = Appointment.find(params[:patient][:appointments_attributes][:id])
       render "/appointments/edit"
     end
   end
